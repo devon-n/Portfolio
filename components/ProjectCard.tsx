@@ -28,15 +28,20 @@ const ProjectCard:FunctionComponent<{
 
 	return (
 		<div>
-			<Image 
-				src={image_path} 
-				alt={name} 
-				className="cursor-pointer" 
-				onClick={() => setShowDetail(id)}
-				width="300"
-				height="150"
-				layout="responsive"/>
-			<p className="my-2 text-center">{name}</p>
+			{showDetail === null && (
+				<div>
+					<Image 
+						src={image_path} 
+						alt={name} 
+						className="cursor-pointer" 
+						onClick={() => setShowDetail(id)}
+						width="300"
+						height="150"
+						layout="responsive"/>
+					<p className="my-2 text-center">{name}</p>
+
+				</div>
+			)}
 
 			{showDetail === id && (
 			<div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 bg-gray-100 rounded-lg md:p-10 md:grid-cols-2 gap-x-12 dark:bg-dark-100">
