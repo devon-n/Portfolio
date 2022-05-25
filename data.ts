@@ -111,7 +111,7 @@ export const projects: IProject[] = [
         name: "Crypto Fund Me",
         description: "Crowdfunding that uses NFTs as the funds",
         image_path: "/images/CFM.png",
-        deployed_url: "cryptofundme.eth.link",
+        deployed_url: "//cryptofundme.eth.link/",
         github_url: "https://github.com/devon-n/CryptoFundMeV2",
         category: ["Blockchain", "Full Stack", ],
         key_techs: ["Solidity", "JavaScript", "HTML/CSS"]
@@ -121,7 +121,7 @@ export const projects: IProject[] = [
         name: "Panda Siege",
         description: "A NFT game on the BSC Network",
         image_path: "/images/PandaSiege.png",
-        deployed_url: "pandasiege.app",
+        deployed_url: "//www.pandasiege.app",
         github_url: "",
         category: ["Blockchain"],
         key_techs: ["Solidity"]

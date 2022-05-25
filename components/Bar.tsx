@@ -24,10 +24,10 @@ const Bar:FunctionComponent<{
 
 
 	return (
-		<div className="my-2 text-gray-700 bg-gray-300 rounded-full dark:bg-dark-300">
+		<div className="my-2 text-gray-700 bg-gray-300 rounded-full dark:bg-dark-300 dark:text-white">
 			
 			<motion.div 
-				className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-gray-200 to-blue-300" 
+				className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-gray-200 to-blue-300 dark:from-dark-200 dark:to-lime-400" 
 				style={{ width: level }}
 				variants={variants}
 				initial="initial"

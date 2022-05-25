@@ -10,8 +10,8 @@ export const NavItem:FunctionComponent<{
     active
 }) => {
 
-    let className = "capitalize cursor-pointer hover:text-blue-200"
-    if (active === value) className += " text-blue-200"
+    let className = "capitalize cursor-pointer hover:text-blue-300 dark:hover:text-lime-300"
+    if (active === value) className += " text-blue-300 dark:text-lime-300"
     
     return (
         <li 

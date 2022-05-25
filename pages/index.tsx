@@ -3,7 +3,10 @@ import ServiceCard from '../components/ServiceCard'
 import { services } from '../data'
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from '../animations'
-const index = () => {
+import Head from 'next/head'
+
+
+const About = () => {
 
 	return (
 		<motion.div 
@@ -13,10 +16,10 @@ const index = () => {
 			animate="animate"
 			exit="exit"
 		>
-			<h5 className="my-3 font-medium">
+			<h4 className="my-3 text-lg font-medium">
 				I am a driven, self-taught programmer with experience in smart contracts and machine learning.
 				I am always hungry to learn more in my journey and contributions to the crypto and AI space. 
-			</h5>
+			</h4>
 			<motion.div
 				variants={stagger}
 				initial="initial"
@@ -24,7 +27,7 @@ const index = () => {
 				className="flex-grow p-4 mt-5 dark:bg-dark" 
 				style={{ marginLeft: '-1.5rem', marginRight: '-1.5rem' }}
 			>
-				<h6 className="my-3 text-xl font-bold tracking-wide">What I can do</h6>
+				<h5 className="my-3 text-xl font-bold tracking-wide">What I can do</h5>
 				<div className="grid gap-6 lg:grid-cols-2">	
 					{services.map((service, index) => (
 						<motion.div
@@ -40,4 +43,4 @@ const index = () => {
 	)
 }
 
-export default index
+export default About
