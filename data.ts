@@ -141,7 +141,7 @@ export const projects: IProject[] = [
         name: "AI Self Driving Car",
         description: "A neural net with genetic evolution built from scratch",
         image_path: "/images/SelfDrivingCar.png",
-        deployed_url: "",
+        deployed_url: "//self-driving-car-rosy.vercel.app/",
         github_url: "https://github.com/devon-n/SelfDrivingCar",
         category: ["AI"],
         key_techs: ["JavaScript"]

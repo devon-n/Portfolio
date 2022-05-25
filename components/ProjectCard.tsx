@@ -31,7 +31,7 @@ const ProjectCard:FunctionComponent<{
 			<Image 
 				src={image_path} 
 				alt={name} 
-				className="cursor-point" 
+				className="cursor-pointer" 
 				onClick={() => setShowDetail(id)}
 				width="300"
 				height="150"
