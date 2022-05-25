@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useState } from "react"
 import ProjectCard from "../components/ProjectCard"
 import ProjectsNavbar from "../components/ProjectNavbar"
 import { projects as projectsData } from "../data"
