@@ -35,7 +35,7 @@ const Sidebar = () => {
             <a 
             className="flex items-center justify-center w-auto px-2 py-1 my-3 bg-gray-100 rounded-full dark:bg-dark-200"
             href="/images/Devon Nathan.pdf"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             download="Devon_Nathan_CV.pdf"
             aria-label="CV Download">
                 <GiTie className="w-6 h-6"/>
@@ -47,13 +47,13 @@ const Sidebar = () => {
 
             {/* Social Icons */}
             <div className="flex justify-around w-9/12 mx-auto my-5 text-blue-500 dark:text-lime-400 md:w-full">
-                <a href="https://github.com/devon-n" target="_blank" aria-label="Github">
+                <a href="https://github.com/devon-n" target="_blank" rel="noreferrer" aria-label="Github">
                     <AiFillGithub className="w-8 h-8 cursor-pointer"/>
                 </a>
-                <a href="https://www.linkedin.com/in/devonnathan/" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/devonnathan/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                     <AiFillLinkedin className="w-8 h-8 cursor-pointer"/>
                 </a>
-                <a href="mailto:devon.nathan@protonmail.com" target="_blank" aria-label="Email">
+                <a href="mailto:devon.nathan@protonmail.com" target="_blank" rel="noreferrer" aria-label="Email">
                     <AiOutlineMail className="w-8 h-8 cursor-pointer"/>
                 </a>
             </div>

@@ -16,6 +16,9 @@ const About = () => {
 			animate="animate"
 			exit="exit"
 		>
+			<Head>
+				<title>Devon Nathan Portfolio - About</title>
+			</Head>
 			<h4 className="my-3 text-lg font-medium">
 				I am a driven, self-taught programmer with experience in smart contracts and machine learning.
 				I am always hungry to learn more in my journey and contributions to the crypto and AI space. 

@@ -49,12 +49,12 @@ const ProjectCard:FunctionComponent<{
 					</motion.div>
 						<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
 							{github_url ? 
-								<a href={github_url} target="_blank" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
+								<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
 									<AiFillGithub /> <span>Github</span>
 								</a> : null
 							}
 							{deployed_url ? 
-								<a href={deployed_url} target="_blank" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
+								<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
 									<CgWebsite /> <span>URL</span>
 								</a> : null
 							}

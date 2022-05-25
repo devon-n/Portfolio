@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import Bar from "../components/Bar"
 import { languages, tools } from "../data"
 import { fadeInUp, routeAnimation } from "../animations"
+import Head from "next/head"
 
 const resume = () => {
 
@@ -13,6 +14,9 @@ const resume = () => {
 			animate="animate"
 			exit="exit"
 		>
+			<Head>
+				<title>Devon Nathan Portfolio - Resume</title>
+			</Head>
 
 			{/* Experience */}
 			<h5 className="my-3 text-2xl font-bold">Experience</h5>

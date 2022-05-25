@@ -5,6 +5,7 @@ import { projects as projectsData } from "../data"
 import { Category } from "../types"
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"
+import Head from "next/head"
 
 const Projects = () => {
 
@@ -33,6 +34,9 @@ const Projects = () => {
 			animate="animate"
 			exit="exit"
 		>
+			<Head>
+				<title>Devon Nathan Portfolio - Projects</title>
+			</Head>
 			<ProjectsNavbar handlerFilterCategory={handlerFilterCategory} active={activeItem}/>
 
 			<motion.div 

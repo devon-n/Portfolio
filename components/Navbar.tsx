@@ -32,7 +32,7 @@ const Navbar = () => {
         if (pathname === '/resume') setActiveItem('Resume')
         if (pathname === '/projects') setActiveItem('Projects')
 
-    }, [])
+    }, [pathname])
     
     return (
         <div className="flex justify-between px-5 py-3 my-3">
