@@ -6,13 +6,17 @@ import { languages, tools, experiences } from '../data'
 const Resume = () => {
   const experiencesMemo = useMemo(() => experiences, [])
 
-  const ExperienceItem = useMemo(() => ({ title, company, period, description }) => (
-    <div className='bg-background-light dark:bg-background-dark p-2 rounded-lg'>
-      <h6 className="my-2 text-xl font-semibold text-primary-light dark:text-primary-dark">{title}</h6>
-      <p className="font-semibold">{company} - {period}</p>
-      <p className="my-3">{description}</p>
-    </div>
-  ), [])
+  const ExperienceItem = useMemo(() => {
+    const Item = ({ title, company, period, description }) => (
+      <div className='bg-background-light dark:bg-background-dark p-2 rounded-lg'>
+        <h6 className="my-2 text-xl font-semibold text-primary-light dark:text-primary-dark">{title}</h6>
+        <p className="font-semibold">{company} - {period}</p>
+        <p className="my-3">{description}</p>
+      </div>
+    )
+    Item.displayName = 'ExperienceItem'
+    return Item
+  }, [])
 
   return (
     <div className="px-6 py-2">
