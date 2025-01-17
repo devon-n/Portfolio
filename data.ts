@@ -4,11 +4,10 @@ import { FaFileContract } from 'react-icons/fa'
 import { GiBrain } from 'react-icons/gi'
 import { BsCircleFill } from 'react-icons/bs'
 import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript } from 'react-icons/si'
-import { IconType } from 'react-icons'
-import { IProject, IService, ISkill } from "./types";
+import { IExperienceItemProps, IProject, IService, ISkill } from "./types";
 
 
-export const services:IService[] = [
+export const services: IService[] = [
 
     {
         title: "Smart Contract Developer",
@@ -16,14 +15,14 @@ export const services:IService[] = [
         Icon: FaFileContract
     },
     {
-        title: "NFT Collection Creator",
-        about: "Build Non-Fungible Tokens using multiple standards for instance <b>ERC721, ERC721a, ERC1155</b> etc. with any customization necessary",
-        Icon: MdOutlineCollections
-    },
-    {
         title: "Full Stack Web3 Developer",
         about: "Create Dapps using <b>Next.js, React.js</b> or <b>JS, HTML</b> and <b>CSS</b> and can deploy on web2 or <b>ENS</b> domains",
         Icon: AiOutlineCodeSandbox
+    },
+    {
+        title: "NFT Collection Creator",
+        about: "Build Non-Fungible Tokens using multiple standards for instance <b>ERC721, ERC721a, ERC1155</b> etc. with any customization necessary",
+        Icon: MdOutlineCollections
     },
     {
         title: "Smart Contract Security",
@@ -37,7 +36,7 @@ export const services:IService[] = [
     }
 ]
 
-export const languages:ISkill[] = [
+export const languages: ISkill[] = [
     {
         name:"Python",
         level: "100%",
@@ -68,6 +67,16 @@ export const languages:ISkill[] = [
         level: "100%",
         Icon: SiNextdotjs
     },
+    {
+        name:"ExpressJS",
+        level: "100%",
+        Icon: SiNextdotjs
+    },
+    {
+        name:"Flask",
+        level: "100%",
+        Icon: SiNextdotjs
+    },
 
 ]
 
@@ -78,12 +87,22 @@ export const tools:ISkill[] = [
         Icon: BsCircleFill
     },
     {
-        name:"Truffle/Hardhat/Brownie",
+        name:"Truffle/Hardhat/Brownie/Foundry",
         level: "100%",
         Icon: BsCircleFill
     },
     {
-        name:"Ethereum Name Services Domains",
+        name:"Google Cloud Platform",
+        level: "100%",
+        Icon: BsCircleFill
+    },
+    {
+        name:"SQL",
+        level: "100%",
+        Icon: BsCircleFill
+    },
+    {
+        name:"BigQuery",
         level: "100%",
         Icon: BsCircleFill
     },
@@ -108,16 +127,26 @@ export const tools:ISkill[] = [
 export const projects: IProject[] = [
     {
         id: 1,
+        name: "StratX",
+        description: "Forward testing dashboard to monitor and manage multiple strategies across multiple exchanges",
+        image_path: "/images/Stratx.png",
+        deployed_url: "//stratx.app/",
+        github_url: "https://github.com/Forward-Tester/ForwardTesterV2",
+        category: ["Blockchain", "Full Stack"],
+        key_techs: ["Python", "Typescript"]
+    },
+    {
+        id: 2,
         name: "Crypto Fund Me",
         description: "Crowdfunding that uses NFTs as the funds",
         image_path: "/images/CFM.png",
         deployed_url: "//cryptofundme.eth.link/",
         github_url: "https://github.com/devon-n/CryptoFundMeV2",
-        category: ["Blockchain", "Full Stack", ],
+        category: ["Blockchain", "Full Stack"],
         key_techs: ["Solidity", "JavaScript", "HTML/CSS"]
     },
     {
-        id: 2,
+        id: 3,
         name: "Panda Siege",
         description: "A NFT game on the BSC Network",
         image_path: "/images/PandaSiege.png",
@@ -127,7 +156,7 @@ export const projects: IProject[] = [
         key_techs: ["Solidity"]
     },
     {
-        id: 3,
+        id: 4,
         name: "NFT Minting Dapp + Marketplace",
         description: "A NFT minting dapp with a multi-NFT marketplace",
         image_path: "/images/NFTSite.png",
@@ -137,7 +166,7 @@ export const projects: IProject[] = [
         key_techs: ["Solidity", "NextJS", "JavaScript"]
     },
     {
-        id: 4,
+        id: 5,
         name: "AI Self Driving Car",
         description: "A neural net with genetic evolution built from scratch",
         image_path: "/images/SelfDrivingCar.png",
@@ -147,7 +176,7 @@ export const projects: IProject[] = [
         key_techs: ["JavaScript"]
     },
     {
-        id: 5,
+        id: 6,
         name: "MLB Neuro-Evolution of Augmented Topologies",
         description: "AI that finds the optimal betting strategies based on team stats",
         image_path: "/images/MLBNeat.png",
@@ -157,7 +186,7 @@ export const projects: IProject[] = [
         key_techs: ["Keras", "NEAT"]
     },
     {
-        id: 6,
+        id: 7,
         name: "Betting Bot",
         description: "A bot that places bets based on AI predictions and betting strategies",
         image_path: "/images/MLBNeatBetting.png",
@@ -167,7 +196,7 @@ export const projects: IProject[] = [
         key_techs: ["Keras", "NEAT", "Selenium",]
     },
     {
-        id: 7,
+        id: 8,
         name: "NBA AI Game predictor",
         description: "AI that predicts the outcomes of NBA games",
         image_path: "/images/NBAAI.png",
@@ -177,7 +206,7 @@ export const projects: IProject[] = [
         key_techs: ["Keras", "Scikit-Learn", "Stable Baselines"]
     },
     {
-        id: 8, 
+        id: 9,
         name: "MLB AI Game predictor",
         description: "AI that predicts the outcomes of MLB games",
         image_path: "/images/MLBAI.png",
@@ -187,3 +216,37 @@ export const projects: IProject[] = [
         key_techs: ["Keras", "Scikit-Learn", "NEAT", "Selenium"]
     },
 ]
+
+
+export const experiences: IExperienceItemProps[] = [
+    {
+      title: "Solutions Architect",
+      company: "Trilitech",
+      period: "2024/25",
+      description: "Lead smart contract developer for major blockchain gaming platform",
+    },
+    {
+      title: "Solidity Developer",
+      company: "Blowfish Studios",
+      period: "2022/24",
+      description: "Lead smart contract developer for major blockchain gaming platform",
+    },
+    {
+        title: "Substitute Teacher",
+        company: "2u",
+        period: "2022",
+        description: "Subsitute teacher for blockchain and AI classes at Monash University"
+    },
+    {
+      title: "Full Stack Developer",
+      company: "Crypto Fund Me",
+      period: "2022",
+      description: "Created a crowdfunding web3 platform that uses NFTs as the individual crowdfunds on an ENS domain.",
+    },
+    {
+      title: "Blockchain Developer",
+      company: "Panda Siege",
+      period: "2021/22",
+      description: "Developed reusable initial coin offerings, an NFT minting dapp and an NFT marketplace.",
+    },
+  ];

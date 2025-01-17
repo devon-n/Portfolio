@@ -7,19 +7,19 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animations'
 
-const ProjectCard:FunctionComponent<{ 
+const ProjectCard:FunctionComponent<{
 	project:IProject,
 	showDetail: null | number,
 	setShowDetail:(id: number | null) => void
 }> = ({
 	project: {
 		id,
-		name, 
-		description, 
-		image_path, 
-		deployed_url, 
-		github_url, 
-		category, 
+		name,
+		description,
+		image_path,
+		deployed_url,
+		github_url,
+		category,
 		key_techs
 	},
 	showDetail,
@@ -30,10 +30,10 @@ const ProjectCard:FunctionComponent<{
 		<div>
 			{showDetail === null && (
 				<div>
-					<Image 
-						src={image_path} 
-						alt={name} 
-						className="cursor-pointer" 
+					<Image
+						src={image_path}
+						alt={name}
+						className="cursor-pointer"
 						onClick={() => setShowDetail(id)}
 						width="300"
 						height="150"
@@ -53,12 +53,12 @@ const ProjectCard:FunctionComponent<{
 						<Image src={image_path} alt={name} layout="responsive" width="300" height="150"/>
 					</motion.div>
 						<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
-							{github_url ? 
+							{github_url ?
 								<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
 									<AiFillGithub /> <span>Github</span>
 								</a> : null
 							}
-							{deployed_url ? 
+							{deployed_url ?
 								<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
 									<CgWebsite /> <span>URL</span>
 								</a> : null

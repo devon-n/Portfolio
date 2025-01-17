@@ -1,5 +1,11 @@
-import { FunctionComponent } from "react";
 import { IconType } from "react-icons";
+
+export interface IExperienceItemProps {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  }
 
 export interface IService {
   Icon: IconType;
@@ -14,7 +20,7 @@ export interface ISkill {
 }
 
 export interface IProject {
-  id: number,
+  id: number;
   name: string;
   description: string;
   image_path: string;
