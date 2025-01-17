@@ -44,7 +44,7 @@ const ProjectCard:FunctionComponent<{
 			)}
 
 			{showDetail === id && (
-			<div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 bg-gray-100 rounded-lg md:p-10 md:grid-cols-2 gap-x-12 dark:bg-dark-100">
+			<div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 bg-background-light rounded-lg md:p-10 md:grid-cols-2 gap-x-12 dark:bg-background-dark">
 				<motion.div
 					variants={stagger}
 					initial="initial"
@@ -54,12 +54,12 @@ const ProjectCard:FunctionComponent<{
 					</motion.div>
 						<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
 							{github_url ?
-								<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
+								<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
 									<AiFillGithub /> <span>Github</span>
 								</a> : null
 							}
 							{deployed_url ?
-								<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 rounded-md dark:bg-dark-200">
+								<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
 									<CgWebsite /> <span>URL</span>
 								</a> : null
 							}
@@ -71,7 +71,7 @@ const ProjectCard:FunctionComponent<{
 					<motion.h3 variants={fadeInUp} className="mb-3 font-medium">{description}</motion.h3>
 					<motion.div variants={fadeInUp}  className="flex flex-wrap mt-5 space-x-2 text-sm tracking-wider">
 						{key_techs.map((tech, index) => (
-							<span key={tech} className="px-2 py-1 my-1 bg-gray-200 rounded-sm dark:bg-dark-200">
+							<span key={tech} className="px-2 py-1 my-1 bg-background-light rounded-sm dark:bg-background-dark">
 								{tech}
 							</span>
 						))}
@@ -79,7 +79,7 @@ const ProjectCard:FunctionComponent<{
 				</motion.div>
 				<button>
 					<MdClose size={30}  onClick={() => setShowDetail(null)}
-					className="absolute p-1 bg-gray-200 rounded-full top-3 right-3 focus:outline-none dark:bg-dark-200"/>
+					className="absolute p-1 bg-background-light rounded-full top-3 right-3 focus:outline-none dark:bg-background-dark"/>
 				</button>
 
 			</div>

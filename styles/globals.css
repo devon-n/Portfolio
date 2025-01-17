@@ -4,14 +4,14 @@
 
 /* TODO use tailwind */
 
-body { 
+body {
   /* background: rgb(164,163,185); */
   /* background: linear-gradient(90deg, rgba(164,163,185,0.3519608527004552) 0%, rgba(96, 165, 250, 0.651) 100%);  */
   font-family: sans-serif;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to right bottom, #E5E7EB, #BFDBFE);
+  background-image: linear-gradient(to right bottom, var(--tw-color-background-light), var(--tw-color-primary-light));
 }
 
 ::-webkit-scrollbar {
@@ -20,7 +20,7 @@ body {
 }
 
 .scrollbar {
-  background-image: linear-gradient(to right bottom, #E5E7EB, #BFDBFE);
+  background-image: linear-gradient(to right bottom, var(--tw-color-background-light), var(--tw-color-primary-light));
   width: 8px;
   height: 0px;
 }

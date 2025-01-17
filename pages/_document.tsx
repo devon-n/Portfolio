@@ -13,8 +13,8 @@ class MyDocument extends Document {
           <meta name="description" content="Blockchain/Full stack/Artificial Intelligence developer portfolio" />
           <meta name="keywords" content="blockchain artificial intelligence solidity portfolio software developer web3" />
         </Head>
-        <body 
-            className="bg-fixed bg-gradient-to-r from-gray-200 to-blue-300 dark:from-dark-500 dark:to-dark-700 dark:text-white">
+        <body
+            className="bg-fixed bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark dark:text-white">
           <Main />
           <NextScript />
         </body>

@@ -11,8 +11,8 @@ const NavItem:FunctionComponent<{
     return activeItem !== name ? (
         <Link href={route}>
             <a>
-                <span 
-                    className="dark:hover:text-lime-400 hover:text-blue-400"
+                <span
+                    className="dark:hover:test-primary-dark hover:text-primary-light"
                     onClick={() => setActiveItem(name)}>
                     {name}
                 </span>
@@ -33,10 +33,11 @@ const Navbar = () => {
         if (pathname === '/projects') setActiveItem('Projects')
 
     }, [pathname])
-    
+
     return (
         <div className="flex justify-between px-5 py-3 my-3">
-            <span className="text-xl font-bold text-blue-400 border-b-4 border-blue-400 md:text-2xl dark:text-lime-400 dark:border-lime-400">
+            <span className="text-xl font-bold border-b-4 border-primary-light md:text-2xl
+                text-primary-light dark:text-primary-date dark:border-primary-dark">
                 {activeItem}
             </span>
             <div className="flex space-x-5 text-lg">
