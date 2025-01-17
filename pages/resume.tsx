@@ -7,8 +7,8 @@ import { IExperienceItemProps } from "../types"
 
 const ExperienceItem: React.FC<IExperienceItemProps> = ({ title, company, period, description }) => {
 	return (
-	  <motion.div variants={fadeInUp} initial="initial" animate="animate">
-		<h6 className="my-2 text-xl font-semibold">{title}</h6>
+	  <motion.div variants={fadeInUp} initial="initial" animate="animate" className="bg-background-light dark:bg-background-dark rounded-lg p-2">
+		<h6 className="my-2 text-xl font-semibold text-primary-light dark:text-primary-dark">{title}</h6>
 		<p className="font-semibold">{company} - {period}</p>
 		<p className="my-3">{description}</p>
 	  </motion.div>

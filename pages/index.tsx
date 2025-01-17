@@ -29,7 +29,7 @@ const About = () => {
 				variants={stagger}
 				initial="initial"
 				animate="animate"
-				className="flex-grow p-4 mt-5 dark:bg-dark"
+				className="flex-grow p-4 mt-5"
 				style={{ marginLeft: '-1.5rem', marginRight: '-1.5rem' }}
 			>
 				<h5 className="my-3 text-xl font-bold tracking-wide">What I can do</h5>
@@ -37,7 +37,7 @@ const About = () => {
 					{services.map((service, index) => (
 						<motion.div
 							variants={fadeInUp}
-							className="bg-gray-100 rounded-lg dark:bg-dark-100 lg:col-span-1" key={index}
+							className="bg-surface-light rounded-lg dark:bg-background-dark lg:col-span-1" key={index}
 						>
 							<ServiceCard service={service} />
 						</motion.div>
