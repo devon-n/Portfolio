@@ -1,4 +1,3 @@
-import { GetServerSidePropsContext, GetStaticPropsContext } from 'next'
 import ServiceCard from '../components/ServiceCard'
 import { services } from '../data'
 import { motion } from 'framer-motion'

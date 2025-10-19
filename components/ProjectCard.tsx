@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { CgWebsite } from 'react-icons/cg'
 import { MdClose } from 'react-icons/md'
@@ -19,7 +19,6 @@ const ProjectCard:FunctionComponent<{
 		image_path,
 		deployed_url,
 		github_url,
-		category,
 		key_techs
 	},
 	showDetail,

@@ -4,15 +4,14 @@ import { motion } from 'framer-motion'
 
 const Bar:FunctionComponent<{
 	data:ISkill
-}> = ({ data:{Icon, level, name} }) => {
+}> = ({ data:{Icon, name} }) => {
 
-	const bar_width = `${level}`
 	const variants = {
 		initial: {
 			width: 0
 		},
 		animate: {
-			width: bar_width,
+			width: "100%",
 			transition: {
 				duration: 0.6,
 				type: "spring",
@@ -28,7 +27,7 @@ const Bar:FunctionComponent<{
 
 			<motion.div
 				className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark"
-				style={{ width: level }}
+				style={{ width: "100"}}
 				variants={variants}
 				initial="initial"
 				animate="animate"

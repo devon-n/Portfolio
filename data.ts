@@ -39,42 +39,34 @@ export const services: IService[] = [
 export const languages: ISkill[] = [
     {
         name:"Python",
-        level: "100%",
         Icon: SiPython
     },
     {
         name:"JavaScript",
-        level: "100%",
         Icon: SiJavascript
     },
     {
         name:"Solidity",
-        level: "100%",
         Icon: SiSolidity
     },
     {
         name:"TypeScript",
-        level: "100%",
         Icon: SiTypescript
     },
     {
         name:"ReactJS",
-        level: "100%",
         Icon: SiReact
     },
     {
         name:"NextJS",
-        level: "100%",
         Icon: SiNextdotjs
     },
     {
         name:"ExpressJS",
-        level: "100%",
         Icon: SiNextdotjs
     },
     {
         name:"Flask",
-        level: "100%",
         Icon: SiNextdotjs
     },
 
@@ -83,42 +75,50 @@ export const languages: ISkill[] = [
 export const tools:ISkill[] = [
     {
         name:"Ethers/Web3",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
         name:"Truffle/Hardhat/Brownie/Foundry",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
         name:"Google Cloud Platform",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
-        name:"SQL",
-        level: "100%",
+        name:"MySQL",
+        Icon: BsCircleFill
+    },
+    {
+        name:"VueJS",
+        Icon: BsCircleFill
+    },
+    {
+        name:"Material UI",
+        Icon: BsCircleFill
+    },
+    {
+        name:"Tailwind CSS",
+        Icon: BsCircleFill
+    },
+    {
+        name:"MobX",
         Icon: BsCircleFill
     },
     {
         name:"BigQuery",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
         name:"Keras",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
         name:"Neuro-evolution of Augmented Topologies",
-        level: "100%",
         Icon: BsCircleFill
     },
     {
         name:"Genetic Algorithms",
-        level: "100%",
         Icon: BsCircleFill
     },
 
@@ -133,7 +133,7 @@ export const projects: IProject[] = [
         deployed_url: "//stratx.app/",
         github_url: "https://github.com/Forward-Tester/ForwardTesterV2",
         category: ["Blockchain", "Full Stack"],
-        key_techs: ["Python", "Typescript"]
+        key_techs: ["Python", "Typescript", "VueJS"]
     },
     {
         id: 2,
@@ -223,7 +223,7 @@ export const experiences: IExperienceItemProps[] = [
       title: "Solutions Architect",
       company: "Trilitech",
       period: "2024/25",
-      description: "Lead smart contract developer for major blockchain gaming platform",
+      description: "Provided technical solutions and architecture for blockchain-based projects and applications.",
     },
     {
       title: "Solidity Developer",
