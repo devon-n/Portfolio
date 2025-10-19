@@ -1,3 +1,4 @@
+import React from 'react'
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
@@ -17,8 +18,8 @@ const Sidebar = () => {
                 src="/images/Headshot.jpeg"
                 alt="Profile"
                 className="mx-auto rounded-full"
-                width="128px"
-                height="128px"
+                width={128}
+                height={128}
                 layout="intrinsic"
             />
 
@@ -41,17 +42,16 @@ const Sidebar = () => {
             <p className="flex items-center justify-center w-auto px-2 py-1 my-3 break-all bg-surface-light rounded-full dark:bg-surface-dark transition-colors duration-500">
                 devon.nathan@protonmail.com
             </p>
-
             {/* Social Icons */}
             <div className="flex justify-around w-9/12 mx-auto my-5 text-primary-light dark:text-primary-darkn md:w-full">
                 <a href="https://github.com/devon-n" target="_blank" rel="noreferrer" aria-label="Github">
-                    <AiFillGithub className="w-8 h-8 cursor-pointer"/>
+                    {React.createElement(AiFillGithub as any, { className: "w-8 h-8 cursor-pointer" })}
                 </a>
                 <a href="https://www.linkedin.com/in/devonnathan/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                    <AiFillLinkedin className="w-8 h-8 cursor-pointer"/>
+                    {React.createElement(AiFillLinkedin as any, { className: "w-8 h-8 cursor-pointer" })}
                 </a>
                 <a href="mailto:devon.nathan@protonmail.com" target="_blank" rel="noreferrer" aria-label="Email">
-                    <AiOutlineMail className="w-8 h-8 cursor-pointer"/>
+                    {React.createElement(AiOutlineMail as any, { className: "w-8 h-8 cursor-pointer" })}
                 </a>
             </div>
 

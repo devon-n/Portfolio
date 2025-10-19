@@ -19,10 +19,16 @@ const About = () => {
 				<title>Devon Nathan Portfolio - About</title>
 			</Head>
 			<h4 className="my-3 text-lg font-medium">
-                Experienced blockchain engineer specializing in smart contract development, DeFi protocols, and full-stack Web3 applications using TypeScript, Python, Solidity, and frameworks like React and Next.js.
-                Skilled in building scalable indexers, monitoring solutions, and data pipelines with Express, Google Cloud Platform, BigQuery, and MySQL.
-                Proficient in AI/ML integration, automated testing, and frontend UI/UX design with Material UI and Tailwind CSS.
-                Passionate about delivering robust, secure, and innovative solutions for decentralized finance, analytics, and automation.
+				Lead Blockchain Architect specializing in EVM smart contract development and high-value multi-chain
+				(EVM & Tezos) architectural integration. I deliver end-to-end solutions, from initial concept and
+				robust design to full-stack execution, leveraging expertise in TypeScript, Python, Solidity, and
+				modern frameworks like React and Next.js.
+				<br /><br />
+				Highly skilled in building the critical infrastructure required for production Web3 projects,
+				including scalable indexers, custom monitoring solutions, and data pipelines on Google Cloud Platform
+				(GCP) with BigQuery and MySQL. My focus is on delivering robust, secure, and innovative solutions
+				for decentralized finance, advanced analytics, and automation. I also have experience with AI/ML,
+				automated testing, and professional UI/UX design.
 			</h4>
 			<motion.div
 				variants={stagger}

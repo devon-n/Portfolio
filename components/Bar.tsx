@@ -1,43 +1,25 @@
-import { FunctionComponent } from "react"
+import React, { FunctionComponent } from "react"
 import { ISkill } from "../types"
 import { motion } from 'framer-motion'
+import { barWidthVariants } from "../animations"
 
-const Bar:FunctionComponent<{
-	data:ISkill
-}> = ({ data:{Icon, name} }) => {
-
-	const variants = {
-		initial: {
-			width: 0
-		},
-		animate: {
-			width: "100%",
-			transition: {
-				duration: 0.6,
-				type: "spring",
-				damping: 30,
-				stiffness: 100
-			}
-		}
-	}
-
-
-	return (
-		<div className="my-2 text-text-light bg-background-ligh dark:bg-background-dark rounded-full dark:bg-background-dark dark:text-text-dark transition-colors duration-500">
-
-			<motion.div
-				className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark"
-				style={{ width: "100"}}
-				variants={variants}
-				initial="initial"
-				animate="animate"
-				>
-				<Icon className="mx-3" />
-				{name}
-			</motion.div>
-
-		</div>
-	)
+const Bar: FunctionComponent<{
+    data: ISkill
+}> = ({ data: { Icon, name } }) => {
+    return (
+        <div className="my-2 text-text-light bg-background-light dark:bg-background-dark rounded-full dark:text-text-dark transition-colors duration-500">
+            <motion.div
+                className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark"
+                style={{ width: "100%" }}
+                variants={barWidthVariants}
+                initial="initial"
+                animate="animate"
+            >
+                <Icon className="mx-3" />
+                {name}
+            </motion.div>
+        </div>
+    )
 }
 
 export default Bar
