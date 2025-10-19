@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from "react"
-import { projects as projectsData } from "../data"
+import { projects as projectsData } from "../data/projects"
 import { Category } from "../types"
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"

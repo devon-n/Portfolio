@@ -1,7 +1,9 @@
 import { useMemo } from 'react'
 import Head from 'next/head'
 import Bar from '../components/Bar'
-import { languages, tools, experiences } from '../data'
+import { experiences } from '../data/experiences'
+import { languages } from '../data/languages'
+import { tools } from '../data/tools'
 
 const Resume = () => {
   const experiencesMemo = useMemo(() => experiences, [])
