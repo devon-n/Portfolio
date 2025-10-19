@@ -109,10 +109,6 @@ export const languages: ISkill[] = [
         Icon: SiExpress
     },
     {
-        name:"VueJS",
-        Icon: BsCircleFill
-    },
-    {
         name:"Jest",
         Icon: SiJest
     },

@@ -1,5 +1,4 @@
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
-import { GiTie } from 'react-icons/gi'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 
