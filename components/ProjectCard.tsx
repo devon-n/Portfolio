@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { CgWebsite } from 'react-icons/cg'
 import { MdClose } from 'react-icons/md'
@@ -19,7 +19,6 @@ const ProjectCard:FunctionComponent<{
 		image_path,
 		deployed_url,
 		github_url,
-		category,
 		key_techs
 	},
 	showDetail,
@@ -30,14 +29,16 @@ const ProjectCard:FunctionComponent<{
 		<div>
 			{showDetail === null && (
 				<div>
-					<Image
-						src={image_path}
-						alt={name}
-						className="cursor-pointer"
-						onClick={() => setShowDetail(id)}
-						width="300"
-						height="150"
-						layout="responsive"/>
+					<div className="w-full max-w-[300px] aspect-[2/1] mx-auto relative">
+						<Image
+							src={image_path}
+							alt={name}
+							className="cursor-pointer object-cover rounded"
+							onClick={() => setShowDetail(id)}
+							fill
+							sizes="(max-width: 768px) 100vw, 300px"
+						/>
+					</div>
 					<p className="my-2 text-center">{name}</p>
 
 				</div>
@@ -49,21 +50,27 @@ const ProjectCard:FunctionComponent<{
 					variants={stagger}
 					initial="initial"
 					animate="animate">
-					<motion.div variants={fadeInUp} className="border-4 border-gray-100">
-						<Image src={image_path} alt={name} layout="responsive" width="300" height="150"/>
+					<motion.div variants={fadeInUp} className="border-4 border-gray-100 w-full aspect-[2/1] relative">
+						<Image
+							src={image_path}
+							alt={name}
+							className="object-cover rounded"
+							fill
+							sizes="(max-width: 768px) 100vw, 300px"
+						/>
 					</motion.div>
-						<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
-							{github_url ?
-								<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
-									<AiFillGithub /> <span>Github</span>
-								</a> : null
-							}
-							{deployed_url ?
-								<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
-									<CgWebsite /> <span>URL</span>
-								</a> : null
-							}
-						</motion.div>
+					<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
+						{github_url ?
+							<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
+								<AiFillGithub /> <span>Github</span>
+							</a> : null
+						}
+						{deployed_url ?
+							<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
+								<CgWebsite /> <span>URL</span>
+							</a> : null
+						}
+					</motion.div>
 				</motion.div>
 
 				<motion.div variants={stagger} initial="initial" animate="animate">

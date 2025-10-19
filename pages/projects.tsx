@@ -1,13 +1,12 @@
 import { useState, useMemo, useCallback } from "react"
-import { projects as projectsData } from "../data"
+import { projects as projectsData } from "../data/projects"
 import { Category } from "../types"
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
-import dynamic from "next/dynamic"
+import ProjectsNavbar from "../components/ProjectNavbar"
+import ProjectCard from "../components/ProjectCard"
 
-const ProjectCard = dynamic(() => import("../components/ProjectCard"))
-const ProjectsNavbar = dynamic(() => import("../components/ProjectNavbar"))
 
 const Projects = () => {
   const [activeItem, setActiveItem] = useState<Category | "all">("all")
@@ -22,7 +21,7 @@ const Projects = () => {
 
   const handlerFilterCategory = useCallback((category: Category | "all") => {
     setActiveItem(category)
-    setShowDetail(null)  // Close any open project details when changing category
+    setShowDetail(null)
   }, [])
 
   return (

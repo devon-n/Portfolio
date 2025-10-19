@@ -1,4 +1,6 @@
-export const fadeInUp = {
+import { Variants } from "framer-motion"
+
+export const fadeInUp: Variants = {
     initial: {
         opacity: 0,
         y: 150
@@ -9,7 +11,7 @@ export const fadeInUp = {
     }
 }
 
-export const stagger = {
+export const stagger: Variants = {
     initial: {},
     animate: {
         transition: {
@@ -18,7 +20,7 @@ export const stagger = {
     }
 }
 
-export const routeAnimation = {
+export const routeAnimation: Variants = {
     initial: {
         opacity: 0
     },
@@ -33,6 +35,19 @@ export const routeAnimation = {
         opacity: 0,
         transition: {
             delay: 0.1,
+            ease: "easeInOut"
+        }
+    }
+}
+
+export const barWidthVariants: Variants = {
+    initial: {
+        width: 0
+    },
+    animate: {
+        width: "100%",
+        transition: {
+            duration: 0.6,
             ease: "easeInOut"
         }
     }
