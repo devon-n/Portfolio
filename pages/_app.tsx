@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
 	}, [router])
 	return (
 		<ThemeProvider attribute="class">
-			<div className="grid grid-cols-12 gap-6 px-5 my-14 lg:px-48 sm:px-20 md:px-32">
+			<div className="grid grid-cols-12 gap-6 px-5 my-14 lg:px-20 md:px-12 sm:px-8">
 				<div className="col-span-12 text-center bg-surface-light dark:bg-surface-dark lg:col-span-3 rounded-2xl shadow-custom-light dark:shadow-custom-dark">
 					<Sidebar />
 				</div>
