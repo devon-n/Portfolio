@@ -22,7 +22,7 @@ const Projects = () => {
 
   const handlerFilterCategory = useCallback((category: Category | "all") => {
     setActiveItem(category)
-    setShowDetail(null)  // Close any open project details when changing category
+    setShowDetail(null)
   }, [])
 
   return (
