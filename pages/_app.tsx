@@ -30,12 +30,12 @@ function MyApp({ Component, pageProps }) {
 	}, [router])
 	return (
 		<ThemeProvider attribute="class">
-			<div className="grid grid-cols-12 gap-6 px-5 my-14 lg:px-20 md:px-12 sm:px-8">
-				<div className="col-span-12 text-center bg-surface-light dark:bg-surface-dark lg:col-span-3 rounded-2xl shadow-custom-light dark:shadow-custom-dark">
+			<div className="grid grid-cols-12 gap-6 px-5 my-14 lg:px-20 md:px-12 sm:px-8 transition-colors duration-500">
+				<div className="col-span-12 text-center bg-surface-light dark:bg-surface-dark lg:col-span-3 rounded-2xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500">
 					<Sidebar />
 				</div>
 
-				<div className="flex flex-col col-span-12 overflow-hidden bg-surface-light shadow-custom-light dark:shadow-custom-dark rounded-2xl lg:col-span-9 dark:bg-surface-dark">
+				<div className="flex flex-col col-span-12 overflow-hidden bg-surface-light shadow-custom-light dark:shadow-custom-dark rounded-2xl lg:col-span-9 dark:bg-surface-dark transition-colors duration-500">
 					<Navbar />
 					<AnimatePresence exitBeforeEnter>
 						<Component {...pageProps} key={router.route}/>

@@ -8,7 +8,7 @@ const Resume = () => {
 
   const ExperienceItem = useMemo(() => {
     const Item = ({ title, company, period, description }) => (
-      <div className='bg-background-light dark:bg-background-dark p-2 rounded-lg'>
+      <div className='bg-background-light dark:bg-background-dark p-2 rounded-lg transition-colors duration-500'>
         <h6 className="my-2 text-xl font-semibold text-primary-light dark:text-primary-dark">{title}</h6>
         <p className="font-semibold">{company} - {period}</p>
         <p className="my-3">{description}</p>
@@ -33,7 +33,7 @@ const Resume = () => {
       </div>
 
       {/* Skills */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 transition-colors duration-500">
         <div>
           <h5 className="my-3 text-xl font-bold">Languages and Frameworks</h5>
           <div className="my-2">
@@ -41,7 +41,7 @@ const Resume = () => {
           </div>
         </div>
 
-        <div>
+        <div className="transition-colors duration-500">
           <h5 className="my-3 text-xl font-bold">Tools</h5>
           <div className="my-2">
             {tools.map(tool => <Bar key={tool.name} data={tool} />)}

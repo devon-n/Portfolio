@@ -28,17 +28,17 @@ const Sidebar = () => {
                 <span className="text-primary-light dark:text-primary-dark">Devon </span>
                 Nathan
             </h3>
-            <p className="flex items-center justify-center w-auto px-2 py-1 my-3 bg-surface-light rounded-full dark:bg-surface-dark">
+            <p className="flex items-center justify-center w-auto px-2 py-1 my-3 bg-surface-light rounded-full dark:bg-surface-dark transition-colors duration-500">
                 Full Stack Blockchain Developer
             </p>
             <a
-                className="flex items-center justify-center w-auto px-2 py-1 my-3 bg-surface-light rounded-full dark:bg-surface-dark"
+                className="flex items-center justify-center w-auto px-2 py-1 my-3 bg-surface-light rounded-full dark:bg-surface-dark transition-colors duration-500"
                 href="/images/Devon Nathan.pdf"
                 target="_blank" rel="noreferrer"
                 download="Devon_Nathan_CV.pdf"
                 aria-label="CV Download">Download Resume
             </a>
-            <p className="flex items-center justify-center w-auto px-2 py-1 my-3 break-all bg-surface-light rounded-full dark:bg-surface-dark">
+            <p className="flex items-center justify-center w-auto px-2 py-1 my-3 break-all bg-surface-light rounded-full dark:bg-surface-dark transition-colors duration-500">
                 devon.nathan@protonmail.com
             </p>
 
@@ -57,7 +57,7 @@ const Sidebar = () => {
 
             {/* Toggle Theme */}
             <button
-            className="w-8/12 px-5 py-2 my-2 text-text-light rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark dark:text-text-dark"
+            className="w-8/12 px-5 py-2 my-2 text-text-light rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark dark:text-text-dark transition-colors duration-500"
             onClick={changeTheme}>
                 Toggle Theme
             </button>

@@ -23,7 +23,7 @@ const Bar:FunctionComponent<{
 
 
 	return (
-		<div className="my-2 text-text-light bg-background-ligh dark:bg-background-dark rounded-full dark:bg-background-dark dark:text-text-dark">
+		<div className="my-2 text-text-light bg-background-ligh dark:bg-background-dark rounded-full dark:bg-background-dark dark:text-text-dark transition-colors duration-500">
 
 			<motion.div
 				className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark"

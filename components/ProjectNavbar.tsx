@@ -10,13 +10,11 @@ export const NavItem:FunctionComponent<{
     active
 }) => {
 
-    let className = "capitalize cursor-pointer hover:text-primary-light dark:hover:text-primary-dark"
+    let className = "capitalize cursor-pointer hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-500"
     if (active === value) className += " text-primary-light dark:text-primary-dark"
 
     return (
-        <li
-        className={className}
-        onClick={() => handlerFilterCategory(value)}>
+        <li className={className}>
             {value}
         </li>
     )

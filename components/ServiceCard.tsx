@@ -12,7 +12,7 @@ const ServiceCard:FunctionComponent<{ service:IService }> = ({
 	}
 
 	return (
-          <div className="flex w-full h-full items-center p-2 space-x-4">
+          <div className="flex items-center p-2 space-x-4 transition-colors duration-500">
 			<div className="w-8 h-8 flex items-center justify-center shrink-0">
             	<Icon className="w-full h-full text-primary-light dark:text-primary-dark" />
 			</div>
