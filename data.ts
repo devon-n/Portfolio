@@ -3,7 +3,7 @@ import { MdOutlineMonitor, MdOutlineSecurity } from 'react-icons/md'
 import { FaCloud, FaDatabase, FaFileContract } from 'react-icons/fa'
 import { GiBrain } from 'react-icons/gi'
 import { BsCircleFill } from 'react-icons/bs'
-import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript, SiVuedotjs, SiExpress, SiFlask, SiPytest, SiJest, SiGooglecloud, SiMysql } from 'react-icons/si'
+import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript, SiVuedotjs, SiExpress, SiFlask, SiPytest, SiJest, SiGooglecloud, SiTelegram } from 'react-icons/si'
 import { IExperienceItemProps, IProject, IService, ISkill } from "./types";
 
 
@@ -18,6 +18,16 @@ export const services: IService[] = [
         title: "Frontend UI/UX Development",
         about: "Build responsive, modern user interfaces with <b>React, Next.js, Vue.js, Material UI/Tailwind CSS and MobX</b>.",
         Icon: SiReact
+    },
+    {
+        title: "Backend Development & APIs",
+        about: "Develop robust backend systems and RESTful APIs using <b>Express.js, Flask, and Node.js</b>.",
+        Icon: SiExpress
+    },
+    {
+        title: "Telegram Bot Development",
+        about: "Create interactive Telegram bots and miniapps using <b>TypeScript</b> and the <b>Telegram API</b>.",
+        Icon: SiTelegram
     },
 
     // Data & Cloud
@@ -112,6 +122,10 @@ export const languages: ISkill[] = [
         name:"Jest",
         Icon: SiJest
     },
+    {
+        name: "Telegram API",
+        Icon: SiTelegram
+    },
     // Python
     {
         name:"Flask",
@@ -151,6 +165,10 @@ export const tools:ISkill[] = [
         name:"MongoDB",
         Icon: BsCircleFill
     },
+    {
+        name:"Firebase",
+        Icon: BsCircleFill
+    },
     // Frontend
     {
         name:"Material UI",
@@ -177,6 +195,10 @@ export const tools:ISkill[] = [
         name:"Genetic Algorithms",
         Icon: BsCircleFill
     },
+    {
+        name: "Telegram API",
+        Icon: BsCircleFill
+    }
 
 ]
 
@@ -271,6 +293,26 @@ export const projects: IProject[] = [
         category: ["AI"],
         key_techs: ["Keras", "Scikit-Learn", "NEAT", "Selenium"]
     },
+    {
+        id: 10,
+        name: "Brek Tasks Telegram Miniapp",
+        description: "A telegram bot that allows users to play a minigame to earn points",
+        image_path: "/images/BrekTasks.png",
+        deployed_url: "",
+        github_url: "",
+        category: ["Blockchain", "Full Stack"],
+        key_techs: ["React", "Express", "Typescript", "Telegram API"]
+    },
+    {
+        id: 11,
+        name: "Brek Telegram Minigame",
+        description: "A telegram bot that allows users to play a minigame to earn points",
+        image_path: "/images/BrekGame.png",
+        deployed_url: "",
+        github_url: "",
+        category: ["Blockchain", "Full Stack"],
+        key_techs: ["React", "Express", "Typescript", "Telegram API"]
+    }
 ]
 
 
