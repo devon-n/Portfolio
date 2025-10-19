@@ -3,12 +3,11 @@ import { MdOutlineCollections, MdOutlineSecurity } from 'react-icons/md'
 import { FaFileContract } from 'react-icons/fa'
 import { GiBrain } from 'react-icons/gi'
 import { BsCircleFill } from 'react-icons/bs'
-import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript } from 'react-icons/si'
+import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript, SiVuedotjs, SiExpress, SiFlask, SiPytest, SiJest } from 'react-icons/si'
 import { IExperienceItemProps, IProject, IService, ISkill } from "./types";
 
 
 export const services: IService[] = [
-
     {
         title: "Smart Contract Developer",
         about: "Easy to interact with and updatable contracts for users to interact with on multiple blockchains such as <b>Ethereum, Polygon, Binance Smart Chain, Avalanche</b>",
@@ -38,21 +37,22 @@ export const services: IService[] = [
 
 export const languages: ISkill[] = [
     {
-        name:"Python",
-        Icon: SiPython
+        name:"TypeScript",
+        Icon: SiTypescript
     },
     {
         name:"JavaScript",
         Icon: SiJavascript
     },
     {
+        name:"Python",
+        Icon: SiPython
+    },
+    {
         name:"Solidity",
         Icon: SiSolidity
     },
-    {
-        name:"TypeScript",
-        Icon: SiTypescript
-    },
+    // JavaScript Frameworks
     {
         name:"ReactJS",
         Icon: SiReact
@@ -62,17 +62,34 @@ export const languages: ISkill[] = [
         Icon: SiNextdotjs
     },
     {
-        name:"ExpressJS",
-        Icon: SiNextdotjs
+        name:"VueJS",
+        Icon: SiVuedotjs
     },
     {
-        name:"Flask",
-        Icon: SiNextdotjs
+        name:"ExpressJS",
+        Icon: SiExpress
     },
-
+    {
+        name:"VueJS",
+        Icon: BsCircleFill
+    },
+    {
+        name:"Jest",
+        Icon: SiJest
+    },
+    // Python
+    {
+        name:"Flask",
+        Icon: SiFlask
+    },
+    {
+        name:"PyTest",
+        Icon: SiPytest
+    }
 ]
 
 export const tools:ISkill[] = [
+    // Blockchain
     {
         name:"Ethers/Web3",
         Icon: BsCircleFill
@@ -81,18 +98,25 @@ export const tools:ISkill[] = [
         name:"Truffle/Hardhat/Brownie/Foundry",
         Icon: BsCircleFill
     },
+    // Dev Ops
     {
         name:"Google Cloud Platform",
         Icon: BsCircleFill
     },
+    // Databases
     {
         name:"MySQL",
         Icon: BsCircleFill
     },
     {
-        name:"VueJS",
+        name:"BigQuery",
         Icon: BsCircleFill
     },
+    {
+        name:"MongoDB",
+        Icon: BsCircleFill
+    },
+    // Frontend
     {
         name:"Material UI",
         Icon: BsCircleFill
@@ -105,10 +129,7 @@ export const tools:ISkill[] = [
         name:"MobX",
         Icon: BsCircleFill
     },
-    {
-        name:"BigQuery",
-        Icon: BsCircleFill
-    },
+    // AI
     {
         name:"Keras",
         Icon: BsCircleFill
