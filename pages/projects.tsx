@@ -4,10 +4,9 @@ import { Category } from "../types"
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
-import dynamic from "next/dynamic"
+import ProjectsNavbar from "../components/ProjectNavbar"
+import ProjectCard from "../components/ProjectCard"
 
-const ProjectCard = dynamic(() => import("../components/ProjectCard"))
-const ProjectsNavbar = dynamic(() => import("../components/ProjectNavbar"))
 
 const Projects = () => {
   const [activeItem, setActiveItem] = useState<Category | "all">("all")
