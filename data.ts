@@ -1,37 +1,76 @@
 import { AiOutlineCodeSandbox } from 'react-icons/ai'
-import { MdOutlineCollections, MdOutlineSecurity } from 'react-icons/md'
-import { FaFileContract } from 'react-icons/fa'
+import { MdOutlineMonitor, MdOutlineSecurity } from 'react-icons/md'
+import { FaCloud, FaDatabase, FaFileContract } from 'react-icons/fa'
 import { GiBrain } from 'react-icons/gi'
 import { BsCircleFill } from 'react-icons/bs'
-import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript, SiVuedotjs, SiExpress, SiFlask, SiPytest, SiJest } from 'react-icons/si'
+import { SiPython, SiReact, SiNextdotjs, SiTypescript, SiSolidity, SiJavascript, SiVuedotjs, SiExpress, SiFlask, SiPytest, SiJest, SiGooglecloud, SiMysql } from 'react-icons/si'
 import { IExperienceItemProps, IProject, IService, ISkill } from "./types";
 
 
 export const services: IService[] = [
-    {
-        title: "Smart Contract Developer",
-        about: "Easy to interact with and updatable contracts for users to interact with on multiple blockchains such as <b>Ethereum, Polygon, Binance Smart Chain, Avalanche</b>",
-        Icon: FaFileContract
-    },
+    // Web & Dapp Development
     {
         title: "Full Stack Web3 Developer",
-        about: "Create Dapps using <b>Next.js, React.js</b> or <b>JS, HTML</b> and <b>CSS</b> and can deploy on web2 or <b>ENS</b> domains",
+        about: "Create Dapps using <b>Next.js, React.js</b> or <b>JS, HTML</b> and <b>CSS</b> and <b>VueJS</b>.",
         Icon: AiOutlineCodeSandbox
     },
     {
-        title: "NFT Collection Creator",
-        about: "Build Non-Fungible Tokens using multiple standards for instance <b>ERC721, ERC721a, ERC1155</b> etc. with any customization necessary",
-        Icon: MdOutlineCollections
+        title: "Frontend UI/UX Development",
+        about: "Build responsive, modern user interfaces with <b>React, Next.js, Vue.js, Material UI/Tailwind CSS and MobX</b>.",
+        Icon: SiReact
+    },
+
+    // Data & Cloud
+    {
+        title: "Indexer Development",
+        about: "Build and deploy blockchain indexers using <b>TypeScript, Express, Google Cloud Platform, BigQuery, and MySQL</b> for efficient data extraction and querying.",
+        Icon: FaDatabase
+    },
+    {
+        title: "Monitoring & Alerting Solutions",
+        about: "Develop monitoring software and alerting systems using <b>TypeScript, Express, GCP, BigQuery, MySQL</b> and integrate with <b>PagerDuty</b> for real-time incident response.",
+        Icon: MdOutlineMonitor
+    },
+    {
+        title: "Data Engineering & Analytics",
+        about: "Design and implement data pipelines, analytics dashboards, and reporting solutions using <b>SQL, BigQuery, and MongoDB</b>.",
+        Icon: FaCloud
+    },
+    {
+        title: "DevOps & Cloud Deployment",
+        about: "Automate deployment and manage cloud infrastructure for scalable blockchain and AI applications using <b>Google Cloud Platform</b>.",
+        Icon: SiGooglecloud
+    },
+
+    // AI & Automation
+    {
+        title: "Artificial Intelligence Engineer",
+        about: "Use different models to tackle any AI problem from frameworks such as <b>Keras, Scikit-Learn, StableBaselines, Neuro-Evolution of Augmented Topologies</b>.",
+        Icon: GiBrain
+    },
+    {
+        title: "Web Scraping & Automation",
+        about: "Develop bots and automation scripts for data collection and interaction using <b>Selenium</b> and Python.",
+        Icon: SiPython
+    },
+
+    // Blockchain & Smart Contracts
+    {
+        title: "Smart Contract Developer",
+        about: "Easy to interact with and upgradeable contracts for users to interact with on multiple blockchains such as <b>Ethereum, Polygon, Binance Smart Chain, Avalanche, Etherlink</b>.",
+        Icon: FaFileContract
     },
     {
         title: "Smart Contract Security",
-        about: "Thorough testing of smart contracts to ensure robust defense against hacks using <b>slither</b> and custom <b>truffle/hardhat</b> written tests",
+        about: "Thorough testing of smart contracts to ensure robust defense against hacks using <b>slither</b> and custom <b>truffle/hardhat</b> written tests.",
         Icon: MdOutlineSecurity
     },
+
+    // Testing & QA
     {
-        title: "Artificial Intelligence Engineer",
-        about: "Use different models to tackle any AI problem from frameworks such as <b>Keras, Scikit-Learn, StableBaselines, Neuro-Evolution of Augmented Topologies</b>",
-        Icon: GiBrain
+        title: "Automated Testing & QA",
+        about: "Set up and maintain automated testing frameworks for smart contracts and web apps using <b>Jest, PyTest, and custom scripts</b>.",
+        Icon: SiJest
     }
 ]
 
@@ -151,8 +190,8 @@ export const projects: IProject[] = [
         name: "StratX",
         description: "Forward testing dashboard to monitor and manage multiple strategies across multiple exchanges",
         image_path: "/images/Stratx.png",
-        deployed_url: "//stratx.app/",
-        github_url: "https://github.com/Forward-Tester/ForwardTesterV2",
+        deployed_url: "",
+        github_url: "",
         category: ["Blockchain", "Full Stack"],
         key_techs: ["Python", "Typescript", "VueJS"]
     },
