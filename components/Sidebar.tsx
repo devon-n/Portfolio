@@ -13,7 +13,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div>
+        <div className="pt-3">
             <Image
                 src="/images/Headshot.jpeg"
                 alt="Profile"
