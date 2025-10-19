@@ -1,5 +1,5 @@
 import ServiceCard from '../components/ServiceCard'
-import { services } from '../data'
+import { services } from '../data/services'
 import { motion } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from '../animations'
 import Head from 'next/head'

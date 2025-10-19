@@ -1,67 +1,80 @@
-import { BsCircleFill } from "react-icons/bs";
+import {
+    SiGooglecloud,
+    SiMysql,
+    SiMongodb,
+    SiFirebase,
+    SiTailwindcss,
+    SiMobx,
+    SiKeras,
+    SiTelegram,
+    SiEthers,
+    SiEthereum,
+    SiGooglebigquery,
+    SiMui
+} from "react-icons/si";
+import { GiArtificialIntelligence } from "react-icons/gi";
 import { ISkill } from "../types";
 
-export const tools:ISkill[] = [
+export const tools: ISkill[] = [
     // Blockchain
     {
-        name:"Ethers/Web3",
-        Icon: BsCircleFill
+        name: "Ethers/Web3",
+        Icon: SiEthers
     },
     {
-        name:"Truffle/Hardhat/Brownie/Foundry",
-        Icon: BsCircleFill
+        name: "Truffle/Hardhat/Brownie/Foundry",
+        Icon: SiEthereum
     },
     // Dev Ops
     {
-        name:"Google Cloud Platform",
-        Icon: BsCircleFill
+        name: "Google Cloud Platform",
+        Icon: SiGooglecloud
     },
     // Databases
     {
-        name:"MySQL",
-        Icon: BsCircleFill
+        name: "MySQL",
+        Icon: SiMysql
     },
     {
-        name:"BigQuery",
-        Icon: BsCircleFill
+        name: "BigQuery",
+        Icon: SiGooglebigquery
     },
     {
-        name:"MongoDB",
-        Icon: BsCircleFill
+        name: "MongoDB",
+        Icon: SiMongodb
     },
     {
-        name:"Firebase",
-        Icon: BsCircleFill
+        name: "Firebase",
+        Icon: SiFirebase
     },
     // Frontend
     {
-        name:"Material UI",
-        Icon: BsCircleFill
+        name: "Material UI",
+        Icon: SiMui
     },
     {
-        name:"Tailwind CSS",
-        Icon: BsCircleFill
+        name: "Tailwind CSS",
+        Icon: SiTailwindcss
     },
     {
-        name:"MobX",
-        Icon: BsCircleFill
+        name: "MobX",
+        Icon: SiMobx
     },
     // AI
     {
-        name:"Keras",
-        Icon: BsCircleFill
+        name: "Keras",
+        Icon: SiKeras
     },
     {
-        name:"Neuro-evolution of Augmented Topologies",
-        Icon: BsCircleFill
+        name: "Neuro-evolution of Augmented Topologies",
+        Icon: GiArtificialIntelligence
     },
     {
-        name:"Genetic Algorithms",
-        Icon: BsCircleFill
+        name: "Genetic Algorithms",
+        Icon: GiArtificialIntelligence
     },
     {
         name: "Telegram API",
-        Icon: BsCircleFill
+        Icon: SiTelegram
     }
-
 ]
