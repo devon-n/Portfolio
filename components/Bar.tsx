@@ -7,20 +7,26 @@ const Bar: FunctionComponent<{
     data: ISkill
 }> = ({ data: { Icon, name } }) => {
     return (
-        <div className="text-text-main bg-primary/5 rounded-xl overflow-hidden border border-border transition-all duration-500 hover:border-primary/50 group">
+        <div className="relative text-text-main bg-primary/5 rounded-xl overflow-hidden border border-border transition-all duration-500 hover:border-primary/50 group cursor-default">
+            {/* Hover Fill Background */}
+            <div className="absolute inset-0 bg-primary translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+
             <motion.div
-                className="flex items-center px-3 py-1.5 bg-gradient-to-r from-primary/20 to-primary/40 text-white"
+                className="relative flex items-center px-4 py-2 text-white z-10"
                 style={{ width: "100%" }}
                 variants={barWidthVariants}
                 initial="initial"
                 animate="animate"
             >
-                <Icon className="mr-2 text-base shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-bold uppercase tracking-tighter truncate">{name}</span>
+                <Icon className="mr-3 text-lg shrink-0 group-hover:scale-110 group-hover:text-background transition-all duration-500" />
+                <span className="text-sm font-bold uppercase tracking-tight truncate group-hover:text-background transition-colors duration-500">
+                    {name}
+                </span>
             </motion.div>
         </div>
     )
 }
+
 
 
 
