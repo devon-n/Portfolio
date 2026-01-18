@@ -1,20 +1,31 @@
 import { useMemo } from 'react'
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 import { experiences } from '../data/experiences'
+import { fadeIn, stagger } from '../animations'
 
 const Resume = () => {
   const experiencesMemo = useMemo(() => experiences, [])
 
   const ExperienceItem = ({ title, company, period, description }) => (
-    <div className='glass-card p-6 rounded-3xl transition-all hover:scale-[1.02]'>
+    <motion.div
+      variants={fadeIn}
+      whileHover={{ scale: 1.02 }}
+      className='glass-card p-6 rounded-3xl'
+    >
       <h6 className="text-xl font-black text-primary tracking-tighter uppercase">{title}</h6>
       <p className="font-bold text-sm text-text-muted mt-1 uppercase tracking-widest">{company} | {period}</p>
       <p className="my-4 text-text-main leading-relaxed">{description}</p>
-    </div>
+    </motion.div>
   )
 
   return (
-    <div className="px-6 py-2">
+    <motion.div
+      variants={stagger}
+      initial="initial"
+      animate="animate"
+      className="px-6 py-2"
+    >
       <Head>
         <title>Devon Nathan - Resume</title>
       </Head>
@@ -33,9 +44,10 @@ const Resume = () => {
           <ExperienceItem key={index} {...exp} />
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
+
 
 
 export default Resume
