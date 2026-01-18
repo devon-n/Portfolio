@@ -18,17 +18,17 @@ export const languages: ISkill[] = [
     {
         name: "TypeScript",
         Icon: SiTypescript,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "JavaScript",
         Icon: SiJavascript,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "Python",
         Icon: SiPython,
-        category: "ai"
+        category: "python"
     },
     {
         name: "Solidity",
@@ -39,42 +39,42 @@ export const languages: ISkill[] = [
     {
         name: "ReactJS",
         Icon: SiReact,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "NextJS",
         Icon: SiNextdotjs,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "VueJS",
         Icon: SiVuedotjs,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "ExpressJS",
         Icon: SiExpress,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "Jest",
         Icon: SiJest,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "Telegram API",
         Icon: SiTelegram,
-        category: "web"
+        category: "javascript"
     },
     // Python
     {
         name: "Flask",
         Icon: SiFlask,
-        category: "ai"
+        category: "python"
     },
     {
         name: "PyTest",
         Icon: SiPytest,
-        category: "ai"
+        category: "python"
     }
 ]

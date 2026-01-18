@@ -25,39 +25,39 @@ const Skills = () => {
             </div>
 
             <div className="grid gap-10 mt-12 mb-10">
-                {/* JS Ecosystem */}
+                {/* JavaScript */}
                 <motion.div variants={fadeInUp}>
-                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">JavaScript Ecosystem</h5>
+                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">JavaScript</h5>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        {[...languages, ...tools].filter(s => s.category === "web").map(skill => (
+                        {[...languages, ...tools].filter(s => s.category === "javascript").map(skill => (
                             <Bar key={skill.name} data={skill} />
                         ))}
                     </div>
                 </motion.div>
 
-                {/* Python & AI */}
+                {/* Python */}
                 <motion.div variants={fadeInUp}>
-                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Python & AI</h5>
+                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Python</h5>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        {[...languages, ...tools].filter(s => s.category === "ai").map(skill => (
+                        {[...languages, ...tools].filter(s => s.category === "python").map(skill => (
                             <Bar key={skill.name} data={skill} />
                         ))}
                     </div>
                 </motion.div>
 
-                {/* Data & Cloud */}
+                {/* Databases */}
                 <motion.div variants={fadeInUp}>
-                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Data & Storage</h5>
+                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Databases</h5>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        {[...languages, ...tools].filter(s => s.category === "data").map(skill => (
+                        {[...languages, ...tools].filter(s => s.category === "databases").map(skill => (
                             <Bar key={skill.name} data={skill} />
                         ))}
                     </div>
                 </motion.div>
 
-                {/* Blockchain & Web3 */}
+                {/* Blockchain */}
                 <motion.div variants={fadeInUp}>
-                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Blockchain & Web3</h5>
+                    <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Blockchain</h5>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                         {[...languages, ...tools].filter(s => s.category === "blockchain").map(skill => (
                             <Bar key={skill.name} data={skill} />
@@ -65,6 +65,7 @@ const Skills = () => {
                     </div>
                 </motion.div>
             </div>
+
         </motion.div>
     )
 }

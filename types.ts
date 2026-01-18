@@ -13,7 +13,7 @@ export interface IService {
   about: string;
 }
 
-export type SkillCategory = "web" | "ai" | "data" | "blockchain";
+export type SkillCategory = "javascript" | "python" | "databases" | "blockchain";
 
 export interface ISkill {
   Icon: IconType;

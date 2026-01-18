@@ -53,66 +53,67 @@ export const tools: ISkill[] = [
     {
         name: "Google Cloud Platform",
         Icon: SiGooglecloud,
-        category: "data"
+        category: "databases"
     },
     // Databases
     {
         name: "MySQL",
         Icon: SiMysql,
-        category: "data"
+        category: "databases"
     },
     {
         name: "BigQuery",
         Icon: SiGooglebigquery,
-        category: "data"
+        category: "databases"
     },
     {
         name: "MongoDB",
         Icon: SiMongodb,
-        category: "data"
+        category: "databases"
     },
     {
         name: "Firebase",
         Icon: SiFirebase,
-        category: "data"
+        category: "databases"
     },
     // Frontend
     {
         name: "Material UI",
         Icon: SiMui,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "Tailwind CSS",
         Icon: SiTailwindcss,
-        category: "web"
+        category: "javascript"
     },
     {
         name: "MobX",
         Icon: SiMobx,
-        category: "web"
+        category: "javascript"
     },
     // AI
     {
         name: "Keras",
         Icon: SiKeras,
-        category: "ai"
+        category: "python"
     },
     {
         name: "NEAT",
         // name: "Neuro-evolution of Augmented Topologies",
         Icon: GiArtificialIntelligence,
-        category: "ai"
+        category: "python"
     },
     {
         name: "Genetic Algorithms",
         Icon: GiArtificialIntelligence,
-        category: "ai"
+        category: "python"
     },
     {
         name: "Telegram API",
         Icon: SiTelegram,
-        category: "web"
+        category: "javascript"
     }
 ]
+
 
