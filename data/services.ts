@@ -8,10 +8,11 @@ import { AiOutlineCodeSandbox } from 'react-icons/ai'
 export const services: IService[] = [
     // Web & Dapp Development
     {
-        title: "Full Stack Web3 Developer",
-        about: "Create Dapps using <b>Next.js, React.js</b> or <b>JS, HTML</b> and <b>CSS</b> and <b>VueJS</b>.",
+        title: "Systems Architecture",
+        about: "Architecting high-value multi-chain systems ($55M+ bridged), focusing on security, scalability, and robust interoperability.",
         Icon: AiOutlineCodeSandbox
     },
+
     {
         title: "Frontend UI/UX Development",
         about: "Build responsive, modern user interfaces with <b>React, Next.js, Vue.js, Material UI/Tailwind CSS and MobX</b>.",

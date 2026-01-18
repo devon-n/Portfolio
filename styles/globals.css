@@ -2,25 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO use tailwind */
+:root {
+  /* Default Architect Theme Variables */
+  --bg-color: #0A0A0B;
+  --surface-color: #161618;
+  --primary-color: #00F5FF;
+  --secondary-color: #7000FF;
+  --accent-color: #00F5FF;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(22, 22, 24, 0.7);
+}
+
+.theme-architect {
+  --bg-color: #0A0A0B;
+  --surface-color: #161618;
+  --primary-color: #00F5FF;
+  --secondary-color: #7000FF;
+  --accent-color: #00F5FF;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(22, 22, 24, 0.7);
+}
+
+.theme-neural {
+  --bg-color: #0F172A;
+  --surface-color: #1E293B;
+  --primary-color: #818CF8;
+  --secondary-color: #C084FC;
+  --accent-color: #2DD4BF;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-color: rgba(148, 163, 184, 0.2);
+  --glass-bg: rgba(30, 41, 59, 0.6);
+}
+
+.theme-cyber {
+  --bg-color: #050505;
+  --surface-color: #0D0D0D;
+  --primary-color: #39FF14;
+  --secondary-color: #FF00FF;
+  --accent-color: #00FFFF;
+  --text-main: #CCFFCC;
+  --text-muted: #66CC66;
+  --border-color: #39FF14;
+  --glass-bg: rgba(5, 5, 5, 0.8);
+}
+
+.theme-minimalist {
+  --bg-color: #FAFAFA;
+  --surface-color: #FFFFFF;
+  --primary-color: #171717;
+  --secondary-color: #404040;
+  --accent-color: #737373;
+  --text-main: #171717;
+  --text-muted: #737373;
+  --border-color: #E5E5E5;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+}
 
 body {
-  /* background: rgb(164,163,185); */
-  /* background: linear-gradient(90deg, rgba(164,163,185,0.3519608527004552) 0%, rgba(96, 165, 250, 0.651) 100%);  */
-  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to right bottom, var(--tw-color-background-light), var(--tw-color-primary-light));
+  background: var(--primary-color);
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 0px;
+  width: 6px;
 }
 
-.scrollbar {
-  background-image: linear-gradient(to right bottom, var(--tw-color-background-light), var(--tw-color-primary-light));
-  width: 8px;
-  height: 0px;
+.glass-card {
+  @apply backdrop-blur-md border;
+  background-color: var(--glass-bg);
+  border-color: var(--border-color);
 }

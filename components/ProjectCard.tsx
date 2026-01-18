@@ -7,10 +7,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animations'
 
-const ProjectCard:FunctionComponent<{
-	project:IProject,
+const ProjectCard: FunctionComponent<{
+	project: IProject,
 	showDetail: null | number,
-	setShowDetail:(id: number | null) => void
+	setShowDetail: (id: number | null) => void
 }> = ({
 	project: {
 		id,
@@ -25,74 +25,79 @@ const ProjectCard:FunctionComponent<{
 	setShowDetail
 }) => {
 
-	return (
-		<div>
-			{showDetail === null && (
-				<div>
-					<div className="w-full max-w-[300px] aspect-[2/1] mx-auto relative">
-						<Image
-							src={image_path}
-							alt={name}
-							className="cursor-pointer object-cover rounded"
-							onClick={() => setShowDetail(id)}
-							fill
-							sizes="(max-width: 768px) 100vw, 300px"
-						/>
+		return (
+			<div>
+				{showDetail === null && (
+					<div>
+						<div className="w-full max-w-[300px] aspect-[2/1] mx-auto relative">
+							<Image
+								src={image_path}
+								alt={name}
+								className="cursor-pointer object-cover rounded"
+								onClick={() => setShowDetail(id)}
+								fill
+								sizes="(max-width: 768px) 100vw, 300px"
+							/>
+						</div>
+						<p className="my-2 text-center">{name}</p>
+
 					</div>
-					<p className="my-2 text-center">{name}</p>
+				)}
 
-				</div>
-			)}
+				{showDetail === id && (
+					<div className="absolute top-0 left-0 z-20 grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl">
+						<motion.div
+							variants={stagger}
+							initial="initial"
+							animate="animate">
+							<motion.div variants={fadeInUp} className="w-full aspect-[2/1] relative rounded-2xl overflow-hidden border border-border">
+								<Image
+									src={image_path}
+									alt={name}
+									className="object-cover"
+									fill
+									sizes="(max-width: 768px) 100vw, 300px"
+								/>
+							</motion.div>
+							<motion.div variants={fadeInUp} className="flex justify-center my-6 space-x-4">
+								{github_url ?
+									<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-6 py-2 space-x-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all">
+										<AiFillGithub /> <span>Github</span>
+									</a> : null
+								}
+								{deployed_url ?
+									<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-6 py-2 space-x-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all">
+										<CgWebsite /> <span>Live Demo</span>
+									</a> : null
+								}
+							</motion.div>
+						</motion.div>
 
-			{showDetail === id && (
-			<div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 bg-background-light rounded-lg md:p-10 md:grid-cols-2 gap-x-12 dark:bg-background-dark">
-				<motion.div
-					variants={stagger}
-					initial="initial"
-					animate="animate">
-					<motion.div variants={fadeInUp} className="border-4 border-gray-100 w-full aspect-[2/1] relative">
-						<Image
-							src={image_path}
-							alt={name}
-							className="object-cover rounded"
-							fill
-							sizes="(max-width: 768px) 100vw, 300px"
-						/>
-					</motion.div>
-					<motion.div variants={fadeInUp} className="flex justify-center my-4 space-x-3">
-						{github_url ?
-							<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
-								<AiFillGithub /> <span>Github</span>
-							</a> : null
-						}
-						{deployed_url ?
-							<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-4 py-2 space-x-3 text-lg bg-background-light rounded-md dark:bg-background-dark">
-								<CgWebsite /> <span>URL</span>
-							</a> : null
-						}
-					</motion.div>
-				</motion.div>
+						<motion.div variants={stagger} initial="initial" animate="animate" className="flex flex-col">
+							<motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-black tracking-tighter text-primary">{name}</motion.h2>
+							<motion.p variants={fadeInUp} className="mb-6 font-medium text-text-muted leading-relaxed">{description}</motion.p>
 
-				<motion.div variants={stagger} initial="initial" animate="animate">
-					<motion.h2 variants={fadeInUp} className="mb-3 text-xl font-medium md:text-2xl">{name}</motion.h2>
-					<motion.h3 variants={fadeInUp} className="mb-3 font-medium">{description}</motion.h3>
-					<motion.div variants={fadeInUp}  className="flex flex-wrap mt-5 space-x-2 text-sm tracking-wider">
-						{key_techs.map((tech, index) => (
-							<span key={tech} className="px-2 py-1 my-1 bg-background-light rounded-sm dark:bg-background-dark">
-								{tech}
-							</span>
-						))}
-					</motion.div>
-				</motion.div>
-				<button>
-					<MdClose size={30}  onClick={() => setShowDetail(null)}
-					className="absolute p-1 bg-background-light rounded-full top-3 right-3 focus:outline-none dark:bg-background-dark"/>
-				</button>
+							<motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-border">
+								{key_techs.map((tech) => (
+									<span key={tech} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold font-mono">
+										{tech}
+									</span>
+								))}
+							</motion.div>
+						</motion.div>
+
+						<button
+							onClick={() => setShowDetail(null)}
+							className="absolute p-2 glass-card rounded-full top-6 right-6 focus:outline-none hover:bg-red-500/20 hover:text-red-500 transition-colors"
+						>
+							<MdClose size={24} />
+						</button>
+
+					</div>
+				)}
 
 			</div>
-			)}
-		</div>
-	)
-}
+		)
+	}
 
 export default ProjectCard

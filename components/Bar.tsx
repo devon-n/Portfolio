@@ -7,19 +7,20 @@ const Bar: FunctionComponent<{
     data: ISkill
 }> = ({ data: { Icon, name } }) => {
     return (
-        <div className="my-2 text-text-light bg-background-light dark:bg-background-dark rounded-full dark:text-text-dark transition-colors duration-500">
+        <div className="my-2 text-text-main bg-primary/5 rounded-full overflow-hidden border border-border transition-colors duration-500">
             <motion.div
-                className="flex items-center px-4 py-1 rounded-full bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark"
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-primary/40 to-primary text-background font-bold"
                 style={{ width: "100%" }}
                 variants={barWidthVariants}
                 initial="initial"
                 animate="animate"
             >
-                <Icon className="mx-3" />
+                <Icon className="mr-3 text-xl" />
                 {name}
             </motion.div>
         </div>
     )
 }
+
 
 export default Bar
