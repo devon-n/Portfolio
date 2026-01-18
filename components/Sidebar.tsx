@@ -78,23 +78,24 @@ const Sidebar = () => {
 
             {/* Identity Switcher Integrated */}
             <div className="w-full px-6 mt-6">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-4 font-bold text-center">Switch Professional Persona</p>
-                <div className="grid grid-cols-4 gap-2">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted mb-4 font-black text-center opacity-60">Professional Persona</p>
+                <div className="flex flex-col gap-2">
                     {identities.map((item) => (
                         <button
                             key={item.id}
                             onClick={() => setIdentity(item.id)}
-                            className={`p-2 rounded-xl transition-all duration-300 flex flex-col items-center justify-center gap-1 border ${identity === item.id
-                                ? 'bg-primary border-primary text-background'
-                                : 'border-border text-primary hover:bg-primary/10'
+                            className={`px-4 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-3 border w-full group ${identity === item.id
+                                ? 'bg-primary border-primary text-background shadow-lg shadow-primary/20'
+                                : 'border-border text-primary hover:bg-primary/5 hover:border-primary/30'
                                 }`}
-                            title={item.name}
                         >
-                            <item.icon className="text-xl" />
+                            <item.icon className={`text-xl transition-transform duration-500 ${identity === item.id ? 'scale-110' : 'group-hover:scale-110'}`} />
+                            <span className={`text-xs font-bold uppercase tracking-widest ${identity === item.id ? '' : 'text-text-main group-hover:text-primary'}`}>{item.name}</span>
                         </button>
                     ))}
                 </div>
             </div>
+
         </div>
     )
 }
