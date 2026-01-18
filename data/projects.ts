@@ -19,7 +19,7 @@ export const projects: IProject[] = [
         description: "Frontend and indexer for Tezos governance supporting >$30M voting power with real-time indexing and voting analytics.",
         image_path: "/images/EtherlinkGovernance.png",
         deployed_url: "https://governance.etherlink.com",
-        github_url: "",
+        github_url: "https://github.com/etherlinkcom/governance-website-v2",
         category: ["Blockchain", "Full Stack"],
         key_techs: ["Next.js", "Express", "Taquito", "MySQL", "WebSockets"]
     },
