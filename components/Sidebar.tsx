@@ -1,9 +1,13 @@
 import { useIdentity } from '../context/IdentityContext'
 import Image from 'next/image'
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
+import { HiChip } from 'react-icons/hi';
+import { GiAbstract050 } from 'react-icons/gi';
+import { MdOutlineArchitecture, MdLensBlur } from 'react-icons/md';
+import { ThemeType } from '../types';
 
 const Sidebar = () => {
-    const { identity } = useIdentity();
+    const { identity, setIdentity } = useIdentity();
 
     const titles = {
         architect: "Lead Blockchain Architect",
@@ -11,6 +15,13 @@ const Sidebar = () => {
         cyber: "Senior Cyber-Engineer",
         minimalist: "Technical Lead"
     }
+
+    const identities: { id: ThemeType; name: string; icon: any }[] = [
+        { id: 'architect', name: 'Architect', icon: MdOutlineArchitecture },
+        { id: 'neural', name: 'Neural', icon: MdLensBlur },
+        { id: 'cyber', name: 'Cyber', icon: HiChip },
+        { id: 'minimalist', name: 'Minimalist', icon: GiAbstract050 },
+    ];
 
     return (
         <div className="pt-3 pb-6 flex flex-col items-center">
@@ -53,7 +64,7 @@ const Sidebar = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex justify-around w-full px-10 my-8 text-primary">
+            <div className="flex justify-around w-full px-10 my-4 text-primary">
                 <a href="https://github.com/devon-n" target="_blank" rel="noreferrer" aria-label="Github" className="hover:scale-125 transition-transform">
                     <AiFillGithub className="w-8 h-8 cursor-pointer" />
                 </a>
@@ -63,6 +74,26 @@ const Sidebar = () => {
                 <a href="mailto:devon.nathan@protonmail.com" target="_blank" rel="noreferrer" aria-label="Email" className="hover:scale-125 transition-transform">
                     <AiOutlineMail className="w-8 h-8 cursor-pointer" />
                 </a>
+            </div>
+
+            {/* Identity Switcher Integrated */}
+            <div className="w-full px-6 mt-6">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-4 font-bold text-center">Switch Professional Persona</p>
+                <div className="grid grid-cols-4 gap-2">
+                    {identities.map((item) => (
+                        <button
+                            key={item.id}
+                            onClick={() => setIdentity(item.id)}
+                            className={`p-2 rounded-xl transition-all duration-300 flex flex-col items-center justify-center gap-1 border ${identity === item.id
+                                    ? 'bg-primary border-primary text-background'
+                                    : 'border-border text-primary hover:bg-primary/10'
+                                }`}
+                            title={item.name}
+                        >
+                            <item.icon className="text-xl" />
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
     )

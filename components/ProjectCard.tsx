@@ -28,33 +28,43 @@ const ProjectCard: FunctionComponent<{
 		return (
 			<div>
 				{showDetail === null && (
-					<>
+					<motion.div
+						layoutId={`project-${id}`}
+						className="cursor-pointer"
+						onClick={() => setShowDetail(id)}
+					>
 						<motion.div
-							layout
-							className="w-full aspect-[2/1] relative rounded-2xl overflow-hidden glass-card"
+							layoutId={`image-${id}`}
+							className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden glass-card"
 						>
 							<Image
 								src={image_path}
 								alt={name}
-								className="cursor-pointer object-cover"
-								onClick={() => setShowDetail(id)}
+								className="object-cover"
 								fill
 								sizes="(max-width: 768px) 100vw, 300px"
 								priority
 							/>
 						</motion.div>
-						<motion.p layout className="my-2 text-center font-bold">{name}</motion.p>
-					</>
+						<motion.p layoutId={`name-${id}`} className="my-2 text-center font-bold">{name}</motion.p>
+					</motion.div>
 				)}
 
 
+
 				{showDetail === id && (
-					<div className="absolute top-0 left-0 z-20 grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl">
+					<motion.div
+						layoutId={`project-${id}`}
+						className="absolute top-0 left-0 z-20 grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl"
+					>
 						<motion.div
 							variants={stagger}
 							initial="initial"
 							animate="animate">
-							<motion.div variants={fadeInUp} className="w-full aspect-[2/1] relative rounded-2xl overflow-hidden border border-border">
+							<motion.div
+								layoutId={`image-${id}`}
+								className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden border border-border"
+							>
 								<Image
 									src={image_path}
 									alt={name}
@@ -79,7 +89,7 @@ const ProjectCard: FunctionComponent<{
 						</motion.div>
 
 						<motion.div variants={stagger} initial="initial" animate="animate" className="flex flex-col">
-							<motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-black tracking-tighter text-primary">{name}</motion.h2>
+							<motion.h2 layoutId={`name-${id}`} className="mb-4 text-3xl font-black tracking-tighter text-primary">{name}</motion.h2>
 							<motion.p variants={fadeInUp} className="mb-6 font-medium text-text-muted leading-relaxed">{description}</motion.p>
 
 							<motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-border">
@@ -98,8 +108,9 @@ const ProjectCard: FunctionComponent<{
 							<MdClose size={24} />
 						</button>
 
-					</div>
+					</motion.div>
 				)}
+
 
 			</div>
 		)

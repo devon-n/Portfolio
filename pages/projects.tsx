@@ -53,14 +53,14 @@ const Projects = () => {
             variants={stagger}
             initial="initial"
             animate="animate"
-            exit="exit"
+            exit={{ opacity: 0 }}
             className="relative grid grid-cols-12 gap-6 my-10"
           >
             {filteredProjects.map(project => (
               <motion.div
                 layout
                 variants={fadeInUp}
-                className="col-span-12 glass-card rounded-3xl p-4 sm:col-span-6 lg:col-span-4 transition-all hover:scale-[1.02]"
+                className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4 transition-all hover:scale-[1.02]"
                 key={project.name}
               >
                 <ProjectCard
@@ -73,11 +73,10 @@ const Projects = () => {
           </motion.div>
         ) : (
           <motion.div
-            layout
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="relative h-screen mt-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="relative min-h-[500px] my-10"
           >
             <ProjectCard
               project={projectsData.find(p => p.id === showDetail)!}
@@ -87,6 +86,7 @@ const Projects = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
 
 
     </motion.div>

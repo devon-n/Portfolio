@@ -47,8 +47,8 @@ function MyApp({ Component, pageProps }) {
 							</AnimatePresence>
 						</div>
 					</div>
-					<IdentitySwitcher />
 				</div>
+
 
 			</ThemeProvider>
 		</IdentityProvider>

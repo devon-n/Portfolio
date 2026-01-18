@@ -80,19 +80,37 @@ const About = () => {
 				className="flex-grow p-4 mt-5"
 				style={{ marginLeft: '-1.5rem', marginRight: '-1.5rem' }}
 			>
-				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Capabilities</h5>
-				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-					{services.map((service, index) => (
-						<motion.div
-							variants={fadeInUp}
-							className="glass-card rounded-2xl" key={index}
-						>
+				{/* Engineering & Infrastructure */}
+				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Engineering & Infrastructure</h5>
+				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
+					{services.filter(s => ["Systems Architecture", "Frontend UI/UX Development", "Backend Development & APIs", "DevOps & Cloud Deployment"].includes(s.title)).map((service, index) => (
+						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
 							<ServiceCard service={service} />
 						</motion.div>
 					))}
 				</div>
 
+				{/* Data & Automation */}
+				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Data & Automation</h5>
+				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
+					{services.filter(s => ["Indexer Development", "Monitoring & Alerting Solutions", "Data Engineering & Analytics", "Web Scraping & Automation"].includes(s.title)).map((service, index) => (
+						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+							<ServiceCard service={service} />
+						</motion.div>
+					))}
+				</div>
+
+				{/* Blockchain & Security */}
+				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Blockchain, AI & Security</h5>
+				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+					{services.filter(s => ["Smart Contract Developer", "Smart Contract Security", "Artificial Intelligence Engineer", "Automated Testing & QA", "Telegram Bot Development"].includes(s.title)).map((service, index) => (
+						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+							<ServiceCard service={service} />
+						</motion.div>
+					))}
+				</div>
 			</motion.div>
+
 		</motion.div>
 	)
 }
