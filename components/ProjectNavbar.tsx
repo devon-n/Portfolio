@@ -13,7 +13,7 @@ export const NavItem: FunctionComponent<{
 
         let className = "px-4 py-1 capitalize cursor-pointer transition-all duration-300 rounded-full font-bold"
         if (active === value) {
-            className += " bg-primary text-background shadow-lg scale-105"
+            className += " bg-primary text-background shadow-md scale-105"
         } else {
             className += " text-text-muted hover:text-primary hover:bg-primary/10"
         }
@@ -32,7 +32,7 @@ export const NavItem: FunctionComponent<{
 
 const ProjectsNavbar: FunctionComponent<{ handlerFilterCategory: Function, active: string }> = (props) => {
     return (
-        <div className="flex px-3 py-2 space-x-3 overflow-x-auto list-none">
+        <div className="flex px-3 py-4 space-x-3 overflow-x-auto list-none">
             <NavItem value="all" {...props} />
             <NavItem value="Blockchain" {...props} />
             <NavItem value="AI" {...props} />

@@ -12,7 +12,7 @@ const Bar: FunctionComponent<{
             <div className="absolute inset-0 bg-primary translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
 
             <motion.div
-                className="relative flex items-center px-4 py-2 text-white z-10"
+                className="relative flex items-center px-4 py-2 text-text-main z-10"
                 style={{ width: "100%" }}
                 variants={barWidthVariants}
                 initial="initial"
