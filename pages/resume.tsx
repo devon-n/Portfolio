@@ -1,9 +1,6 @@
 import { useMemo } from 'react'
 import Head from 'next/head'
-import Bar from '../components/Bar'
 import { experiences } from '../data/experiences'
-import { languages } from '../data/languages'
-import { tools } from '../data/tools'
 
 const Resume = () => {
   const experiencesMemo = useMemo(() => experiences, [])
@@ -36,53 +33,9 @@ const Resume = () => {
           <ExperienceItem key={index} {...exp} />
         ))}
       </div>
-
-      <div className="grid gap-10 mt-12 mb-10">
-        {/* JS Ecosystem */}
-        <div>
-          <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">JavaScript Ecosystem</h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {[...languages, ...tools].filter(s => s.category === "web").map(skill => (
-              <Bar key={skill.name} data={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* Python & AI */}
-        <div>
-          <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Python & AI</h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {[...languages, ...tools].filter(s => s.category === "ai").map(skill => (
-              <Bar key={skill.name} data={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* Data & Cloud */}
-        <div>
-          <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Data & Storage</h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {[...languages, ...tools].filter(s => s.category === "data").map(skill => (
-              <Bar key={skill.name} data={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* Blockchain & Web3 */}
-        <div>
-          <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Blockchain & Web3</h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {[...languages, ...tools].filter(s => s.category === "blockchain").map(skill => (
-              <Bar key={skill.name} data={skill} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-
-
     </div>
   )
 }
+
 
 export default Resume

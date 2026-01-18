@@ -18,6 +18,8 @@ function MyApp({ Component, pageProps }) {
 				router.prefetch('/projects')
 			} else if (url.startsWith('/resume')) {
 				router.prefetch('/resume')
+			} else if (url.startsWith('/skills')) {
+				router.prefetch('/skills')
 			} else if (url.startsWith('/about')) {
 				router.prefetch('/about')
 			}

@@ -8,15 +8,16 @@ const NavItem: FunctionComponent<{
     name: string,
     route: string
 }> = ({ activeItem, setActiveItem, name, route }) => {
-    return activeItem !== name ? (
+    return (
         <Link href={route}>
             <span
-                className="hover:text-primary transition-colors cursor-pointer"
+                className={`hover:text-primary transition-all cursor-pointer pb-1 border-b-2 ${activeItem === name ? "text-primary border-primary" : "text-text-muted border-transparent"
+                    }`}
                 onClick={() => setActiveItem(name)}>
                 {name}
             </span>
         </Link>
-    ) : null
+    )
 }
 
 const Navbar = () => {
@@ -26,21 +27,24 @@ const Navbar = () => {
     useEffect(() => {
         if (pathname === '/') setActiveItem('About')
         if (pathname === '/resume') setActiveItem('Resume')
+        if (pathname === '/skills') setActiveItem('Skills')
         if (pathname === '/projects') setActiveItem('Projects')
     }, [pathname])
 
     return (
-        <div className="flex justify-between px-5 py-3 my-3">
-            <span className="text-xl font-black border-b-4 border-primary md:text-2xl text-primary uppercase tracking-tighter">
+        <div className="flex justify-between items-center px-6 py-4">
+            <span className="text-xl font-black md:text-2xl text-primary uppercase tracking-tighter">
                 {activeItem}
             </span>
-            <div className="flex space-x-8 text-lg font-bold">
+            <div className="flex space-x-6 text-base font-bold uppercase tracking-widest">
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='About' route='/' />
-                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Projects' route='/projects' />
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Resume' route='/resume' />
+                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Skills' route='/skills' />
+                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Projects' route='/projects' />
             </div>
         </div>
     )
 }
+
 
 export default Navbar
