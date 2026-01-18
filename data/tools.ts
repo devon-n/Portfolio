@@ -10,71 +10,109 @@ import {
     SiEthers,
     SiEthereum,
     SiGooglebigquery,
-    SiMui
+    SiMui,
+    SiWeb3Dotjs,
 } from "react-icons/si";
-import { GiArtificialIntelligence } from "react-icons/gi";
+import { GiArtificialIntelligence, GiFoundryBucket } from "react-icons/gi";
 import { ISkill } from "../types";
+import { FaHardHat } from "react-icons/fa";
 
 export const tools: ISkill[] = [
     // Blockchain
     {
-        name: "Ethers/Web3",
-        Icon: SiEthers
+        name: "Ethers",
+        Icon: SiEthers,
+        category: "blockchain"
     },
     {
-        name: "Truffle/Hardhat/Brownie/Foundry",
-        Icon: SiEthereum
+        name: 'Web3',
+        Icon: SiWeb3Dotjs,
+        category: "blockchain"
+    },
+    {
+        name: "Truffle",
+        Icon: SiEthereum,
+        category: "blockchain"
+    },
+    {
+        name: "Hardhat",
+        Icon: FaHardHat,
+        category: "blockchain"
+    },
+    {
+        name: "Brownie",
+        Icon: SiEthereum,
+        category: "blockchain"
+    },
+    {
+        name: "Foundry",
+        Icon: GiFoundryBucket,
+        category: "blockchain"
     },
     // Dev Ops
     {
         name: "Google Cloud Platform",
-        Icon: SiGooglecloud
+        Icon: SiGooglecloud,
+        category: "data"
     },
     // Databases
     {
         name: "MySQL",
-        Icon: SiMysql
+        Icon: SiMysql,
+        category: "data"
     },
     {
         name: "BigQuery",
-        Icon: SiGooglebigquery
+        Icon: SiGooglebigquery,
+        category: "data"
     },
     {
         name: "MongoDB",
-        Icon: SiMongodb
+        Icon: SiMongodb,
+        category: "data"
     },
     {
         name: "Firebase",
-        Icon: SiFirebase
+        Icon: SiFirebase,
+        category: "data"
     },
     // Frontend
     {
         name: "Material UI",
-        Icon: SiMui
+        Icon: SiMui,
+        category: "web"
     },
     {
         name: "Tailwind CSS",
-        Icon: SiTailwindcss
+        Icon: SiTailwindcss,
+        category: "web"
     },
     {
         name: "MobX",
-        Icon: SiMobx
+        Icon: SiMobx,
+        category: "web"
     },
     // AI
     {
         name: "Keras",
-        Icon: SiKeras
+        Icon: SiKeras,
+        category: "ai"
     },
     {
-        name: "Neuro-evolution of Augmented Topologies",
-        Icon: GiArtificialIntelligence
+        name: "NEAT",
+        // name: "Neuro-evolution of Augmented Topologies",
+        Icon: GiArtificialIntelligence,
+        category: "ai"
     },
     {
         name: "Genetic Algorithms",
-        Icon: GiArtificialIntelligence
+        Icon: GiArtificialIntelligence,
+        category: "ai"
     },
     {
         name: "Telegram API",
-        Icon: SiTelegram
+        Icon: SiTelegram,
+        category: "web"
     }
 ]
+

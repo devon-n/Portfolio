@@ -16,53 +16,65 @@ import { ISkill } from '../types'
 
 export const languages: ISkill[] = [
     {
-        name:"TypeScript",
-        Icon: SiTypescript
+        name: "TypeScript",
+        Icon: SiTypescript,
+        category: "web"
     },
     {
-        name:"JavaScript",
-        Icon: SiJavascript
+        name: "JavaScript",
+        Icon: SiJavascript,
+        category: "web"
     },
     {
-        name:"Python",
-        Icon: SiPython
+        name: "Python",
+        Icon: SiPython,
+        category: "ai"
     },
     {
-        name:"Solidity",
-        Icon: SiSolidity
+        name: "Solidity",
+        Icon: SiSolidity,
+        category: "blockchain"
     },
     // JavaScript Frameworks
     {
-        name:"ReactJS",
-        Icon: SiReact
+        name: "ReactJS",
+        Icon: SiReact,
+        category: "web"
     },
     {
-        name:"NextJS",
-        Icon: SiNextdotjs
+        name: "NextJS",
+        Icon: SiNextdotjs,
+        category: "web"
     },
     {
-        name:"VueJS",
-        Icon: SiVuedotjs
+        name: "VueJS",
+        Icon: SiVuedotjs,
+        category: "web"
     },
     {
-        name:"ExpressJS",
-        Icon: SiExpress
+        name: "ExpressJS",
+        Icon: SiExpress,
+        category: "web"
     },
     {
-        name:"Jest",
-        Icon: SiJest
+        name: "Jest",
+        Icon: SiJest,
+        category: "web"
     },
     {
         name: "Telegram API",
-        Icon: SiTelegram
+        Icon: SiTelegram,
+        category: "web"
     },
     // Python
     {
-        name:"Flask",
-        Icon: SiFlask
+        name: "Flask",
+        Icon: SiFlask,
+        category: "ai"
     },
     {
-        name:"PyTest",
-        Icon: SiPytest
+        name: "PyTest",
+        Icon: SiPytest,
+        category: "ai"
     }
 ]

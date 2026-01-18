@@ -5,7 +5,7 @@ export interface IExperienceItemProps {
   company: string;
   period: string;
   description: string;
-  }
+}
 
 export interface IService {
   Icon: IconType;
@@ -13,10 +13,14 @@ export interface IService {
   about: string;
 }
 
+export type SkillCategory = "web" | "ai" | "data" | "blockchain";
+
 export interface ISkill {
   Icon: IconType;
   name: string;
+  category: SkillCategory;
 }
+
 
 export interface IProject {
   id: number;
