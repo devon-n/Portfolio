@@ -30,16 +30,12 @@ const About = () => {
 			description: "Exploring the intersection of neuro-evolution and decentralized systems. Building autonomous agents and self-evolving algorithms for the future of on-chain intelligence.",
 			feature: <NeuralCanvas />
 		},
-		cyber: {
-			title: "Engineer & GameFi Specialist",
+		matrix: {
+			title: "Matrix Systems Specialist",
 			description: "Shipping high-concurrency smart contracts for the next generation of AAA Web3 gaming. Hardening protocols and bridging assets across the metaverse.",
 			feature: <CyberTerminal />
-		},
-		minimalist: {
-			title: "Senior Software Engineer",
-			description: "Focused on clarity, performance, and narrative-driven engineering leadership. Developing seamless user experiences for complex backend architectures.",
-			feature: null
 		}
+
 	}
 
 	const activeContent = content[identity];

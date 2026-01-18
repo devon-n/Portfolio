@@ -12,9 +12,13 @@ export const IdentityProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const [identity, setIdentityState] = useState<ThemeType>('architect');
 
     useEffect(() => {
-        const savedIdentity = localStorage.getItem('user-identity') as ThemeType;
-        if (savedIdentity) {
-            setIdentityState(savedIdentity);
+        const savedIdentity = localStorage.getItem('user-identity') as any;
+        if (savedIdentity === 'cyber') {
+            setIdentity('matrix');
+        } else if (savedIdentity === 'minimalist') {
+            setIdentity('architect');
+        } else if (savedIdentity) {
+            setIdentityState(savedIdentity as ThemeType);
         }
     }, []);
 
@@ -25,12 +29,13 @@ export const IdentityProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     useEffect(() => {
         // Remove all theme classes
-        const themeClasses = ['theme-architect', 'theme-neural', 'theme-cyber', 'theme-minimalist'];
-        document.documentElement.classList.remove(...themeClasses);
+        const themeClasses = ['theme-architect', 'theme-neural', 'theme-matrix'];
+        document.documentElement.classList.remove('theme-architect', 'theme-neural', 'theme-cyber', 'theme-minimalist', 'theme-matrix');
 
         // Add the current theme class
         document.documentElement.classList.add(`theme-${identity}`);
     }, [identity]);
+
 
     return (
         <IdentityContext.Provider value={{ identity, setIdentity }}>

@@ -39,7 +39,7 @@
   --glass-bg: rgba(30, 41, 59, 0.6);
 }
 
-.theme-cyber {
+.theme-matrix {
   --bg-color: #050505;
   --surface-color: #0D0D0D;
   --primary-color: #39FF14;
@@ -51,17 +51,6 @@
   --glass-bg: rgba(5, 5, 5, 0.8);
 }
 
-.theme-minimalist {
-  --bg-color: #FEFCE8;
-  --surface-color: #FEF9C3;
-  --primary-color: #F59E0B;
-  --secondary-color: #D97706;
-  --accent-color: #FBBF24;
-  --text-main: #1F2937;
-  --text-muted: #4B5563;
-  --border-color: rgba(245, 158, 11, 0.2);
-  --glass-bg: rgba(254, 252, 232, 0.8);
-}
 
 
 
@@ -84,4 +73,23 @@ body {
   @apply backdrop-blur-md border;
   background-color: var(--glass-bg);
   border-color: var(--border-color);
+}
+
+/* Cyber Terminal Animations */
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(400px); }
+}
+
+.animate-scanline {
+  animation: scanline 4s linear infinite;
+}
+
+@keyframes terminalFadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 0.8; transform: translateX(0); }
+}
+
+.animate-terminal-fadeIn {
+  animation: terminalFadeIn 0.3s ease-out forwards;
 }

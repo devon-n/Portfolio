@@ -38,4 +38,4 @@ export interface IProject {
 
 export type Category = "Blockchain" | "AI" | "Full Stack"
 
-export type ThemeType = 'architect' | 'neural' | 'cyber' | 'minimalist';
+export type ThemeType = 'architect' | 'neural' | 'matrix';
