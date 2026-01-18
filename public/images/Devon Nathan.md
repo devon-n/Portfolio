@@ -33,7 +33,6 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 - Implemented a **LayerZero** token bridge for **Astrafer** ([Polygon](https://polygonscan.com/address/0xdfce1e99a31c4597a3f8a8945cbfa9037655e335#writeContract) → [Ethereum](https://etherscan.io/token/0xb51b97dd5569fab69495316b5a065cccff4b829d))
 - Production Polygon **NFT contract** with **12,000+ on-chain transactions** ([contract](https://polygonscan.com/address/0xBD662d0D765428A79aee9aE7B003E7037d77F041))
 - Built **dynamic NFT images** with game updates and **EC2** → **S3** rendering pipeline (*JavaScript, AWS*)
-
 - Integrated on-chain features with React/Express and Unity (C#)
 
 **Substitute Instructor** | 2U Monash University | 2022
@@ -48,12 +47,12 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 ---
 
 ## Skills
-**Blockchain:** Solidity, Foundry, Hardhat, Truffle, Geth, Ganache CLI
-**JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers.js, Web3.js, thirdweb, MUI, MobX, TanStack, Tailwind
-**Python:** Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
-**Databases:** MySQL, MongoDB, BigQuery
-**CI/CD & Cloud:** GitHub Actions, Google Cloud Platform, Vercel
-**AI:** Neural Networks, Genetic Algorithms, Neuroevolution of Augmenting Topologies
+- **Blockchain:** Solidity, Foundry, Hardhat, Truffle, Geth, Ganache CLI
+- **JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers.js, Web3.js, thirdweb, MUI, MobX, TanStack, Tailwind
+- **Python:** Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
+- **Databases:** MySQL, MongoDB, BigQuery
+- **CI/CD & Cloud:** GitHub Actions, Google Cloud Platform, Vercel
+- **AI:** Neural Networks, Genetic Algorithms, Neuroevolution of Augmenting Topologies
 
 ---
 
