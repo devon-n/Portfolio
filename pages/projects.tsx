@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback } from "react"
 import { projects as projectsData } from "../data/projects"
 import { Category } from "../types"
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
 import ProjectsNavbar from "../components/ProjectNavbar"
@@ -46,26 +46,49 @@ const Projects = () => {
 
       <ProjectsNavbar handlerFilterCategory={handlerFilterCategory} active={activeItem} />
 
-      <motion.div
-        variants={stagger}
-        initial="initial"
-        animate="animate"
-        className="relative grid grid-cols-12 gap-6 my-10"
-      >
-        {filteredProjects.map(project => (
+      <AnimatePresence mode="popLayout">
+        {showDetail === null ? (
           <motion.div
-            variants={fadeInUp}
-            className="col-span-12 glass-card rounded-3xl p-4 sm:col-span-6 lg:col-span-4 transition-all hover:scale-[1.02]"
-            key={project.name}
+            layout
+            variants={stagger}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="relative grid grid-cols-12 gap-6 my-10"
+          >
+            {filteredProjects.map(project => (
+              <motion.div
+                layout
+                variants={fadeInUp}
+                className="col-span-12 glass-card rounded-3xl p-4 sm:col-span-6 lg:col-span-4 transition-all hover:scale-[1.02]"
+                key={project.name}
+              >
+                <ProjectCard
+                  project={project}
+                  showDetail={showDetail}
+                  setShowDetail={setShowDetail}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : (
+          <motion.div
+            layout
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="relative h-screen mt-10"
           >
             <ProjectCard
-              project={project}
+              project={projectsData.find(p => p.id === showDetail)!}
               showDetail={showDetail}
               setShowDetail={setShowDetail}
             />
           </motion.div>
-        ))}
-      </motion.div>
+        )}
+      </AnimatePresence>
+
+
     </motion.div>
   )
 }

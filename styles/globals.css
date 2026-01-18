@@ -52,16 +52,17 @@
 }
 
 .theme-minimalist {
-  --bg-color: #FAFAFA;
-  --surface-color: #FFFFFF;
-  --primary-color: #171717;
-  --secondary-color: #404040;
-  --accent-color: #737373;
-  --text-main: #171717;
-  --text-muted: #737373;
-  --border-color: #E5E5E5;
-  --glass-bg: rgba(255, 255, 255, 0.8);
+  --bg-color: #0F0913;
+  --surface-color: #1C1221;
+  --primary-color: #FF5E62;
+  --secondary-color: #FF9966;
+  --accent-color: #FEB47B;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --border-color: rgba(255, 94, 98, 0.2);
+  --glass-bg: rgba(28, 18, 33, 0.7);
 }
+
 
 body {
   background-color: var(--bg-color);

@@ -28,21 +28,25 @@ const ProjectCard: FunctionComponent<{
 		return (
 			<div>
 				{showDetail === null && (
-					<div>
-						<div className="w-full max-w-[300px] aspect-[2/1] mx-auto relative">
+					<>
+						<motion.div
+							layout
+							className="w-full aspect-[2/1] relative rounded-2xl overflow-hidden glass-card"
+						>
 							<Image
 								src={image_path}
 								alt={name}
-								className="cursor-pointer object-cover rounded"
+								className="cursor-pointer object-cover"
 								onClick={() => setShowDetail(id)}
 								fill
 								sizes="(max-width: 768px) 100vw, 300px"
+								priority
 							/>
-						</div>
-						<p className="my-2 text-center">{name}</p>
-
-					</div>
+						</motion.div>
+						<motion.p layout className="my-2 text-center font-bold">{name}</motion.p>
+					</>
 				)}
+
 
 				{showDetail === id && (
 					<div className="absolute top-0 left-0 z-20 grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl">
@@ -67,9 +71,10 @@ const ProjectCard: FunctionComponent<{
 								}
 								{deployed_url ?
 									<a href={deployed_url} target="_blank" rel="noreferrer" className="flex items-center px-6 py-2 space-x-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all">
-										<CgWebsite /> <span>Live Demo</span>
+										<CgWebsite /> <span>Website</span>
 									</a> : null
 								}
+
 							</motion.div>
 						</motion.div>
 

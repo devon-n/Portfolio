@@ -38,21 +38,22 @@ const Resume = () => {
       </div>
 
       {/* Skills */}
-      <div className="grid gap-10 md:grid-cols-2 mt-12 mb-10">
+      <div className="grid gap-10 mt-12 mb-10">
         <div>
           <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Expertise</h5>
-          <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {languages.map(language => <Bar key={language.name} data={language} />)}
           </div>
         </div>
 
         <div>
           <h5 className="my-6 text-2xl font-bold border-l-4 border-primary pl-4 tracking-widest uppercase">Toolbelt</h5>
-          <div className="space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map(tool => <Bar key={tool.name} data={tool} />)}
           </div>
         </div>
       </div>
+
     </div>
   )
 }

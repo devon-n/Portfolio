@@ -80,17 +80,18 @@ const About = () => {
 				className="flex-grow p-4 mt-5"
 				style={{ marginLeft: '-1.5rem', marginRight: '-1.5rem' }}
 			>
-				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4">Capabilities</h5>
-				<div className="grid gap-6 lg:grid-cols-2">
+				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Capabilities</h5>
+				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{services.map((service, index) => (
 						<motion.div
 							variants={fadeInUp}
-							className="glass-card rounded-2xl lg:col-span-1" key={index}
+							className="glass-card rounded-2xl" key={index}
 						>
 							<ServiceCard service={service} />
 						</motion.div>
 					))}
 				</div>
+
 			</motion.div>
 		</motion.div>
 	)

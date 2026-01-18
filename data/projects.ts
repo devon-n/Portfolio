@@ -5,32 +5,36 @@ export const projects: IProject[] = [
         id: 1,
         name: "Etherlink Bridge",
         description: "Cross-chain bridge supporting >$55M volume between Tezos and EVM chains. Implemented fast withdrawals reducing wait times by 2 weeks.",
-        image_path: "/images/etherlink_bridge.png",
-        deployed_url: "https://www.etherlinkbridge.com",
+        image_path: "/images/EtherlinkBridge.png",
+        deployed_url: "https://bridge.etherlink.com",
         github_url: "",
         category: ["Blockchain", "Full Stack"],
         key_techs: ["Next.js", "Ethers", "LayerZero", "Taquito", "MobX"]
     },
+
+
     {
         id: 2,
         name: "Tezos Governance",
         description: "Frontend and indexer for Tezos governance supporting >$30M voting power with real-time indexing and voting analytics.",
-        image_path: "/images/tezos_gov.png",
+        image_path: "/images/EtherlinkGovernance.png",
         deployed_url: "https://governance.etherlink.com",
         github_url: "",
         category: ["Blockchain", "Full Stack"],
         key_techs: ["Next.js", "Express", "Taquito", "MySQL", "WebSockets"]
     },
+
     {
         id: 3,
         name: "Phantom Galaxies (Astrafer)",
         description: "Sole Solidity developer for a Web3 game with 60K players. Shipped upgradeable contracts and LayerZero token bridge.",
-        image_path: "/images/phantom_galaxies.png",
+        image_path: "/images/PhantomGalaxies.png",
         deployed_url: "https://www.phantomgalaxies.com",
         github_url: "",
         category: ["Blockchain"],
         key_techs: ["Solidity", "Foundry", "LayerZero", "OpenZeppelin"]
     },
+
     {
         id: 4,
         name: "StratX",
@@ -45,12 +49,14 @@ export const projects: IProject[] = [
         id: 5,
         name: "Bridge Analytics Dashboard",
         description: "Liquidity and volume monitoring dashboard for EVM bridge transfers with real-time data pipelines.",
-        image_path: "/images/bridge_stats.png",
-        deployed_url: "https://www.etherlinkbridge.com/stats",
+        image_path: "/images/EtherlinkBridgeStats.png",
+        deployed_url: "https://bridge.etherlink.com/stats",
         github_url: "",
         category: ["Full Stack", "Blockchain"],
         key_techs: ["Next.js", "Express", "BigQuery", "GCP"]
     },
+
+
     {
         id: 6,
         name: "AI Self Driving Car",

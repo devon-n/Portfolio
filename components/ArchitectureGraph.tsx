@@ -3,26 +3,32 @@ import { motion } from 'framer-motion';
 
 const ArchitectureGraph: React.FC = () => {
     const nodes = [
-        { id: 'l1', label: 'Tezos/Ethereum L1', x: 100, y: 100, color: '#7000FF' },
-        { id: 'l2', label: 'Etherlink L2', x: 400, y: 100, color: '#00F5FF' },
-        { id: 'indexer', label: 'Custom Indexers', x: 250, y: 250, color: '#39FF14' },
-        { id: 'monitor', label: 'GCP Monitoring', x: 550, y: 250, color: '#FFD700' },
+        { id: 'tezos', label: 'Tezos L1', x: 100, y: 100, color: '#7000FF' },
+        { id: 'etherlink', label: 'Etherlink L2', x: 350, y: 100, color: '#00F5FF' },
+        { id: 'evm', label: 'EVM Chains', x: 600, y: 100, color: '#39FF14' },
+        { id: 'gcp', label: 'GCP Monitoring', x: 350, y: 280, color: '#FFD700' },
     ];
 
     const connections = [
-        { from: 'l1', to: 'l2', label: 'Bridge ($55M+)' },
-        { from: 'l2', to: 'indexer', label: 'Events' },
-        { from: 'indexer', to: 'monitor', label: 'Stats' },
+        // Bidirectional: Tezos <-> Etherlink
+        { from: 'tezos', to: 'etherlink', bidirectional: true },
+        // Bidirectional: Etherlink <-> EVM Chains
+        { from: 'etherlink', to: 'evm', bidirectional: true },
+        // Directional: All -> GCP
+        { from: 'tezos', to: 'gcp', label: 'Metrics' },
+        { from: 'etherlink', to: 'gcp', label: 'Stats' },
+        { from: 'evm', to: 'gcp', label: 'Events' },
     ];
 
     return (
-        <div className="w-full aspect-video glass-card rounded-3xl p-8 my-10 relative overflow-hidden">
+        <div className="w-full aspect-[2/1] glass-card rounded-3xl p-8 my-10 relative overflow-hidden bg-background/30">
             <h3 className="text-xl font-bold mb-8 text-primary uppercase tracking-widest">Multi-Chain Ecosystem Architecture</h3>
             <svg viewBox="0 0 700 400" className="w-full h-full">
                 {/* Connections */}
                 {connections.map((conn, i) => {
                     const from = nodes.find(n => n.id === conn.from)!;
                     const to = nodes.find(n => n.id === conn.to)!;
+
                     return (
                         <g key={i}>
                             <motion.line
@@ -34,14 +40,16 @@ const ArchitectureGraph: React.FC = () => {
                                 animate={{ pathLength: 1, opacity: 0.3 }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                             />
-                            <text
-                                x={(from.x + to.x) / 2}
-                                y={(from.y + to.y) / 2 - 10}
-                                textAnchor="middle"
-                                className="text-[10px] fill-text-muted font-mono"
-                            >
-                                {conn.label}
-                            </text>
+                            {conn.label && (
+                                <text
+                                    x={(from.x + to.x) / 2}
+                                    y={(from.y + to.y) / 2 + 20}
+                                    textAnchor="middle"
+                                    className="text-[10px] fill-text-muted font-mono"
+                                >
+                                    {conn.label}
+                                </text>
+                            )}
                         </g>
                     );
                 })}
@@ -59,7 +67,7 @@ const ArchitectureGraph: React.FC = () => {
                             x={node.x}
                             y={node.y + 60}
                             textAnchor="middle"
-                            className="text-xs font-bold fill-text-main"
+                            className="text-[10px] font-bold fill-text-main uppercase tracking-tighter"
                         >
                             {node.label}
                         </text>
@@ -68,9 +76,8 @@ const ArchitectureGraph: React.FC = () => {
                 ))}
             </svg>
 
-            {/* Legend/Note */}
-            <div className="absolute bottom-6 right-6 text-[10px] font-mono text-text-muted max-w-[200px] text-right">
-                * Real-time monitoring of L1/L2 state transitions and liquidity flows.
+            <div className="absolute bottom-6 right-6 text-[10px] font-mono text-text-muted max-w-[200px] text-right italic">
+                * Unified observer for Tezos/EVM state transitions.
             </div>
         </div>
     );
