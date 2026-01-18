@@ -28,52 +28,39 @@ const ProjectCard: FunctionComponent<{
 		return (
 			<div>
 				{showDetail === null && (
-					<motion.div
-						layoutId={`project-${id}`}
-						className="cursor-pointer"
+					<div
+						className="cursor-pointer group"
 						onClick={() => setShowDetail(id)}
 					>
-						<motion.div
-							layoutId={`image-${id}`}
-							className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden glass-card"
-						>
+						<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden glass-card border border-border group-hover:border-primary/50 transition-colors">
 							<Image
 								src={image_path}
 								alt={name}
-								className="object-cover"
+								className="object-cover group-hover:scale-105 transition-transform duration-500"
 								fill
 								sizes="(max-width: 768px) 100vw, 300px"
 								priority
 							/>
-						</motion.div>
-						<motion.p layoutId={`name-${id}`} className="my-2 text-center font-bold">{name}</motion.p>
-					</motion.div>
+						</div>
+						<p className="my-2 text-center font-bold text-text-main group-hover:text-primary transition-colors">{name}</p>
+					</div>
 				)}
 
 
 
 				{showDetail === id && (
-					<motion.div
-						layoutId={`project-${id}`}
-						className="absolute top-0 left-0 z-20 grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl"
-					>
-						<motion.div
-							variants={stagger}
-							initial="initial"
-							animate="animate">
-							<motion.div
-								layoutId={`image-${id}`}
-								className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden border border-border"
-							>
+					<div className="grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl relative bg-surface border border-primary/20">
+						<div>
+							<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden border border-border">
 								<Image
 									src={image_path}
 									alt={name}
 									className="object-cover"
 									fill
-									sizes="(max-width: 768px) 100vw, 300px"
+									sizes="(max-width: 1024px) 100vw, 50vw"
 								/>
-							</motion.div>
-							<motion.div variants={fadeInUp} className="flex justify-center my-6 space-x-4">
+							</div>
+							<div className="flex justify-center my-6 space-x-4">
 								{github_url ?
 									<a href={github_url} target="_blank" rel="noreferrer" className="flex items-center px-6 py-2 space-x-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all">
 										<AiFillGithub /> <span>Github</span>
@@ -84,32 +71,32 @@ const ProjectCard: FunctionComponent<{
 										<CgWebsite /> <span>Website</span>
 									</a> : null
 								}
+							</div>
+						</div>
 
-							</motion.div>
-						</motion.div>
+						<div className="flex flex-col">
+							<h2 className="mb-4 text-3xl font-black tracking-tighter text-primary uppercase">{name}</h2>
+							<p className="mb-6 font-medium text-text-muted leading-relaxed">{description}</p>
 
-						<motion.div variants={stagger} initial="initial" animate="animate" className="flex flex-col">
-							<motion.h2 layoutId={`name-${id}`} className="mb-4 text-3xl font-black tracking-tighter text-primary">{name}</motion.h2>
-							<motion.p variants={fadeInUp} className="mb-6 font-medium text-text-muted leading-relaxed">{description}</motion.p>
-
-							<motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-border">
+							<div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-border">
 								{key_techs.map((tech) => (
-									<span key={tech} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold font-mono">
+									<span key={tech} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-[10px] font-bold font-mono uppercase tracking-tighter">
 										{tech}
 									</span>
 								))}
-							</motion.div>
-						</motion.div>
+							</div>
+						</div>
 
 						<button
 							onClick={() => setShowDetail(null)}
-							className="absolute p-2 glass-card rounded-full top-6 right-6 focus:outline-none hover:bg-red-500/20 hover:text-red-500 transition-colors"
+							className="absolute p-2 glass-card rounded-full top-4 right-4 focus:outline-none hover:bg-red-500/20 hover:text-red-500 transition-colors z-30"
 						>
 							<MdClose size={24} />
 						</button>
-
-					</motion.div>
+					</div>
 				)}
+
+
 
 
 			</div>

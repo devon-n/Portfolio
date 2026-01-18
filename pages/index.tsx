@@ -31,12 +31,12 @@ const About = () => {
 			feature: <NeuralCanvas />
 		},
 		cyber: {
-			title: "Cyber-Engineer & GameFi Specialist",
+			title: "Engineer & GameFi Specialist",
 			description: "Shipping high-concurrency smart contracts for the next generation of AAA Web3 gaming. Hardening protocols and bridging assets across the metaverse.",
 			feature: <CyberTerminal />
 		},
 		minimalist: {
-			title: "Technical Lead",
+			title: "Senior Software Engineer",
 			description: "Focused on clarity, performance, and narrative-driven engineering leadership. Developing seamless user experiences for complex backend architectures.",
 			feature: null
 		}

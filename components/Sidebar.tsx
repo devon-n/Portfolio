@@ -12,8 +12,8 @@ const Sidebar = () => {
     const titles = {
         architect: "Lead Blockchain Architect",
         neural: "AI & Web3 Researcher",
-        cyber: "Senior Cyber-Engineer",
-        minimalist: "Technical Lead"
+        cyber: "Senior Engineer",
+        minimalist: "Senior Software Engineer"
     }
 
     const identities: { id: ThemeType; name: string; icon: any }[] = [
@@ -85,8 +85,8 @@ const Sidebar = () => {
                             key={item.id}
                             onClick={() => setIdentity(item.id)}
                             className={`p-2 rounded-xl transition-all duration-300 flex flex-col items-center justify-center gap-1 border ${identity === item.id
-                                    ? 'bg-primary border-primary text-background'
-                                    : 'border-border text-primary hover:bg-primary/10'
+                                ? 'bg-primary border-primary text-background'
+                                : 'border-border text-primary hover:bg-primary/10'
                                 }`}
                             title={item.name}
                         >

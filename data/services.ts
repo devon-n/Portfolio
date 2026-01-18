@@ -47,7 +47,7 @@ export const services: IService[] = [
     },
     {
         title: "DevOps & Cloud Deployment",
-        about: "Automate deployment and manage cloud infrastructure for scalable blockchain and AI applications using <b>Google Cloud Platform</b>.",
+        about: "Automate deployment and manage cloud infrastructure for scalable blockchain using <b>Google Cloud Platform</b>.",
         Icon: SiGooglecloud
     },
 
@@ -71,7 +71,7 @@ export const services: IService[] = [
     },
     {
         title: "Smart Contract Security",
-        about: "Thorough testing of smart contracts to ensure robust defense against hacks using <b>slither</b> and custom <b>truffle/hardhat</b> written tests.",
+        about: "Thorough testing of smart contracts to ensure robust defense against hacks using <b>slither</b> and custom <b>foundry/hardhat/truffle</b> written tests.",
         Icon: MdOutlineSecurity
     },
 

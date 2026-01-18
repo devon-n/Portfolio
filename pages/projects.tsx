@@ -46,46 +46,57 @@ const Projects = () => {
 
       <ProjectsNavbar handlerFilterCategory={handlerFilterCategory} active={activeItem} />
 
-      <AnimatePresence mode="popLayout">
-        {showDetail === null ? (
-          <motion.div
-            layout
-            variants={stagger}
-            initial="initial"
-            animate="animate"
-            exit={{ opacity: 0 }}
-            className="relative grid grid-cols-12 gap-6 my-10"
-          >
-            {filteredProjects.map(project => (
+      <div className="relative min-h-screen">
+        <motion.div
+          variants={stagger}
+          initial="initial"
+          animate="animate"
+          className="grid grid-cols-12 gap-6 my-10"
+        >
+          {filteredProjects.map(project => (
+            <motion.div
+              variants={fadeInUp}
+              className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4"
+              key={project.name}
+            >
+              <ProjectCard
+                project={project}
+                showDetail={showDetail}
+                setShowDetail={setShowDetail}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <AnimatePresence>
+          {showDetail !== null && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-5 md:p-20 bg-background/90 backdrop-blur-md"
+              onClick={() => setShowDetail(null)}
+            >
               <motion.div
-                layout
-                variants={fadeInUp}
-                className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4 transition-all hover:scale-[1.02]"
-                key={project.name}
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                className="w-full max-w-6xl max-h-full overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
               >
                 <ProjectCard
-                  project={project}
+                  project={projectsData.find(p => p.id === showDetail)!}
                   showDetail={showDetail}
                   setShowDetail={setShowDetail}
                 />
               </motion.div>
-            ))}
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="relative min-h-[500px] my-10"
-          >
-            <ProjectCard
-              project={projectsData.find(p => p.id === showDetail)!}
-              showDetail={showDetail}
-              setShowDetail={setShowDetail}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+
 
 
 
