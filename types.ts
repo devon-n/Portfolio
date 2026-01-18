@@ -7,10 +7,13 @@ export interface IExperienceItemProps {
   description: string;
 }
 
+export type ServiceCategory = "engineering" | "data" | "blockchain"
+
 export interface IService {
   Icon: IconType;
   title: string;
   about: string;
+  category: ServiceCategory;
 }
 
 export type SkillCategory = "javascript" | "python" | "databases" | "blockchain";

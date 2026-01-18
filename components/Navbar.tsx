@@ -11,9 +11,11 @@ const NavItem: FunctionComponent<{
     return (
         <Link href={route}>
             <span
-                className={`hover:text-primary transition-all cursor-pointer pb-1 border-b-2 ${activeItem === name ? "text-primary border-primary" : "text-text-muted border-transparent"
+                className={`hover:text-primary transition-all cursor-pointer pb-1 border-b-2 outline-none focus:text-primary ${activeItem === name ? "text-primary border-primary" : "text-text-muted border-transparent"
                     }`}
-                onClick={() => setActiveItem(name)}>
+                onClick={() => setActiveItem(name)}
+                aria-current={activeItem === name ? "page" : undefined}
+            >
                 {name}
             </span>
         </Link>
@@ -32,7 +34,7 @@ const Navbar = () => {
     }, [pathname])
 
     return (
-        <div className="flex justify-between items-center px-6 py-4">
+        <nav className="flex justify-between items-center px-6 py-4" aria-label="Main navigation">
             <span className="text-xl font-black md:text-2xl text-primary uppercase tracking-tighter">
                 {activeItem}
             </span>
@@ -42,9 +44,10 @@ const Navbar = () => {
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Skills' route='/skills' />
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Projects' route='/projects' />
             </div>
-        </div>
+        </nav>
     )
 }
+
 
 
 export default Navbar

@@ -15,7 +15,9 @@ const Skills = () => {
         >
             <Head>
                 <title>Devon Nathan - Skills</title>
+                <meta name="description" content="A comprehensive technical breakdown of expertise across JavaScript ecosystems, AI development in Python, Database architecture, and Blockchain protocol engineering." />
             </Head>
+
 
             <div className="my-8">
                 <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Expertise & Toolbelt</h1>

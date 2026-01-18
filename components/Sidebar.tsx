@@ -33,8 +33,9 @@ const Sidebar = () => {
                     className="rounded-full border-2 border-primary z-10"
                     width={128}
                     height={128}
-                    layout="intrinsic"
+                    priority
                 />
+
             </div>
 
             {/* Profile */}
@@ -84,6 +85,7 @@ const Sidebar = () => {
                         <button
                             key={item.id}
                             onClick={() => setIdentity(item.id)}
+                            aria-label={`Switch to ${item.name} persona`}
                             className={`px-4 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-3 border w-full group ${identity === item.id
                                 ? 'bg-primary border-primary text-background shadow-lg shadow-primary/20'
                                 : 'border-border text-primary hover:bg-primary/5 hover:border-primary/30'

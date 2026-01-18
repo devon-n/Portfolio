@@ -54,7 +54,9 @@ const About = () => {
 		>
 			<Head>
 				<title>Devon Nathan - {activeContent.title}</title>
+				<meta name="description" content="Senior Software Engineer specializing in high-value multi-chain integration, AI research, and robust Web3 infrastructure. Explore my technical foundations and professional persona." />
 			</Head>
+
 
 			<div className="my-8">
 				<motion.h1
@@ -83,7 +85,7 @@ const About = () => {
 				{/* Engineering & Infrastructure */}
 				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Engineering & Infrastructure</h5>
 				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
-					{services.filter(s => ["Systems Architecture", "Frontend UI/UX Development", "Backend Development & APIs", "DevOps & Cloud Deployment"].includes(s.title)).map((service, index) => (
+					{services.filter(s => s.category === "engineering").map((service, index) => (
 						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
 							<ServiceCard service={service} />
 						</motion.div>
@@ -93,7 +95,7 @@ const About = () => {
 				{/* Data & Automation */}
 				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Data & Automation</h5>
 				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
-					{services.filter(s => ["Indexer Development", "Monitoring & Alerting Solutions", "Data Engineering & Analytics", "Web Scraping & Automation"].includes(s.title)).map((service, index) => (
+					{services.filter(s => s.category === "data").map((service, index) => (
 						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
 							<ServiceCard service={service} />
 						</motion.div>
@@ -103,12 +105,13 @@ const About = () => {
 				{/* Blockchain & Security */}
 				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Blockchain, AI & Security</h5>
 				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-					{services.filter(s => ["Smart Contract Developer", "Smart Contract Security", "Artificial Intelligence Engineer", "Automated Testing & QA", "Telegram Bot Development"].includes(s.title)).map((service, index) => (
+					{services.filter(s => s.category === "blockchain").map((service, index) => (
 						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
 							<ServiceCard service={service} />
 						</motion.div>
 					))}
 				</div>
+
 			</motion.div>
 
 		</motion.div>

@@ -28,7 +28,9 @@ const Resume = () => {
     >
       <Head>
         <title>Devon Nathan - Resume</title>
+        <meta name="description" content="A detailed timeline of Devon Nathan's professional path, highlighting high-impact engineering leadership, smart contract development, and infrastructure architecture." />
       </Head>
+
 
       <div className="my-8">
         <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Professional Path</h1>
