@@ -12,69 +12,69 @@ import {
     SiJest,
     SiTelegram
 } from 'react-icons/si'
-import { ISkill } from '../types'
+import { ISkill, SkillCategory } from '../types'
 
 export const languages: ISkill[] = [
     {
         name: "TypeScript",
         Icon: SiTypescript,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "JavaScript",
         Icon: SiJavascript,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "Python",
         Icon: SiPython,
-        category: "python"
+        category: SkillCategory.Python
     },
     {
         name: "Solidity",
         Icon: SiSolidity,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     // JavaScript Frameworks
     {
         name: "ReactJS",
         Icon: SiReact,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "NextJS",
         Icon: SiNextdotjs,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "VueJS",
         Icon: SiVuedotjs,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "ExpressJS",
         Icon: SiExpress,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "Jest",
         Icon: SiJest,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "Telegram API",
         Icon: SiTelegram,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     // Python
     {
         name: "Flask",
         Icon: SiFlask,
-        category: "python"
+        category: SkillCategory.Python
     },
     {
         name: "PyTest",
         Icon: SiPytest,
-        category: "python"
+        category: SkillCategory.Python
     }
 ]

@@ -5,13 +5,13 @@ export const experiences: IExperienceItemProps[] = [
     title: "Lead Blockchain Solutions Architect",
     company: "Trilitech (Etherlink)",
     period: "2024 - Present",
-    description: "Leadership in cross-chain bridge architecture ($55M+ volume), fast withdrawal implementation, and governance infrastructure. Mentoring engineers and establishing CI/CD standards.",
+    description: "Technical leadership in cross-chain bridging solutions ($55M+ volume), specifically overseeing the architectural overhaul of the Etherlink bridge and managing the Tezos integration. Engineered fast withdrawal system.",
   },
   {
-    title: "Solidity Developer",
+    title: "Smart Contract Engineer",
     company: "Blowfish Studios (Phantom Galaxies)",
     period: "2022 - 2024",
-    description: "Principal smart contract engineer for a game with 60k+ players and 1,700 ETH volume. Shipped upgradeable proxies, LayerZero bridges, and dynamic NFT rendering pipelines.",
+    description: "Sole smart contract developer for Web3 title (60k+ players, 1,700 ETH volume). Shipped robust upgradeable proxy systems, LayerZero cross-chain bridges, and dynamic NFT rendering pipelines.",
   },
   {
     title: "Substitute Instructor",
@@ -23,6 +23,6 @@ export const experiences: IExperienceItemProps[] = [
     title: "Blockchain Developer",
     company: "Panda Siege / Crypto Fund Me",
     period: "2020 - 2022",
-    description: "Early-stage development of NFT marketplaces, crowdfunding platforms, and decentralized applications on EVM networks.",
+    description: "Early-stage development of NFT marketplaces, crowdfunding platforms, and decentralized applications on EVM networks."
   },
 ];

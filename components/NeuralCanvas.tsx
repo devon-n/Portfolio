@@ -1,17 +1,14 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { ServiceCategory } from '../types';
 
 const NeuralCanvas: React.FC = () => {
     // Structured layers: Input (4), Hidden (6), Output (2)
     const layers = [4, 6, 2];
     const nodeRadius = 5;
 
-    const inputLabels = [
-        "Infrastructure",
-        "Web",
-        "Blockchain",
-        "AI"
-    ];
+    // Standard: Use Enum values for display and identification
+    const inputLabels: ServiceCategory[] = Object.values(ServiceCategory);
 
     // Generate node positions
     const network = useMemo(() => layers.map((count, layerIdx) => {

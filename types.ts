@@ -7,7 +7,12 @@ export interface IExperienceItemProps {
   description: string;
 }
 
-export type ServiceCategory = "web" | "blockchain" | "ai" | "infrastructure"
+export enum ServiceCategory {
+  Infrastructure = "Infrastructure & Systems",
+  Web = "Web & Interface",
+  Blockchain = "Blockchain & Security",
+  AI = "AI & Automation"
+}
 
 export interface IService {
   Icon: IconType;
@@ -16,7 +21,12 @@ export interface IService {
   category: ServiceCategory;
 }
 
-export type SkillCategory = "javascript" | "python" | "databases" | "blockchain";
+export enum SkillCategory {
+  JavaScript = "JavaScript",
+  Python = "Python",
+  Databases = "Databases",
+  Blockchain = "Blockchain"
+}
 
 export interface ISkill {
   Icon: IconType;

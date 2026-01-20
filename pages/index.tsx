@@ -7,10 +7,21 @@ import ArchitectureGraph from '../components/ArchitectureGraph'
 import NeuralCanvas from '../components/NeuralCanvas'
 import CyberTerminal from '../components/CyberTerminal'
 import ServiceCard from '../components/ServiceCard'
+import { IService, ServiceCategory } from '../types'
 import { services } from '../data/services'
 
 const About = () => {
 	const { identity } = useIdentity();
+
+	const servicesByCategory: Record<ServiceCategory, IService[]> = services.reduce((acc, service) => {
+		if (!acc[service.category]) {
+			acc[service.category] = [];
+		}
+		acc[service.category].push(service);
+		return acc;
+	}, {} as Record<ServiceCategory, IService[]>);
+
+	const serviceCategories: ServiceCategory[] = Object.values(ServiceCategory);
 
 	const content = {
 		architect: {
@@ -83,53 +94,20 @@ const About = () => {
 			</motion.div>
 
 			<motion.div variants={stagger} initial="initial" animate="animate" className="space-y-12">
-				{/* Infrastructure */}
-				<div>
-					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Infrastructure & Systems</h5>
-					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-						{services.filter(s => s.category === "infrastructure").map((service, index) => (
-							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-								<ServiceCard service={service} />
-							</motion.div>
-						))}
+				{serviceCategories.map((category: ServiceCategory) => (
+					<div key={category}>
+						<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">
+							{category}
+						</h5>
+						<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+							{(servicesByCategory[category] || []).map((service: IService, index: number) => (
+								<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+									<ServiceCard service={service} />
+								</motion.div>
+							))}
+						</div>
 					</div>
-				</div>
-
-				{/* Web */}
-				<div>
-					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Web & Interface</h5>
-					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-						{services.filter(s => s.category === "web").map((service, index) => (
-							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-								<ServiceCard service={service} />
-							</motion.div>
-						))}
-					</div>
-				</div>
-
-				{/* Blockchain */}
-				<div>
-					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Blockchain & Security</h5>
-					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-						{services.filter(s => s.category === "blockchain").map((service, index) => (
-							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-								<ServiceCard service={service} />
-							</motion.div>
-						))}
-					</div>
-				</div>
-
-				{/* AI */}
-				<div>
-					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">AI & Automation</h5>
-					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-						{services.filter(s => s.category === "ai").map((service, index) => (
-							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-								<ServiceCard service={service} />
-							</motion.div>
-						))}
-					</div>
-				</div>
+				))}
 			</motion.div>
 		</motion.div>
 	)

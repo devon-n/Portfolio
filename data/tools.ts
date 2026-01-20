@@ -14,7 +14,7 @@ import {
     SiWeb3Dotjs,
 } from "react-icons/si";
 import { GiArtificialIntelligence, GiFoundryBucket } from "react-icons/gi";
-import { ISkill } from "../types";
+import { ISkill, SkillCategory } from "../types";
 import { FaHardHat } from "react-icons/fa";
 
 export const tools: ISkill[] = [
@@ -22,98 +22,96 @@ export const tools: ISkill[] = [
     {
         name: "Ethers",
         Icon: SiEthers,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     {
         name: 'Web3',
         Icon: SiWeb3Dotjs,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     {
         name: "Truffle",
         Icon: SiEthereum,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     {
         name: "Hardhat",
         Icon: FaHardHat,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     {
         name: "Brownie",
         Icon: SiEthereum,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     {
         name: "Foundry",
         Icon: GiFoundryBucket,
-        category: "blockchain"
+        category: SkillCategory.Blockchain
     },
     // Dev Ops
     {
         name: "Google Cloud Platform",
         Icon: SiGooglecloud,
-        category: "databases"
+        category: SkillCategory.Databases
     },
     // Databases
     {
         name: "MySQL",
         Icon: SiMysql,
-        category: "databases"
+        category: SkillCategory.Databases
     },
     {
         name: "BigQuery",
         Icon: SiGooglebigquery,
-        category: "databases"
+        category: SkillCategory.Databases
     },
     {
         name: "MongoDB",
         Icon: SiMongodb,
-        category: "databases"
+        category: SkillCategory.Databases
     },
     {
         name: "Firebase",
         Icon: SiFirebase,
-        category: "databases"
+        category: SkillCategory.Databases
     },
     // Frontend
     {
         name: "Material UI",
         Icon: SiMui,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "Tailwind CSS",
         Icon: SiTailwindcss,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     {
         name: "MobX",
         Icon: SiMobx,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     },
     // AI
     {
         name: "Keras",
         Icon: SiKeras,
-        category: "python"
+        category: SkillCategory.Python
     },
     {
         name: "NEAT",
         // name: "Neuro-evolution of Augmented Topologies",
         Icon: GiArtificialIntelligence,
-        category: "python"
+        category: SkillCategory.Python
     },
     {
         name: "Genetic Algorithms",
         Icon: GiArtificialIntelligence,
-        category: "python"
+        category: SkillCategory.Python
     },
     {
         name: "Telegram API",
         Icon: SiTelegram,
-        category: "javascript"
+        category: SkillCategory.JavaScript
     }
 ]
-
-
