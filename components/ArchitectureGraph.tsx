@@ -10,20 +10,17 @@ const ArchitectureGraph: React.FC = () => {
     ];
 
     const connections = [
-        // Bidirectional: Tezos <-> Etherlink
         { from: 'tezos', to: 'etherlink', bidirectional: true },
-        // Bidirectional: Etherlink <-> EVM Chains
         { from: 'etherlink', to: 'evm', bidirectional: true },
-        // Directional: All -> GCP
         { from: 'tezos', to: 'gcp', label: 'Metrics' },
         { from: 'etherlink', to: 'gcp', label: 'Stats' },
         { from: 'evm', to: 'gcp', label: 'Events' },
     ];
 
     return (
-        <div className="w-full aspect-[2/1] glass-card rounded-3xl p-8 my-10 relative overflow-hidden bg-background/30">
-            <h3 className="text-xl font-bold mb-8 text-primary uppercase tracking-widest">Multi-Chain Ecosystem Architecture</h3>
-            <svg viewBox="0 0 700 400" className="w-full h-full">
+        <div className="w-full aspect-[2/1] glass-card rounded-3xl p-8 my-10 relative overflow-hidden bg-background/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.05)]">
+            <h3 className="text-xl font-bold mb-8 text-primary uppercase tracking-widest relative z-10">Multi-Chain Ecosystem Architecture</h3>
+            <svg viewBox="0 0 700 400" className="w-full h-full relative z-10">
                 {/* Connections */}
                 {connections.map((conn, i) => {
                     const from = nodes.find(n => n.id === conn.from)!;
@@ -76,8 +73,8 @@ const ArchitectureGraph: React.FC = () => {
                 ))}
             </svg>
 
-            <div className="absolute bottom-6 right-6 text-[10px] font-mono text-text-muted max-w-[200px] text-right italic">
-                * Unified observer for Tezos/EVM state transitions.
+            <div className="absolute bottom-6 right-6 text-sm font-bold text-primary max-w-[300px] text-right bg-background/50 px-2 py-1 rounded backdrop-blur-sm z-10">
+                ENGINEERING CORE ENABLED
             </div>
         </div>
     );

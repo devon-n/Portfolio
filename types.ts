@@ -7,7 +7,7 @@ export interface IExperienceItemProps {
   description: string;
 }
 
-export type ServiceCategory = "engineering" | "data" | "blockchain"
+export type ServiceCategory = "web" | "blockchain" | "ai" | "infrastructure"
 
 export interface IService {
   Icon: IconType;

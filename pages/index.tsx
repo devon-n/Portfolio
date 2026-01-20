@@ -1,6 +1,4 @@
-import ServiceCard from '../components/ServiceCard'
-import { services } from '../data/services'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from '../animations'
 import Head from 'next/head'
 import { useIdentity } from '../context/IdentityContext'
@@ -8,7 +6,8 @@ import ImpactTicker from '../components/ImpactTicker'
 import ArchitectureGraph from '../components/ArchitectureGraph'
 import NeuralCanvas from '../components/NeuralCanvas'
 import CyberTerminal from '../components/CyberTerminal'
-
+import ServiceCard from '../components/ServiceCard'
+import { services } from '../data/services'
 
 const About = () => {
 	const { identity } = useIdentity();
@@ -23,7 +22,6 @@ const About = () => {
 					<ArchitectureGraph />
 				</>
 			)
-
 		},
 		neural: {
 			title: "AI & Web3 Research Engineer",
@@ -35,7 +33,6 @@ const About = () => {
 			description: "Shipping high-concurrency smart contracts for the next generation of AAA Web3 gaming. Hardening protocols and bridging assets across the metaverse.",
 			feature: <CyberTerminal />
 		}
-
 	}
 
 	const activeContent = content[identity];
@@ -53,63 +50,87 @@ const About = () => {
 				<meta name="description" content="Senior Software Engineer specializing in high-value multi-chain integration, AI research, and robust Web3 infrastructure. Explore my technical foundations and professional persona." />
 			</Head>
 
-
 			<div className="my-8">
 				<motion.h1
 					layout
-					className="text-4xl md:text-6xl font-black mb-4 tracking-tighter"
+					className="text-4xl md:text-6xl font-black mb-4 tracking-tighter text-primary"
 				>
 					{activeContent.title}
 				</motion.h1>
 				<motion.p
 					layout
-					className="text-xl text-text-muted max-w-3xl leading-relaxed"
+					className="text-lg md:text-xl text-text-muted max-w-3xl leading-relaxed"
 				>
 					{activeContent.description}
 				</motion.p>
 			</div>
 
-			{activeContent.feature}
-
 			<motion.div
-				variants={stagger}
-				initial="initial"
-				animate="animate"
-				className="flex-grow p-4 mt-5"
-				style={{ marginLeft: '-1.5rem', marginRight: '-1.5rem' }}
+				layout
+				className="flex-grow mb-12"
 			>
-				{/* Engineering & Infrastructure */}
-				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Engineering & Infrastructure</h5>
-				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
-					{services.filter(s => s.category === "engineering").map((service, index) => (
-						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-							<ServiceCard service={service} />
-						</motion.div>
-					))}
-				</div>
-
-				{/* Data & Automation */}
-				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Data & Automation</h5>
-				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
-					{services.filter(s => s.category === "data").map((service, index) => (
-						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-							<ServiceCard service={service} />
-						</motion.div>
-					))}
-				</div>
-
-				{/* Blockchain & Security */}
-				<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Blockchain, AI & Security</h5>
-				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-					{services.filter(s => s.category === "blockchain").map((service, index) => (
-						<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
-							<ServiceCard service={service} />
-						</motion.div>
-					))}
-				</div>
-
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={identity}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -20 }}
+						transition={{ duration: 0.5 }}
+					>
+						{activeContent.feature}
+					</motion.div>
+				</AnimatePresence>
 			</motion.div>
 
+			<motion.div variants={stagger} initial="initial" animate="animate" className="space-y-12">
+				{/* Infrastructure */}
+				<div>
+					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Infrastructure & Systems</h5>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						{services.filter(s => s.category === "infrastructure").map((service, index) => (
+							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+								<ServiceCard service={service} />
+							</motion.div>
+						))}
+					</div>
+				</div>
+
+				{/* Web */}
+				<div>
+					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Web & Interface</h5>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						{services.filter(s => s.category === "web").map((service, index) => (
+							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+								<ServiceCard service={service} />
+							</motion.div>
+						))}
+					</div>
+				</div>
+
+				{/* Blockchain */}
+				<div>
+					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">Blockchain & Security</h5>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						{services.filter(s => s.category === "blockchain").map((service, index) => (
+							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+								<ServiceCard service={service} />
+							</motion.div>
+						))}
+					</div>
+				</div>
+
+				{/* AI */}
+				<div>
+					<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase">AI & Automation</h5>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						{services.filter(s => s.category === "ai").map((service, index) => (
+							<motion.div variants={fadeInUp} className="glass-card rounded-2xl" key={index}>
+								<ServiceCard service={service} />
+							</motion.div>
+						))}
+					</div>
+				</div>
+			</motion.div>
 		</motion.div>
 	)
 }

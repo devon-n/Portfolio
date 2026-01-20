@@ -15,59 +15,56 @@ const accomplishments = [
     "BUILT: MLB & NBA AI Betting Predictor models",
     "PROTOTYPED: Custom Telegram Mini Apps ecosystem",
     "LAUNCHED: Multiple NFT minting dapps and marketplaces",
+    "CAPABILITY: Smart Contract Development (EVM/Tezos)",
+    "CAPABILITY: Security Auditing & Formal Verification",
+    "CAPABILITY: Full-stack UI Design (Next.js/Framer)",
+    "CAPABILITY: Backend API Engineering (Node/Go/Python)",
+    "CAPABILITY: Telegram Bot & Mini App Ecosystems",
 ];
-
-const generateStackLine = () => {
-    const methods = ["handleTransaction()", "validateBlock()", "syncNode()", "fetchMetadata()", "verifySignature()", "computeHash()", "initBridge()"];
-    const files = ["main.sol", "bridge.ts", "utils.py", "index.js", "types.d.ts"];
-    const lines = [102, 442, 89, 234, 12, 567];
-
-    const choice = Math.random();
-    if (choice > 0.7) {
-        return `at ${methods[Math.floor(Math.random() * methods.length)]} (${files[Math.floor(Math.random() * files.length)]}:${lines[Math.floor(Math.random() * lines.length)]})`;
-    } else if (choice > 0.4) {
-        return `0x${Math.floor(Math.random() * 0xFFFFFF).toString(16).toUpperCase()} -> CACHE_HIT | REF_COUNT: ${Math.floor(Math.random() * 10)}`;
-    } else {
-        return `THREAD_ID_${Math.floor(Math.random() * 9999)} :: STACK_TRACE_DUMP...`;
-    }
-};
 
 const CyberTerminal: React.FC = () => {
     const [leftLines, setLeftLines] = useState<string[]>([]);
     const [rightLines, setRightLines] = useState<string[]>([]);
 
     useEffect(() => {
-        let lIdx = 0;
-        const leftInterval = setInterval(() => {
-            setLeftLines(prev => [...prev.slice(-15), `[COMPLETED] ${accomplishments[lIdx]}`]);
-            lIdx = (lIdx + 1) % accomplishments.length;
-        }, 2000);
+        let idx = 0;
+        let side: 'left' | 'right' = 'left';
 
-        const rightInterval = setInterval(() => {
-            setRightLines(prev => [...prev.slice(-18), generateStackLine()]);
-        }, 400);
+        const interval = setInterval(() => {
+            const line = `[SYSTEM_LOG] ${accomplishments[idx]}`;
 
-        return () => {
-            clearInterval(leftInterval);
-            clearInterval(rightInterval);
-        };
+            if (side === 'left') {
+                setLeftLines(prev => [...prev.slice(-14), line]);
+                side = 'right';
+            } else {
+                setRightLines(prev => [...prev.slice(-14), line]);
+                side = 'left';
+            }
+
+            idx = (idx + 1) % accomplishments.length;
+        }, 800);
+
+        return () => clearInterval(interval);
     }, []);
 
+    // Standardized style for terminal lines
+    const lineStyle = "text-primary text-[9px] md:text-[10px] font-medium opacity-90 animate-terminal-fadeIn border-l border-primary/10 pl-2 truncate";
+
     return (
-        <div className="w-full h-[400px] bg-black border-2 border-primary my-10 font-mono relative overflow-hidden group flex flex-col md:flex-row shadow-[0_0_20px_rgba(57,255,20,0.1)]">
+        <div className="w-full h-[400px] bg-black border-2 border-primary my-10 font-mono relative overflow-hidden group flex flex-col md:flex-row shadow-[0_0_20px_rgba(var(--primary-rgb),0.1)]">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/20 animate-scanline pointer-events-none z-20" />
 
-            {/* Left Column: Accomplishments */}
+            {/* Left Column */}
             <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-primary/20 overflow-hidden relative flex flex-col bg-black/40">
                 <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-4 shrink-0">
-                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase">Persona: ACHIEVEMENTS_HISTORY</span>
+                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_A</span>
                     <div className="flex gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     </div>
                 </div>
                 <div className="space-y-1 overflow-hidden flex-1">
                     {leftLines.map((line, idx) => (
-                        <div key={idx} className="text-primary text-[9px] md:text-[10px] opacity-90 animate-terminal-fadeIn border-l border-primary/10 pl-2">
+                        <div key={idx} className={lineStyle}>
                             {line}
                         </div>
                     ))}
@@ -75,29 +72,24 @@ const CyberTerminal: React.FC = () => {
                 </div>
             </div>
 
-            {/* Right Column: Active Diagnostics */}
-            <div className="w-full md:w-1/2 p-4 overflow-hidden relative bg-black/60 flex flex-col">
-
+            {/* Right Column */}
+            <div className="w-full md:w-1/2 p-4 overflow-hidden relative bg-black/60 flex flex-col border-l border-primary/10">
                 <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-4 shrink-0">
-                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase opacity-60">System: ACTIVE_DIAGNOSTICS</span>
+                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_B</span>
                 </div>
-                <div className="space-y-0.5 overflow-hidden flex-1">
+                <div className="space-y-1 overflow-hidden flex-1">
                     {rightLines.map((line, idx) => (
-                        <div key={idx} className="text-primary text-[8px] opacity-40 font-light truncate">
+                        <div key={idx} className={lineStyle}>
                             {line}
                         </div>
                     ))}
+                    <div className="text-primary animate-pulse inline-block text-[10px] ml-2">_</div>
                 </div>
             </div>
 
             <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none bg-gradient-to-t from-primary/10 to-transparent z-10" />
-
             <div className="absolute bottom-4 left-4 text-[8px] text-primary/40 uppercase tracking-[0.5em] z-20">
-                Matrix System Trace Active
-            </div>
-
-            <div className="absolute top-2 right-2 text-[8px] text-primary/20 font-mono hidden md:block">
-                UPTIME: 99.998%
+                Matrix Sequential Trace Active
             </div>
         </div>
     );
