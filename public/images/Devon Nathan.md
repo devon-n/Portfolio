@@ -1,5 +1,5 @@
 # Devon Nathan
-**Lead / Senior Full-Stack Blockchain Engineer (EVM/Tezos)**
+**Lead / Senior Full-Stack Blockchain Engineer (EVM/Tezos)**  
 [devonnathan.com](https://www.devonnathan.com) | [devon.nathan@protonmail.com](mailto:devon.nathan@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/devonnathan/) | [GitHub](https://github.com/devon-n)
 
 ---
@@ -20,7 +20,7 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 **Lead Hands-on Blockchain Solutions Architect** | Trilitech | 2024 - Present | [etherlink.com](https://www.etherlink.com)
 - Built and shipped the cross-chain bridge frontend and production integrations ([etherlinkbridge.com](https://www.etherlinkbridge.com)) supporting **>$55M** across Tezos and EVM chains (*Next.js, Ethers, LayerZero, Taquito, MUI, MobX*)
 - Implemented bridging integrations including **deposit/withdraw UX** and **event indexing** across Etherlink (EVM) and Tezos contracts (*Ethers, Taquito*)
-- Helped implement **fast withdrawals** reducing withdrawal times by **~2 weeks** from Etherlink L2 to Tezos L1; supported **14,282 fast withdrawals** totaling **3.19M XTZ** across **350+ unique wallets**
+- Helped implement **fast withdrawals** reducing withdrawal times by **~2 weeks** from Etherlink L2 to Tezos L1; supported **14k+ fast withdrawals** surpassing **3M XTZ** across **350+ unique wallets**
 - Built liquidity dashboard to monitor EVM bridge transfers ([etherlinkbridge.com/stats](https://www.etherlinkbridge.com/stats)) (*Next.js, Express, TypeScript, BigQuery, MySQL, GCP*)
 - Created frontend and indexer for Tezos governance ([governance.etherlink.com](https://governance.etherlink.com)) supporting **>$30M** voting power (*Next.js, Express, Taquito, MySQL, WebSockets, MobX*)
 - Built monitoring/alerting for dapp availability and RPC/indexer issues with on-call escalation (*Node.js, Express, Ethers, Taquito, PagerDuty*)
@@ -48,7 +48,7 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 
 ## Skills
 - **Blockchain:** Solidity, Foundry, Hardhat, Truffle, Geth, Ganache CLI
-- **JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers.js, Web3.js, thirdweb, MUI, MobX, TanStack, Tailwind
+- **JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers, MUI, MobX, TanStack, Tailwind
 - **Python:** Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
 - **Databases:** MySQL, MongoDB, BigQuery
 - **CI/CD & Cloud:** GitHub Actions, Google Cloud Platform, Vercel
