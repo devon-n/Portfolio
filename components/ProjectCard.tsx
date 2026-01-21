@@ -30,7 +30,7 @@ const ProjectCard: FunctionComponent<{
 						className="cursor-pointer group h-full flex flex-col"
 						onClick={() => setShowDetail(id)}
 					>
-						<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden glass-card border border-border group-hover:border-primary/50 transition-colors shadow-sm">
+						<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden glass-card group-hover:border-primary/50 transition-colors shadow-sm">
 							<Image
 								src={image_path}
 								alt={name}
@@ -45,9 +45,9 @@ const ProjectCard: FunctionComponent<{
 				)}
 
 				{showDetail === id && (
-					<div className="grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl relative bg-surface border border-primary/20">
+					<div className="grid w-full h-auto p-4 glass-card rounded-3xl md:p-10 md:grid-cols-2 gap-x-12 shadow-2xl relative bg-surface">
 						<div className="flex flex-col">
-							<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden border border-border bg-background/50">
+							<div className="w-full aspect-[16/9] relative rounded-2xl overflow-hidden bg-background/50">
 								<Image
 									src={image_path}
 									alt={name}
@@ -62,7 +62,7 @@ const ProjectCard: FunctionComponent<{
 										href={github_url}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex items-center px-6 py-2 gap-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all border border-border hover:border-primary"
+										className="flex items-center px-6 py-2 gap-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all"
 									>
 										<AiFillGithub /> <span>Github</span>
 									</a>
@@ -72,7 +72,7 @@ const ProjectCard: FunctionComponent<{
 										href={deployed_url}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex items-center px-6 py-2 gap-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all border border-border hover:border-primary"
+										className="flex items-center px-6 py-2 gap-3 text-lg glass-card rounded-full font-bold hover:bg-primary hover:text-background transition-all"
 									>
 										<CgWebsite /> <span>Website</span>
 									</a>

@@ -47,8 +47,8 @@ const ProjectsNavbar: FunctionComponent<IProjectsNavbarProps> = ({ handlerFilter
     const categories: (ProjectCategory | 'all')[] = ['all', ...Object.values(ProjectCategory)];
 
     return (
-        <nav aria-label="Project categories" className="glass-card rounded-3xl p-2 inline-block">
-            <ul className="flex items-center gap-2 overflow-x-auto list-none scrollbar-hide">
+        <nav aria-label="Project categories" className="glass-card rounded-3xl p-1 inline-block border-none bg-transparent">
+            <ul className="flex items-center gap-2 overflow-x-auto list-none scrollbar-hide py-1 px-1">
                 {categories.map((cat) => (
                     <NavItem
                         key={cat}
