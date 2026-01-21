@@ -135,12 +135,7 @@ const NeuralCanvas: React.FC = () => {
                 <div className="h-0.5 w-16 bg-primary/30" />
             </div>
 
-            <div className="absolute bottom-6 left-6 p-4 glass-card bg-surface/40 rounded-xl">
-                <p className="text-[10px] font-mono whitespace-pre text-primary animate-pulse">
-                    {`> ARCH_STABLE\n> INFERENCE_CLEAN\n> DATA_NODES_VISUALIZED`}
-                </p>
-            </div>
-        </div>
+        </div >
     );
 };
 

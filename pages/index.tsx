@@ -35,8 +35,8 @@ const About = () => {
 			)
 		},
 		neural: {
-			title: "AI & Web3 Research Engineer",
-			description: "Exploring the intersection of neuro-evolution and decentralized systems. Building autonomous agents and self-evolving algorithms for the future of on-chain intelligence.",
+			title: "AI Research Engineer",
+			description: "Exploring the intersection of neuro-evolution. Building autonomous agents and self-evolving algorithms.",
 			feature: <NeuralCanvas />
 		},
 		matrix: {

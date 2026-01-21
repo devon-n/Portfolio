@@ -11,7 +11,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
 
     const titles = {
         architect: "Lead Blockchain Architect",
-        neural: "AI & Web3 Researcher",
+        neural: "AI Researcher",
         matrix: "Senior Software Engineer",
     }
 
