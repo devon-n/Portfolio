@@ -10,15 +10,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
             rel="stylesheet"
           />
-          <meta name="description" content="Blockchain/Full stack/Artificial Intelligence developer portfolio" />
-          <meta name="keywords" content="solutions architect blockchain artificial intelligence solidity portfolio software developer web3" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
-        <body
-            className="bg-fixed bg-gradient-to-r from-background-light to-primary-light dark:from-background-dark dark:to-primary-dark dark:text-white">
+        <body className="transition-colors duration-500">
           <Main />
           <NextScript />
         </body>
       </Html>
+
     );
   }
 }
