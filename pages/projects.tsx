@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react"
 import { projects as projectsData } from "../data/projects"
-import { Category } from "../types"
+import { ProjectCategory, IProject } from "../types"
 import { motion, AnimatePresence } from 'framer-motion'
 import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
@@ -9,18 +9,30 @@ import ProjectCard from "../components/ProjectCard"
 import { useIdentity } from '../context/IdentityContext'
 
 const Projects = () => {
-  const [activeItem, setActiveItem] = useState<Category | "all">("all")
+  // Standard 1: Explicit Variable Types
+  const [activeItem, setActiveItem] = useState<ProjectCategory | "all">("all")
   const [showDetail, setShowDetail] = useState<number | null>(null)
   const { identity } = useIdentity();
 
-  const filteredProjects = useMemo(() => {
+  // Standard 2: Loop Minimization - Memoize filtered projects
+  const filteredProjects: IProject[] = useMemo(() => {
     if (activeItem === "all") {
       return projectsData
     }
-    return projectsData.filter(project => project.category.includes(activeItem))
+    return projectsData.filter((project: IProject) =>
+      project.category.includes(activeItem as ProjectCategory)
+    )
   }, [activeItem])
 
-  const handlerFilterCategory = useCallback((category: Category | "all") => {
+  // Standard 3: Pre-index projects for detail view to avoid .find() in render
+  const projectsMap: Record<number, IProject> = useMemo(() => {
+    return projectsData.reduce((acc, project) => {
+      acc[project.id] = project;
+      return acc;
+    }, {} as Record<number, IProject>);
+  }, []);
+
+  const handlerFilterCategory = useCallback((category: ProjectCategory | "all") => {
     setActiveItem(category)
     setShowDetail(null)
   }, [])
@@ -38,9 +50,8 @@ const Projects = () => {
         <meta name="description" content="A curated collection of selected works including cross-chain bridges, decentralized governance systems, and AI-driven predictive models by Devon Nathan." />
       </Head>
 
-
       <div className="my-8">
-        <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Selected Works</h1>
+        <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter text-primary uppercase">Selected Works</h1>
         <p className="text-xl text-text-muted max-w-2xl leading-relaxed italic">
           {identity === 'architect' ? "Engineering high-throughput multi-chain systems and infrastructure." : "Exploring the bleeding edge of Web3 and AI development."}
         </p>
@@ -55,7 +66,7 @@ const Projects = () => {
           animate="animate"
           className="grid grid-cols-12 gap-6 my-10"
         >
-          {filteredProjects.map(project => (
+          {filteredProjects.map((project: IProject) => (
             <motion.div
               variants={fadeInUp}
               className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4"
@@ -71,7 +82,7 @@ const Projects = () => {
         </motion.div>
 
         <AnimatePresence>
-          {showDetail !== null && (
+          {showDetail !== null && projectsMap[showDetail] && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -88,7 +99,7 @@ const Projects = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <ProjectCard
-                  project={projectsData.find(p => p.id === showDetail)!}
+                  project={projectsMap[showDetail]}
                   showDetail={showDetail}
                   setShowDetail={setShowDetail}
                 />
@@ -97,11 +108,6 @@ const Projects = () => {
           )}
         </AnimatePresence>
       </div>
-
-
-
-
-
     </motion.div>
   )
 }

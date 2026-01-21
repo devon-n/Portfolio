@@ -1,4 +1,4 @@
-import { IProject } from "../types";
+import { IProject, ProjectCategory } from "../types";
 
 export const projects: IProject[] = [
     {
@@ -8,11 +8,9 @@ export const projects: IProject[] = [
         image_path: "/images/EtherlinkBridge.png",
         deployed_url: "https://bridge.etherlink.com",
         github_url: "",
-        category: ["Blockchain", "Full Stack"],
+        category: [ProjectCategory.Blockchain, ProjectCategory.FullStack],
         key_techs: ["Next.js", "Ethers", "LayerZero", "Taquito", "MobX"]
     },
-
-
     {
         id: 2,
         name: "Tezos Governance",
@@ -20,10 +18,9 @@ export const projects: IProject[] = [
         image_path: "/images/EtherlinkGovernance.png",
         deployed_url: "https://governance.etherlink.com",
         github_url: "https://github.com/etherlinkcom/governance-website-v2",
-        category: ["Blockchain", "Full Stack"],
+        category: [ProjectCategory.Blockchain, ProjectCategory.FullStack],
         key_techs: ["Next.js", "Express", "Taquito", "MySQL", "WebSockets"]
     },
-
     {
         id: 3,
         name: "Phantom Galaxies (Astrafer)",
@@ -31,10 +28,9 @@ export const projects: IProject[] = [
         image_path: "/images/PhantomGalaxies.png",
         deployed_url: "https://www.phantomgalaxies.com",
         github_url: "",
-        category: ["Blockchain"],
+        category: [ProjectCategory.Blockchain],
         key_techs: ["Solidity", "Foundry", "LayerZero", "OpenZeppelin"]
     },
-
     {
         id: 4,
         name: "StratX",
@@ -42,7 +38,7 @@ export const projects: IProject[] = [
         image_path: "/images/Stratx.png",
         deployed_url: "",
         github_url: "",
-        category: ["Blockchain", "Full Stack"],
+        category: [ProjectCategory.Blockchain, ProjectCategory.FullStack],
         key_techs: ["Python", "Typescript", "VueJS"]
     },
     {
@@ -52,11 +48,9 @@ export const projects: IProject[] = [
         image_path: "/images/EtherlinkBridgeStats.png",
         deployed_url: "https://bridge.etherlink.com/stats",
         github_url: "",
-        category: ["Full Stack", "Blockchain"],
+        category: [ProjectCategory.FullStack, ProjectCategory.Blockchain],
         key_techs: ["Next.js", "Express", "BigQuery", "GCP"]
     },
-
-
     {
         id: 6,
         name: "AI Self Driving Car",
@@ -64,7 +58,7 @@ export const projects: IProject[] = [
         image_path: "/images/SelfDrivingCar.png",
         deployed_url: "//self-driving-car-rosy.vercel.app/",
         github_url: "https://github.com/devon-n/SelfDrivingCar",
-        category: ["AI"],
+        category: [ProjectCategory.AI],
         key_techs: ["JavaScript", "Neural Networks"]
     },
     {
@@ -74,7 +68,7 @@ export const projects: IProject[] = [
         image_path: "/images/MLBNeat.png",
         deployed_url: "",
         github_url: "https://github.com/devon-n/MLB_NEAT",
-        category: ["AI"],
+        category: [ProjectCategory.AI],
         key_techs: ["Python", "Keras", "NEAT"]
     },
     {
@@ -84,7 +78,7 @@ export const projects: IProject[] = [
         image_path: "/images/BrekTasks.png",
         deployed_url: "",
         github_url: "",
-        category: ["Full Stack"],
+        category: [ProjectCategory.FullStack],
         key_techs: ["React", "Express", "Typescript", "Telegram API"]
     }
 ]

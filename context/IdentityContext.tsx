@@ -9,16 +9,20 @@ interface IdentityContextProps {
 const IdentityContext = createContext<IdentityContextProps | undefined>(undefined);
 
 export const IdentityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [identity, setIdentityState] = useState<ThemeType>('architect');
+    // Standard: Use Enum values for state initialization
+    const [identity, setIdentityState] = useState<ThemeType>(ThemeType.Architect);
 
     useEffect(() => {
-        const savedIdentity = localStorage.getItem('user-identity') as any;
-        if (savedIdentity === 'cyber') {
-            setIdentity('matrix');
-        } else if (savedIdentity === 'minimalist') {
-            setIdentity('architect');
-        } else if (savedIdentity) {
-            setIdentityState(savedIdentity as ThemeType);
+        const savedIdentity = localStorage.getItem('user-identity');
+        if (savedIdentity) {
+            // Mapping legacy identities to new Enum values if necessary
+            if (savedIdentity === 'cyber') {
+                setIdentity(ThemeType.Matrix);
+            } else if (savedIdentity === 'minimalist') {
+                setIdentity(ThemeType.Architect);
+            } else {
+                setIdentityState(savedIdentity as ThemeType);
+            }
         }
     }, []);
 
@@ -28,11 +32,16 @@ export const IdentityProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     };
 
     useEffect(() => {
-        // Remove all theme classes
-        const themeClasses = ['theme-architect', 'theme-neural', 'theme-matrix'];
-        document.documentElement.classList.remove('theme-architect', 'theme-neural', 'theme-cyber', 'theme-minimalist', 'theme-matrix');
+        // Remove all theme classes including legacy ones
+        document.documentElement.classList.remove(
+            'theme-architect',
+            'theme-neural',
+            'theme-cyber',
+            'theme-minimalist',
+            'theme-matrix'
+        );
 
-        // Add the current theme class
+        // Add the current theme class derived from the Enum value
         document.documentElement.classList.add(`theme-${identity}`);
     }, [identity]);
 

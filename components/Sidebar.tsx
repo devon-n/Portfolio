@@ -1,27 +1,18 @@
 import { useIdentity } from '../context/IdentityContext'
 import Image from 'next/image'
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
-import { HiChip, HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
-import { MdOutlineArchitecture, MdLensBlur } from 'react-icons/md';
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import { ThemeType } from '../types';
+import { IconType } from 'react-icons';
+import { TITLES, IDENTITIES } from '../data/identities';
 
-const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsCollapsed: (v: boolean) => void }) => {
+interface ISidebarProps {
+    isCollapsed: boolean;
+    setIsCollapsed: (v: boolean) => void;
+}
+
+const Sidebar: React.FC<ISidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
     const { identity, setIdentity } = useIdentity();
-
-
-    const titles = {
-        architect: "Lead Blockchain Architect",
-        neural: "AI Researcher",
-        matrix: "Senior Software Engineer",
-    }
-
-    const identities: { id: ThemeType; name: string; icon: any }[] = [
-        { id: 'architect', name: 'Architect', icon: MdOutlineArchitecture },
-        { id: 'neural', name: 'Neural Network', icon: MdLensBlur },
-        { id: 'matrix', name: 'Matrix', icon: HiChip },
-    ];
-
-
 
     return (
         <div className={`pt-3 pb-6 flex flex-col items-center transition-all duration-500 relative ${isCollapsed ? 'px-2' : 'px-0'}`}>
@@ -33,7 +24,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
             >
                 {isCollapsed ? <HiChevronDoubleRight className="w-4 h-4" /> : <HiChevronDoubleLeft className="w-4 h-4" />}
             </button>
-
 
             <div className={`relative transition-all duration-500 ${isCollapsed ? 'w-12 h-12' : 'w-32 h-32'} mb-4 group mt-8`}>
                 <div className="absolute inset-0 bg-primary opacity-20 blur-xl rounded-full group-hover:opacity-40 transition-opacity" />
@@ -55,8 +45,8 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
                         Nathan
                     </h3>
 
-                    <p className="px-4 py-1 my-3 glass-card rounded-full text-sm font-bold uppercase tracking-widest text-primary">
-                        {titles[identity]}
+                    <p className="px-4 py-1 my-3 glass-card rounded-full text-sm font-bold uppercase tracking-widest text-primary border border-primary/20">
+                        {TITLES[identity as ThemeType]}
                     </p>
                 </>
             )}
@@ -65,7 +55,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
                 <a
                     className={`flex items-center justify-center w-full px-2 py-2 glass-card rounded-xl font-bold hover:bg-primary hover:text-background transition-all ${isCollapsed ? 'h-10' : ''}`}
                     href="/images/Devon Nathan.pdf"
-                    target="_blank" rel="noreferrer"
+                    target="_blank" rel="noopener noreferrer"
                     download="Devon_Nathan_CV.pdf"
                     aria-label="CV Download"
                 >
@@ -73,7 +63,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
                 </a>
 
                 {!isCollapsed && (
-                    <p className="flex items-center justify-center w-full px-2 py-2 glass-card rounded-xl text-xs font-mono truncate">
+                    <p className="flex items-center justify-center w-full px-2 py-2 glass-card rounded-xl text-xs font-mono truncate border border-border/50">
                         devon.nathan@protonmail.com
                     </p>
                 )}
@@ -81,13 +71,13 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
 
             {/* Social Icons */}
             <div className={`flex ${isCollapsed ? 'flex-col gap-4' : 'justify-around w-full px-10'} my-4 text-primary`}>
-                <a href="https://github.com/devon-n" target="_blank" rel="noreferrer" aria-label="Github" className="hover:scale-125 transition-transform">
+                <a href="https://github.com/devon-n" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:scale-125 transition-transform">
                     <AiFillGithub className={`${isCollapsed ? 'w-6 h-6' : 'w-8 h-8'} cursor-pointer`} />
                 </a>
-                <a href="https://www.linkedin.com/in/devonnathan/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:scale-125 transition-transform">
+                <a href="https://www.linkedin.com/in/devonnathan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:scale-125 transition-transform">
                     <AiFillLinkedin className={`${isCollapsed ? 'w-6 h-6' : 'w-8 h-8'} cursor-pointer`} />
                 </a>
-                <a href="mailto:devon.nathan@protonmail.com" target="_blank" rel="noreferrer" aria-label="Email" className="hover:scale-125 transition-transform">
+                <a href="mailto:devon.nathan@protonmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" className="hover:scale-125 transition-transform">
                     <AiOutlineMail className={`${isCollapsed ? 'w-6 h-6' : 'w-8 h-8'} cursor-pointer`} />
                 </a>
             </div>
@@ -98,7 +88,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
                     <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted mb-4 font-black text-center opacity-60">Professional Persona</p>
                 )}
                 <div className="flex flex-col gap-2">
-                    {identities.map(({ id, name, icon: Icon }) => (
+                    {IDENTITIES.map(({ id, name, icon: Icon }) => (
                         <button
                             key={id}
                             onClick={() => setIdentity(id)}
@@ -116,7 +106,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: { isCollapsed: boolean, setIsC
                     ))}
                 </div>
             </div>
-
         </div>
     )
 }

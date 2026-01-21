@@ -34,6 +34,11 @@ export interface ISkill {
   category: SkillCategory;
 }
 
+export enum ProjectCategory {
+  Blockchain = "Blockchain",
+  AI = "AI",
+  FullStack = "Full Stack"
+}
 
 export interface IProject {
   id: number;
@@ -42,10 +47,12 @@ export interface IProject {
   image_path: string;
   deployed_url: string;
   github_url: string;
-  category: Category[];
+  category: ProjectCategory[];
   key_techs: string[];
 }
 
-export type Category = "Blockchain" | "AI" | "Full Stack"
-
-export type ThemeType = 'architect' | 'neural' | 'matrix';
+export enum ThemeType {
+  Architect = 'architect',
+  Neural = 'neural',
+  Matrix = 'matrix'
+}
