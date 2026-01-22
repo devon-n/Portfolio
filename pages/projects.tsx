@@ -46,7 +46,7 @@ const Projects = () => {
       exit="exit"
     >
       <Head>
-        <title>Devon Nathan - Projects</title>
+        <title>{`Devon Nathan - Projects`}</title>
         <meta name="description" content="A curated collection of selected works including cross-chain bridges, decentralized governance systems, and AI-driven predictive models by Devon Nathan." />
       </Head>
 

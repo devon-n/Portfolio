@@ -25,7 +25,7 @@ const Resume = () => {
       className="px-6 py-2 h-auto min-h-screen"
     >
       <Head>
-        <title>Devon Nathan - Resume</title>
+        <title>{`Devon Nathan - Resume`}</title>
         <meta name="description" content="A detailed timeline of Devon Nathan's professional path, highlighting high-impact engineering leadership, smart contract development, and infrastructure architecture." />
       </Head>
 
