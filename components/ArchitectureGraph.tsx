@@ -18,9 +18,9 @@ const ArchitectureGraph: React.FC = () => {
     ];
 
     return (
-        <div className="w-full aspect-[2/1] glass-card rounded-3xl p-8 my-10 relative overflow-hidden bg-background/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.05)]">
-            <h3 className="text-xl font-bold mb-8 text-primary uppercase tracking-widest relative z-10">Multi-Chain Ecosystem Architecture</h3>
-            <svg viewBox="0 0 700 400" className="w-full h-full relative z-10">
+        <div className="w-full aspect-[3/4] sm:aspect-square md:aspect-[2/1] glass-card rounded-3xl p-4 md:p-8 my-6 md:my-10 relative overflow-hidden bg-background/30 shadow-[0_0_20px_rgba(var(--primary-rgb),0.05)]">
+            <h3 className="text-sm md:text-xl font-bold mb-4 md:mb-8 text-primary uppercase tracking-widest relative z-10">Multi-Chain Ecosystem Architecture</h3>
+            <svg viewBox="0 0 700 400" preserveAspectRatio="xMidYMid meet" className="w-full h-full relative z-10">
                 {/* Connections */}
                 {connections.map((conn, i) => {
                     const from = nodes.find(n => n.id === conn.from)!;
@@ -73,9 +73,6 @@ const ArchitectureGraph: React.FC = () => {
                 ))}
             </svg>
 
-            <div className="absolute bottom-6 right-6 text-sm font-bold text-primary max-w-[300px] text-right bg-background/50 px-2 py-1 rounded backdrop-blur-sm z-10">
-                ENGINEERING CORE ENABLED
-            </div>
         </div>
     );
 };

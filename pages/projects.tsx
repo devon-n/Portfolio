@@ -39,7 +39,7 @@ const Projects = () => {
 
   return (
     <motion.div
-      className="px-6 py-2 h-auto min-h-screen"
+      className="px-4 md:px-6 py-2 h-auto min-h-screen"
       variants={routeAnimation}
       initial="initial"
       animate="animate"
@@ -69,7 +69,7 @@ const Projects = () => {
           {filteredProjects.map((project: IProject) => (
             <motion.div
               variants={fadeInUp}
-              className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4"
+              className="col-span-12 rounded-3xl p-2 md:p-4 sm:col-span-6 lg:col-span-4"
               key={project.name}
             >
               <ProjectCard

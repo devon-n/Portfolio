@@ -23,7 +23,7 @@ const Skills = () => {
 
     return (
         <motion.div
-            className="px-6 py-2"
+            className="px-4 md:px-6 py-2"
             variants={stagger}
             initial="initial"
             animate="animate"

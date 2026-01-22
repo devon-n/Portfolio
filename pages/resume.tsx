@@ -22,7 +22,7 @@ const Resume = () => {
       variants={stagger}
       initial="initial"
       animate="animate"
-      className="px-6 py-2 h-auto min-h-screen"
+      className="px-4 md:px-6 py-2 h-auto min-h-screen"
     >
       <Head>
         <title>{`Devon Nathan - Resume`}</title>

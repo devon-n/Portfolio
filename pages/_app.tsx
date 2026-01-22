@@ -39,8 +39,8 @@ function MyApp({ Component, pageProps }) {
 			{/* We keep next-themes for potential compatibility, but IdentityProvider handles the 4 cores */}
 			<ThemeProvider attribute="class" forcedTheme="dark">
 				<div className="min-h-screen bg-background text-text-main transition-colors duration-500 overflow-x-hidden">
-					<div className="flex flex-col lg:flex-row gap-6 px-5 py-14 lg:px-20 md:px-12 sm:px-8 max-w-[1920px] mx-auto items-start">
-						{/* Sidebar Column */}
+					<div className="flex flex-col lg:flex-row gap-0 lg:gap-6 px-3 py-6 lg:px-20 md:px-12 sm:px-8 max-w-[1920px] mx-auto items-start w-full">
+						{/* Sidebar Column (Desktop Only) */}
 						<div
 							className={`bg-surface rounded-2xl shadow-custom-light border border-border transition-all duration-500 sticky top-14 overflow-hidden shrink-0 hidden lg:block`}
 							style={{ width: isCollapsed ? '80px' : '350px' }}
@@ -48,13 +48,13 @@ function MyApp({ Component, pageProps }) {
 							<Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
 						</div>
 
-						{/* Mobile Sidebar (Top Stack) */}
-						<div className="lg:hidden w-full bg-surface rounded-2xl shadow-custom-light border border-border transition-all duration-500 overflow-hidden">
-							<Sidebar isCollapsed={false} setIsCollapsed={() => { }} />
-						</div>
+						{/* Main Content Column (Integrated Sidebar on Mobile) */}
+						<div className="flex flex-col flex-1 min-w-0 w-full bg-surface shadow-custom-light rounded-2xl border border-border transition-all duration-500 overflow-hidden">
+							{/* Inline Mobile Sidebar Header */}
+							<div className="lg:hidden border-b border-border bg-surface/50 backdrop-blur-xl">
+								<Sidebar isCollapsed={false} setIsCollapsed={() => { }} />
+							</div>
 
-						{/* Main Content Column */}
-						<div className="flex flex-col flex-1 min-w-0 bg-surface shadow-custom-light rounded-2xl border border-border transition-all duration-500 overflow-hidden">
 							<Navbar />
 							<AnimatePresence mode="wait">
 								<Component {...pageProps} key={router.route} />

@@ -37,15 +37,16 @@ const Navbar = () => {
     }, [pathname])
 
     return (
-        <nav className="flex justify-between items-center px-6 py-4" aria-label="Main navigation">
-            <span className="text-xl font-black md:text-2xl text-primary uppercase tracking-tighter">
+        <nav className="flex justify-between items-center px-4 md:px-6 py-4" aria-label="Main navigation">
+            <span className="hidden md:block text-xl font-black md:text-2xl text-primary uppercase tracking-tighter shrink-0">
                 {activeItem}
             </span>
-            <div className="flex space-x-6 text-base font-bold uppercase tracking-widest">
+            <div className="flex w-full md:w-auto justify-center md:justify-end gap-3 sm:gap-4 md:gap-8 text-sm md:text-base font-bold uppercase tracking-widest overflow-x-auto scrollbar-hide py-1 px-2">
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='About' route='/' />
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Resume' route='/resume' />
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Skills' route='/skills' />
                 <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name='Projects' route='/projects' />
+                <div className="md:hidden w-4 shrink-0" aria-hidden="true" />
             </div>
         </nav>
     )

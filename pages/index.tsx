@@ -54,7 +54,7 @@ const About = () => {
 
 	return (
 		<motion.div
-			className="flex flex-col flex-grow px-6 pt-1 mb-10"
+			className="flex flex-col flex-grow px-4 md:px-6 pt-1 mb-10"
 			variants={routeAnimation}
 			initial="initial"
 			animate="animate"
@@ -103,9 +103,9 @@ const About = () => {
 						<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase text-primary">
 							{category}
 						</h5>
-						<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 							{(servicesByCategory[category] || []).map((service: IService, index: number) => (
-								<motion.div variants={fadeInUp} className="glass-card rounded-2xl border border-border/50 hover:border-primary/30 transition-colors" key={`${service.title}-${index}`}>
+								<motion.div variants={fadeInUp} className="glass-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300" key={`${service.title}-${index}`}>
 									<ServiceCard service={service} />
 								</motion.div>
 							))}

@@ -48,21 +48,21 @@ const CyberTerminal: React.FC = () => {
     }, []);
 
     // Standardized style for terminal lines
-    const lineStyle = "text-primary text-[9px] md:text-[10px] font-medium opacity-90 animate-terminal-fadeIn border-l border-primary/10 pl-2 truncate";
+    const lineStyle = "text-primary text-[8px] sm:text-[9px] md:text-[10px] font-medium opacity-90 animate-terminal-fadeIn border-l border-primary/10 pl-2 truncate";
 
     return (
-        <div className="w-full h-[400px] bg-black border-2 border-primary my-10 font-mono relative overflow-hidden group flex flex-col md:flex-row shadow-[0_0_20px_rgba(var(--primary-rgb),0.1)]">
+        <div className="w-full h-[500px] md:h-[450px] bg-black border-2 border-primary my-6 md:my-10 font-mono relative overflow-hidden group flex flex-col md:flex-row shadow-[0_0_20px_rgba(var(--primary-rgb),0.1)]">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/20 animate-scanline pointer-events-none z-20" />
 
             {/* Left Column */}
-            <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-primary/20 overflow-hidden relative flex flex-col bg-black/40">
-                <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-4 shrink-0">
-                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_A</span>
+            <div className="flex-1 p-3 md:p-4 border-b md:border-b-0 md:border-r border-primary/20 overflow-hidden relative flex flex-col bg-black/40">
+                <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-2 md:mb-4 shrink-0">
+                    <span className="text-primary text-[9px] md:text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_A</span>
                     <div className="flex gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     </div>
                 </div>
-                <div className="space-y-1 overflow-hidden flex-1">
+                <div className="space-y-0.5 md:space-y-1 overflow-hidden flex-1">
                     {leftLines.map((line, idx) => (
                         <div key={idx} className={lineStyle}>
                             {line}
@@ -73,11 +73,11 @@ const CyberTerminal: React.FC = () => {
             </div>
 
             {/* Right Column */}
-            <div className="w-full md:w-1/2 p-4 overflow-hidden relative bg-black/60 flex flex-col border-l border-primary/10">
-                <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-4 shrink-0">
-                    <span className="text-primary text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_B</span>
+            <div className="flex-1 p-3 md:p-4 overflow-hidden relative bg-black/60 flex flex-col border-l border-primary/10">
+                <div className="flex justify-between items-center border-b border-primary/30 pb-2 mb-2 md:mb-4 shrink-0">
+                    <span className="text-primary text-[9px] md:text-[10px] font-bold tracking-tighter uppercase">LOG_STREAM_B</span>
                 </div>
-                <div className="space-y-1 overflow-hidden flex-1">
+                <div className="space-y-0.5 md:space-y-1 overflow-hidden flex-1">
                     {rightLines.map((line, idx) => (
                         <div key={idx} className={lineStyle}>
                             {line}
@@ -87,8 +87,8 @@ const CyberTerminal: React.FC = () => {
                 </div>
             </div>
 
-            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none bg-gradient-to-t from-primary/10 to-transparent z-10" />
-            <div className="absolute bottom-4 left-4 text-[8px] text-primary/40 uppercase tracking-[0.5em] z-20">
+            <div className="absolute inset-x-0 bottom-0 h-12 md:h-16 pointer-events-none bg-gradient-to-t from-primary/10 to-transparent z-10" />
+            <div className="absolute bottom-2 left-3 md:bottom-4 md:left-4 text-[7px] md:text-[8px] text-primary/40 uppercase tracking-[0.5em] z-20">
                 Matrix Sequential Trace Active
             </div>
         </div>
