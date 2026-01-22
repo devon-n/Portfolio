@@ -11,10 +11,10 @@ export const NavItem: FunctionComponent<{
     active
 }) => {
         const isActive = active === value;
-        let className = "px-3 md:px-5 py-1.5 capitalize cursor-pointer transition-all duration-300 rounded-full font-bold outline-none focus:ring-2 focus:ring-primary/50 whitespace-nowrap text-xs md:text-base"
+        let className = "px-2 sm:px-4 py-1 md:py-2 uppercase cursor-pointer transition-all duration-300 rounded-full font-bold outline-none focus:ring-2 focus:ring-primary/50 whitespace-nowrap text-xs sm:text-sm lg:text-base"
 
         if (isActive) {
-            className += " bg-primary text-background shadow-lg scale-105"
+            className += " bg-primary text-background shadow-lg shadow-primary/20"
         } else {
             className += " text-text-muted hover:text-primary hover:bg-primary/5"
         }
@@ -32,6 +32,7 @@ export const NavItem: FunctionComponent<{
                 }}
                 aria-current={isActive ? "page" : undefined}
             >
+                {/* {value === ProjectCategory.AI ? "AI" : value} */}
                 {value}
             </li>
         )

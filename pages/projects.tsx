@@ -6,6 +6,7 @@ import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
 import ProjectsNavbar from "../components/ProjectNavbar"
 import ProjectCard from "../components/ProjectCard"
+import ProjectDetail from "../components/ProjectDetail"
 import { useIdentity } from '../context/IdentityContext'
 
 const Projects = () => {
@@ -16,11 +17,12 @@ const Projects = () => {
 
   // Standard 2: Loop Minimization - Memoize filtered projects
   const filteredProjects: IProject[] = useMemo(() => {
-    if (activeItem === "all") {
+    if (!activeItem || activeItem === "all") {
       return projectsData
     }
+    const search = activeItem.trim().toLowerCase()
     return projectsData.filter((project: IProject) =>
-      project.category.includes(activeItem as ProjectCategory)
+      project.category?.some(cat => cat?.trim().toLowerCase() === search)
     )
   }, [activeItem])
 
@@ -98,9 +100,8 @@ const Projects = () => {
                 className="w-full max-w-6xl max-h-full overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ProjectCard
+                <ProjectDetail
                   project={projectsMap[showDetail]}
-                  showDetail={showDetail}
                   setShowDetail={setShowDetail}
                 />
               </motion.div>
