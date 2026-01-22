@@ -29,7 +29,7 @@ const About = () => {
 
 	const content: Record<ThemeType, { title: string; description: string; feature: React.ReactNode }> = {
 		[ThemeType.Architect]: {
-			title: "Lead Blockchain Architect",
+			title: "Lead Solutions Architect",
 			description: "Specializing in high-value multi-chain integration and robust EVM infrastructure. I build the systems that bridge millions in capital and govern critical Web3 protocols.",
 			feature: (
 				<>

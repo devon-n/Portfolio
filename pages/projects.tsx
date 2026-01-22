@@ -20,10 +20,11 @@ const Projects = () => {
     if (!activeItem || activeItem === "all") {
       return projectsData
     }
-    const search = activeItem.trim().toLowerCase()
-    return projectsData.filter((project: IProject) =>
-      project.category?.some(cat => cat?.trim().toLowerCase() === search)
+    const search = activeItem.trim()
+    const results = projectsData.filter((project: IProject) =>
+      project.category?.some(cat => cat?.trim() === search)
     )
+    return results
   }, [activeItem])
 
   // Standard 3: Pre-index projects for detail view to avoid .find() in render
@@ -66,6 +67,7 @@ const Projects = () => {
           variants={stagger}
           initial="initial"
           animate="animate"
+          key={activeItem}
           className="grid grid-cols-12 gap-6 my-10"
         >
           {filteredProjects.map((project: IProject) => (
