@@ -11,10 +11,10 @@ export const NavItem: FunctionComponent<{
     active
 }) => {
         const isActive = active === value;
-        let className = "px-5 py-1.5 capitalize cursor-pointer transition-all duration-300 rounded-full font-bold outline-none focus:ring-2 focus:ring-primary/50 whitespace-nowrap"
+        let className = "px-2 sm:px-4 py-1 md:py-2 uppercase cursor-pointer transition-all duration-300 rounded-full font-bold outline-none focus:ring-2 focus:ring-primary/50 whitespace-nowrap text-xs sm:text-sm lg:text-base"
 
         if (isActive) {
-            className += " bg-primary text-background shadow-lg scale-105"
+            className += " bg-primary text-background shadow-lg shadow-primary/20"
         } else {
             className += " text-text-muted hover:text-primary hover:bg-primary/5"
         }
@@ -32,6 +32,7 @@ export const NavItem: FunctionComponent<{
                 }}
                 aria-current={isActive ? "page" : undefined}
             >
+                {/* {value === ProjectCategory.AI ? "AI" : value} */}
                 {value}
             </li>
         )
@@ -47,8 +48,8 @@ const ProjectsNavbar: FunctionComponent<IProjectsNavbarProps> = ({ handlerFilter
     const categories: (ProjectCategory | 'all')[] = ['all', ...Object.values(ProjectCategory)];
 
     return (
-        <nav aria-label="Project categories" className="glass-card rounded-3xl p-1 inline-block border-none bg-transparent">
-            <ul className="flex items-center gap-2 overflow-x-auto list-none scrollbar-hide py-1 px-1">
+        <nav aria-label="Project categories" className="w-full">
+            <ul className="flex items-center gap-2 overflow-x-auto list-none scrollbar-hide py-2 px-1">
                 {categories.map((cat) => (
                     <NavItem
                         key={cat}
@@ -57,6 +58,8 @@ const ProjectsNavbar: FunctionComponent<IProjectsNavbarProps> = ({ handlerFilter
                         active={active}
                     />
                 ))}
+                {/* Spacer for horizontal scroll on mobile */}
+                <li className="shrink-0 w-4 md:hidden" aria-hidden="true" />
             </ul>
         </nav>
     )

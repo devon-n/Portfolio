@@ -6,6 +6,7 @@ import { fadeInUp, routeAnimation, stagger } from "../animations"
 import Head from "next/head"
 import ProjectsNavbar from "../components/ProjectNavbar"
 import ProjectCard from "../components/ProjectCard"
+import ProjectDetail from "../components/ProjectDetail"
 import { useIdentity } from '../context/IdentityContext'
 
 const Projects = () => {
@@ -16,12 +17,14 @@ const Projects = () => {
 
   // Standard 2: Loop Minimization - Memoize filtered projects
   const filteredProjects: IProject[] = useMemo(() => {
-    if (activeItem === "all") {
+    if (!activeItem || activeItem === "all") {
       return projectsData
     }
-    return projectsData.filter((project: IProject) =>
-      project.category.includes(activeItem as ProjectCategory)
+    const search = activeItem.trim()
+    const results = projectsData.filter((project: IProject) =>
+      project.category?.some(cat => cat?.trim() === search)
     )
+    return results
   }, [activeItem])
 
   // Standard 3: Pre-index projects for detail view to avoid .find() in render
@@ -39,14 +42,14 @@ const Projects = () => {
 
   return (
     <motion.div
-      className="px-6 py-2 h-auto min-h-screen"
+      className="px-4 md:px-6 py-2 h-auto min-h-screen"
       variants={routeAnimation}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <Head>
-        <title>Devon Nathan - Projects</title>
+        <title>{`Devon Nathan - Projects`}</title>
         <meta name="description" content="A curated collection of selected works including cross-chain bridges, decentralized governance systems, and AI-driven predictive models by Devon Nathan." />
       </Head>
 
@@ -64,12 +67,13 @@ const Projects = () => {
           variants={stagger}
           initial="initial"
           animate="animate"
+          key={activeItem}
           className="grid grid-cols-12 gap-6 my-10"
         >
           {filteredProjects.map((project: IProject) => (
             <motion.div
               variants={fadeInUp}
-              className="col-span-12 rounded-3xl p-4 sm:col-span-6 lg:col-span-4"
+              className="col-span-12 rounded-3xl p-2 md:p-4 sm:col-span-6 lg:col-span-4"
               key={project.name}
             >
               <ProjectCard
@@ -98,9 +102,8 @@ const Projects = () => {
                 className="w-full max-w-6xl max-h-full overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ProjectCard
+                <ProjectDetail
                   project={projectsMap[showDetail]}
-                  showDetail={showDetail}
                   setShowDetail={setShowDetail}
                 />
               </motion.div>

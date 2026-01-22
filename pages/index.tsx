@@ -29,7 +29,7 @@ const About = () => {
 
 	const content: Record<ThemeType, { title: string; description: string; feature: React.ReactNode }> = {
 		[ThemeType.Architect]: {
-			title: "Lead Blockchain Architect",
+			title: "Lead Solutions Architect",
 			description: "Specializing in high-value multi-chain integration and robust EVM infrastructure. I build the systems that bridge millions in capital and govern critical Web3 protocols.",
 			feature: (
 				<>
@@ -54,14 +54,14 @@ const About = () => {
 
 	return (
 		<motion.div
-			className="flex flex-col flex-grow px-6 pt-1 mb-10"
+			className="flex flex-col flex-grow px-4 md:px-6 pt-1 mb-10"
 			variants={routeAnimation}
 			initial="initial"
 			animate="animate"
 			exit="exit"
 		>
 			<Head>
-				<title>Devon Nathan - {activeContent.title}</title>
+				<title>{`Devon Nathan - ${activeContent.title}`}</title>
 				<meta name="description" content="Senior Software Engineer specializing in high-value multi-chain integration, AI research, and robust Web3 infrastructure. Explore my technical foundations and professional persona." />
 			</Head>
 
@@ -103,9 +103,9 @@ const About = () => {
 						<h5 className="my-3 text-2xl font-bold tracking-wide border-l-4 border-primary pl-4 uppercase text-primary">
 							{category}
 						</h5>
-						<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
 							{(servicesByCategory[category] || []).map((service: IService, index: number) => (
-								<motion.div variants={fadeInUp} className="glass-card rounded-2xl border border-border/50 hover:border-primary/30 transition-colors" key={`${service.title}-${index}`}>
+								<motion.div variants={fadeInUp} className="glass-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 overflow-hidden" key={`${service.title}-${index}`}>
 									<ServiceCard service={service} />
 								</motion.div>
 							))}

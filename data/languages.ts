@@ -61,11 +61,6 @@ export const languages: ISkill[] = [
         Icon: SiJest,
         category: SkillCategory.JavaScript
     },
-    {
-        name: "Telegram API",
-        Icon: SiTelegram,
-        category: SkillCategory.JavaScript
-    },
     // Python
     {
         name: "Flask",

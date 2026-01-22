@@ -23,13 +23,13 @@ const Skills = () => {
 
     return (
         <motion.div
-            className="px-6 py-2"
+            className="px-4 md:px-6 py-2"
             variants={stagger}
             initial="initial"
             animate="animate"
         >
             <Head>
-                <title>Devon Nathan - Skills</title>
+                <title>{`Devon Nathan - Skills`}</title>
                 <meta name="description" content="A comprehensive technical breakdown of expertise across JavaScript ecosystems, AI development in Python, Database architecture, and Blockchain protocol engineering." />
             </Head>
 
