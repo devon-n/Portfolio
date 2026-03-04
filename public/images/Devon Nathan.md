@@ -1,5 +1,5 @@
 # Devon Nathan
-**Lead / Senior Full-Stack Blockchain Engineer (EVM/Tezos)**  
+**Senior Full-Stack Blockchain Engineer (EVM/Tezos)**
 [devonnathan.com](https://www.devonnathan.com) | [devon.nathan@protonmail.com](mailto:devon.nathan@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/devonnathan/) | [GitHub](https://github.com/devon-n)
 
 ---
@@ -9,9 +9,10 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 
 **Key Highlights**
 - Cross-chain bridge UI + integrations supporting **>$55M** bridged volume (Tezos ↔ EVM)
+- Architected a **High-Availability Blockchain Cluster** on bare-metal servers; automated L1/EVM node provisioning using **Ansible** and **Docker**
+- Engineered a **distributed load-testing framework** in Python/Locust capable of simulating **3000+ RPS** with real-time metric aggregation
 - Implemented **fast withdrawals**, reducing withdrawal time by **~2 weeks** (Etherlink L2 → Tezos L1)
 - Governance UI + indexing system supporting **>$30M** voting power
-- Sole Solidity developer for a game with **60K players**, **500K NFT owners**, **1700 ETH** volume
 
 ---
 
@@ -19,8 +20,11 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 
 **Lead Hands-on Blockchain Solutions Architect** | Trilitech | 2024 - Present | [etherlink.com](https://www.etherlink.com)
 - Built and shipped the cross-chain bridge frontend and production integrations ([etherlinkbridge.com](https://www.etherlinkbridge.com)) supporting **>$55M** across Tezos and EVM chains (*Next.js, Ethers, LayerZero, Taquito, MUI, MobX*)
-- Implemented bridging integrations including **deposit/withdraw UX** and **event indexing** across Etherlink (EVM) and Tezos contracts (*Ethers, Taquito*)
-- Helped implement **fast withdrawals** reducing withdrawal times by **~2 weeks** from Etherlink L2 to Tezos L1; supported **14k+ fast withdrawals** surpassing **3M XTZ** across **350+ unique wallets**
+- **Architected a High-Availability Blockchain Cluster:** Designed and deployed a "Twin Towers" infrastructure for Etherlink nodes on bare-metal servers, achieving 99.9% uptime via Nginx load balancing.
+- **Infrastructure as Code:** Automated server provisioning and software stack deployment (L1/EVM nodes, Indexers, Postgres) using **Ansible** and **Docker Compose**.
+- **Data Engineering & Storage:** Optimized 4TB NVMe RAID 0 arrays for high-IOPS indexing and authored "**Fast Restore**" automation for 1.2TB+ snapshots.
+- **Monitoring & Observability:** Integrated a centralized **Prometheus/Grafana** stack to monitor real-time node health across multi-region clusters.
+- **Distributed Performance Engineering:** Engineered a custom load-testing framework in **Python/Locust** to benchmark high-throughput RPC nodes, supporting 3000+ RPS and automated kernel tuning.
 - Built liquidity dashboard to monitor EVM bridge transfers ([etherlinkbridge.com/stats](https://www.etherlinkbridge.com/stats)) (*Next.js, Express, TypeScript, BigQuery, MySQL, GCP*)
 - Created frontend and indexer for Tezos governance ([governance.etherlink.com](https://governance.etherlink.com)) supporting **>$30M** voting power (*Next.js, Express, Taquito, MySQL, WebSockets, MobX*)
 - Built monitoring/alerting for dapp availability and RPC/indexer issues with on-call escalation (*Node.js, Express, Ethers, Taquito, PagerDuty*)
@@ -47,12 +51,11 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 ---
 
 ## Skills
-- **Blockchain:** Solidity, Foundry, Hardhat, Truffle, Geth, Ganache CLI
+- **DevOps / SRE:** Ansible, Docker, Nginx (Load Balancing), Prometheus, Grafana, RAID Storage, Bash Scripting, Linux SysAdmin
 - **JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers, MUI, MobX, TanStack, Tailwind
-- **Python:** Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
-- **Databases:** MySQL, MongoDB, BigQuery
-- **CI/CD & Cloud:** GitHub Actions, Google Cloud Platform, Vercel
-- **AI:** Neural Networks, Genetic Algorithms, Neuroevolution of Augmenting Topologies
+- **Python:** Locust (Distributed Testing), Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
+- **Databases:** MySQL, MongoDB, BigQuery, SQLite
+- **Blockchain Infrastructure:** Tezos/Etherlink Node Ops, TzKT Indexer Management, RPC Optimization, Snapshot Handling
 
 ---
 

@@ -80,5 +80,25 @@ export const projects: IProject[] = [
         github_url: "",
         category: [ProjectCategory.FullStack],
         key_techs: ["React", "Express", "Typescript", "Telegram API"]
+    },
+    {
+        id: 9,
+        name: "Distributed Load Testing Framework",
+        description: "Architected a Master-Worker system in Python/Locust capable of simulating 3000+ RPS. Features real-time cross-process metric aggregation, kernel-level OS tuning, and headless data visualization.",
+        image_path: "/images/DistributedTesting.png",
+        deployed_url: "",
+        github_url: "",
+        category: [ProjectCategory.Infrastructure, ProjectCategory.Python],
+        key_techs: ["Python", "Locust", "Distributed Systems", "Matplotlib", "SQLite"]
+    },
+    {
+        id: 10,
+        name: "High-Availability Blockchain Cluster",
+        description: "Engineered a 'Twin Towers' infrastructure for Etherlink nodes on bare-metal servers. Automated L1/EVM node deployment, optimized 4TB NVMe RAID arrays, and implemented centralized Prometheus/Grafana monitoring.",
+        image_path: "/images/BlockchainInfra.png",
+        deployed_url: "",
+        github_url: "",
+        category: [ProjectCategory.Infrastructure, ProjectCategory.Blockchain],
+        key_techs: ["Ansible", "Docker", "Nginx", "Prometheus", "Grafana", "Linux"]
     }
 ]

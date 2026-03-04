@@ -5,7 +5,7 @@ export const experiences: IExperienceItemProps[] = [
     title: "Lead Blockchain Solutions Architect",
     company: "Trilitech (Etherlink)",
     period: "2024 - Present",
-    description: "Technical leadership in cross-chain bridging solutions ($55M+ volume), specifically overseeing the architectural overhaul of the Etherlink bridge and managing the Tezos integration. Engineered fast withdrawal system.",
+    description: "Technical leadership in cross-chain bridging solutions ($55M+ volume), specifically overseeing the architectural overhaul of the Etherlink bridge and managing the Tezos integration. Engineered fast withdrawal system. Architected a High-Availability Blockchain Cluster on bare-metal servers, achieving 99.9% uptime via Nginx load balancing. Automated L1/EVM node provisioning and indexer stacks using Ansible and Docker. Engineered a distributed load-testing framework in Python/Locust capable of 3000+ RPS and optimized 4TB NVMe RAID arrays for high-IOPS blockchain indexing.",
   },
   {
     title: "Smart Contract Engineer",

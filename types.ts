@@ -25,7 +25,9 @@ export enum SkillCategory {
   JavaScript = "JavaScript",
   Python = "Python",
   Databases = "Databases",
-  Blockchain = "Blockchain"
+  Blockchain = "Blockchain",
+  DevOps = "DevOps",
+  SRE = "SRE"
 }
 
 export interface ISkill {
@@ -37,7 +39,9 @@ export interface ISkill {
 export enum ProjectCategory {
   Blockchain = "Blockchain",
   AI = "AI",
-  FullStack = "Full Stack"
+  FullStack = "Full Stack",
+  Infrastructure = "Infrastructure",
+  Python = "Python"
 }
 
 export interface IProject {
