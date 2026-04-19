@@ -46,20 +46,15 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 **Substitute Instructor** | 2U Monash University | 2022
 - Taught Blockchain Programming and AI to classrooms of 20+ people
 
-**Blockchain Developer** | Panda Siege | 2021 - 2022
-- NFT minting dapp and marketplace (*Next.js, CSS, Solidity*)
-
-**Full Stack Developer** | Crypto Fund Me | 2020 - 2021
-- NFT crowdfunding platform (*JavaScript, HTML, CSS, IPFS hosting, Solidity*)
+**Early Career Blockchain & Web Development** | 2020 - 2022
+- Developed NFT marketplaces, crowdfunding platforms, and dapps for **Panda Siege** and **Crypto Fund Me** (*Next.js, Solidity, IPFS*).
 
 ---
 
-## Skills
-- **JavaScript/TypeScript:** Node.js, Express, React, Next.js, Vue.js, Ethers, MUI, MobX, TanStack, Tailwind
-- **Python:** Locust (Distributed Testing), Brownie, web3.py, Flask, pytest, Keras, SciKit-Learn, HyperNEAT, Computer Vision
-- **Databases & Analytics:** MySQL, MongoDB, BigQuery, SQLite, real-time metrics
-- **Blockchain Infrastructure:** Tezos/Etherlink Node Ops, TzKT Indexer Management, RPC Optimization, Snapshot Handling
-- **Cloud & DevOps:** **GCP (Cloud Run, Cloud VM, Cloud Build, Cloud Storage, Cloud Scheduler)**, Ansible, Docker, Nginx (Load Balancing), Prometheus, Grafana, RAID Storage, Bash Scripting, Linux SysAdmin
+## Skills & Stack
+- **Languages:** JavaScript/TypeScript (Node, React, Next, Vue), Python (Locust, Keras, Scikit-Learn), Solidity
+- **Cloud & DevOps:** **GCP (Run, Build, Storage, BigQuery, VM)**, Kubernetes, Ansible, Docker, Nginx, Prometheus
+- **Specialization:** Cross-chain bridge architecture, high-IOPS indexing, HA bare-metal node clusters, CI/CD
 
 ---
 
@@ -71,4 +66,5 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 ---
 
 ## Education
-**Bachelor of Marketing and Philosophy** | Macquarie University (Sydney)
+**Double Degree: Bachelor of Business (Marketing) & Bachelor of Arts (Philosophy)**
+Macquarie University, Sydney
