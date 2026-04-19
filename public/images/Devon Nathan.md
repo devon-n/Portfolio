@@ -53,7 +53,7 @@ Full-stack blockchain engineer with 5+ years delivering production-grade, multi-
 
 ## Skills & Stack
 - **Languages:** JavaScript/TypeScript (Node, React, Next, Vue), Python (Locust, Keras, Scikit-Learn), Solidity
-- **Cloud & DevOps:** **GCP (Run, Build, Storage, BigQuery, VM)**, Kubernetes, Ansible, Docker, Nginx, Prometheus
+- **Cloud & DevOps:** **GCP (Run, Build, Storage, BigQuery, VM)**, Kubernetes, Ansible, Docker, Prometheus
 - **Specialization:** Cross-chain bridge architecture, high-IOPS indexing, HA bare-metal node clusters, CI/CD
 
 ---

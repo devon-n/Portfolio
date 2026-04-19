@@ -99,7 +99,7 @@ export const projects: IProject[] = [
         deployed_url: "",
         github_url: "",
         category: [ProjectCategory.Infrastructure, ProjectCategory.Blockchain],
-        key_techs: ["Ansible", "Docker", "Nginx", "Prometheus", "Grafana", "Linux"]
+        key_techs: ["Ansible", "Docker", "Prometheus", "Grafana", "Linux"]
     },
     {
         id: 11,

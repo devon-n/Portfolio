@@ -10,10 +10,8 @@ import {
     SiFlask,
     SiPytest,
     SiJest,
-    SiTelegram,
     SiAnsible,
     SiDocker,
-    SiNginx,
     SiPrometheus,
     SiGrafana,
     SiLinux
@@ -87,11 +85,6 @@ export const languages: ISkill[] = [
     {
         name: "Docker",
         Icon: SiDocker,
-        category: SkillCategory.DevOps
-    },
-    {
-        name: "Nginx",
-        Icon: SiNginx,
         category: SkillCategory.DevOps
     },
     {
