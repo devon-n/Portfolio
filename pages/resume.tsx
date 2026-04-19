@@ -12,7 +12,7 @@ const ExperienceItem: React.FC<IExperienceItemProps> = ({ title, company, period
   >
     <h6 className="text-xl font-black text-primary tracking-tighter uppercase">{title}</h6>
     <p className="font-bold text-sm text-text-muted mt-1 uppercase tracking-widest">{company} | {period}</p>
-    <p className="my-4 text-text-main leading-relaxed">{description}</p>
+    <p className="my-4 text-text-main leading-relaxed whitespace-pre-line text-lg">{description}</p>
   </motion.div>
 )
 

@@ -1,9 +1,10 @@
 import {
-    SiGooglecloud,
     SiMysql,
     SiMongodb,
     SiFirebase,
     SiTailwindcss,
+    SiGooglecloud,
+    SiGooglecloudstorage,
     SiMobx,
     SiKeras,
     SiTelegram,
@@ -49,11 +50,11 @@ export const tools: ISkill[] = [
         Icon: GiFoundryBucket,
         category: SkillCategory.Blockchain
     },
-    // Dev Ops
+    // Infrastructure & Cloud
     {
-        name: "Google Cloud Platform",
+        name: "GCP (Cloud Run / Build / Storage)",
         Icon: SiGooglecloud,
-        category: SkillCategory.Databases
+        category: SkillCategory.DevOps
     },
     // Databases
     {

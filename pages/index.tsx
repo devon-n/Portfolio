@@ -62,7 +62,7 @@ const About = () => {
 		>
 			<Head>
 				<title>{`Devon Nathan - ${activeContent.title}`}</title>
-				<meta name="description" content="Senior Software Engineer specializing in high-value multi-chain integration, AI research, and robust Web3 infrastructure. Explore my technical foundations and professional persona." />
+				<meta name="description" content="Senior Software Engineer specializing in high-value multi-chain integration, AI research, and robust Web3 infrastructure. Explore my technical foundations." />
 			</Head>
 
 			<div className="my-8">
