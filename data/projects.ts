@@ -4,7 +4,7 @@ export const projects: IProject[] = [
     {
         id: 1,
         name: "Etherlink Bridge",
-        description: "Cross-chain bridge supporting >$55M volume between Tezos and EVM chains. Implemented fast withdrawals reducing wait times by 2 weeks.",
+        description: "Production UI and integrations for a high-volume cross-chain bridge supporting >$55M volume. Architected the off-chain execution services for fast withdrawals.",
         image_path: "/images/EtherlinkBridge.png",
         deployed_url: "https://bridge.etherlink.com",
         github_url: "",
@@ -34,12 +34,12 @@ export const projects: IProject[] = [
     {
         id: 4,
         name: "StratX",
-        description: "Forward testing dashboard to monitor and manage multiple algo-trading strategies across multiple exchanges.",
+        description: "Forward testing dashboard and algo-trading platform integrated with Binance API to monitor and manage multiple strategies.",
         image_path: "/images/Stratx.png",
         deployed_url: "",
         github_url: "",
         category: [ProjectCategory.Blockchain, ProjectCategory.FullStack],
-        key_techs: ["Python", "Typescript", "VueJS"]
+        key_techs: ["Python", "Flask", "Typescript", "Binance API", "VueJS"]
     },
     {
         id: 5,
@@ -80,5 +80,35 @@ export const projects: IProject[] = [
         github_url: "",
         category: [ProjectCategory.FullStack],
         key_techs: ["React", "Express", "Typescript", "Telegram API"]
+    },
+    {
+        id: 9,
+        name: "Distributed Load Testing Framework",
+        description: "Architected a Master-Worker system in Python/Locust capable of simulating 3000+ RPS. Features real-time cross-process metric aggregation, kernel-level OS tuning, and headless data visualization.",
+        image_path: "/images/DistributedTesting.png",
+        deployed_url: "",
+        github_url: "",
+        category: [ProjectCategory.Infrastructure, ProjectCategory.Python],
+        key_techs: ["Python", "Locust", "Distributed Systems", "Matplotlib", "SQLite"]
+    },
+    {
+        id: 10,
+        name: "High-Availability Blockchain Cluster",
+        description: "Engineered a 'Twin Towers' infrastructure for Etherlink nodes on bare-metal servers. Automated L1/EVM node deployment and optimized 4TB NVMe RAID arrays.",
+        image_path: "/images/BlockchainInfra.png",
+        deployed_url: "",
+        github_url: "",
+        category: [ProjectCategory.Infrastructure, ProjectCategory.Blockchain],
+        key_techs: ["Ansible", "Docker", "Prometheus", "Grafana", "Linux"]
+    },
+    {
+        id: 11,
+        name: "Commercial Node Infrastructure",
+        description: "Provisioned multi-region EVM node clusters on Kubernetes to support commercial RPC services. Implemented Grafana/Prometheus alerting for high availability.",
+        image_path: "/images/K8sNodes.png",
+        deployed_url: "",
+        github_url: "",
+        category: [ProjectCategory.Infrastructure, ProjectCategory.Blockchain],
+        key_techs: ["Kubernetes", "GCP", "Prometheus", "Grafana", "EVM Nodes"]
     }
 ]

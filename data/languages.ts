@@ -10,7 +10,11 @@ import {
     SiFlask,
     SiPytest,
     SiJest,
-    SiTelegram
+    SiAnsible,
+    SiDocker,
+    SiPrometheus,
+    SiGrafana,
+    SiLinux
 } from 'react-icons/si'
 import { ISkill, SkillCategory } from '../types'
 
@@ -71,5 +75,31 @@ export const languages: ISkill[] = [
         name: "PyTest",
         Icon: SiPytest,
         category: SkillCategory.Python
+    },
+    // DevOps & SRE
+    {
+        name: "Ansible",
+        Icon: SiAnsible,
+        category: SkillCategory.DevOps
+    },
+    {
+        name: "Docker",
+        Icon: SiDocker,
+        category: SkillCategory.DevOps
+    },
+    {
+        name: "Prometheus",
+        Icon: SiPrometheus,
+        category: SkillCategory.SRE
+    },
+    {
+        name: "Grafana",
+        Icon: SiGrafana,
+        category: SkillCategory.SRE
+    },
+    {
+        name: "Linux Admin",
+        Icon: SiLinux,
+        category: SkillCategory.SRE
     }
 ]

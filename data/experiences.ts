@@ -2,10 +2,16 @@ import { IExperienceItemProps } from "../types";
 
 export const experiences: IExperienceItemProps[] = [
   {
-    title: "Lead Blockchain Solutions Architect",
+    title: "Lead Hands-on Blockchain Solutions Architect",
     company: "Trilitech (Etherlink)",
     period: "2024 - Present",
-    description: "Technical leadership in cross-chain bridging solutions ($55M+ volume), specifically overseeing the architectural overhaul of the Etherlink bridge and managing the Tezos integration. Engineered fast withdrawal system.",
+    description: `SOFTWARE ENGINEERING:
+• Architected off-chain execution services and UI flows for fast-withdrawals; advised on L2 contract design to reduce L2-to-L1 bridge latency by ~2 weeks.
+• Engineered and sustained the production UI and integrations for high-volume cross-chain bridges ($55M+ vol) and Tezos governance systems ($30M+ voting power).
+
+DEVOPS & INFRASTRUCTURE:
+• Provisioned multi-region EVM node clusters on Kubernetes for commercial RPC services; implemented Grafana/Prometheus alerting.
+• Orchestrated High-Availability bare-metal clusters and automated node provisioning via GCP and Ansible.`,
   },
   {
     title: "Smart Contract Engineer",

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useIdentity } from '../context/IdentityContext'
 import Image from 'next/image'
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail, AiOutlineFilePdf } from 'react-icons/ai'
@@ -13,6 +14,13 @@ interface ISidebarProps {
 
 const Sidebar: React.FC<ISidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
     const { identity, setIdentity } = useIdentity();
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("devon.nathan@protonmail.com");
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000);
+    };
 
     return (
         <div className={`py-4 lg:pb-6 flex flex-col items-center transition-all duration-500 relative ${isCollapsed ? 'px-2' : 'px-0'}`}>
@@ -41,19 +49,20 @@ const Sidebar: React.FC<ISidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
                 </div>
             </div>
 
-            {/* Profile */}
+            {/* Profile Name */}
             {!isCollapsed && (
-                <div className="flex flex-col items-center lg:contents">
-                    <h3 className="my-1 lg:my-4 text-lg lg:text-3xl font-black tracking-tighter uppercase whitespace-nowrap text-center">
-                        <span className="text-primary tracking-widest">Devon</span> Nathan
-                    </h3>
-                    <p className={`my-0.5 lg:my-3 px-2 py-1 glass-card rounded-full text-[9px] lg:text-sm font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 border border-primary/20`}>
-                        {TITLES[identity as ThemeType]}
-                    </p>
-                </div>
+                <h3 className="my-1 lg:my-4 text-lg lg:text-3xl font-black tracking-tighter uppercase whitespace-nowrap text-center">
+                    <span className="text-primary tracking-widest">Devon</span> Nathan
+                </h3>
             )}
 
             <div className="w-full px-4 flex flex-col gap-2 lg:gap-3 lg:mt-4">
+                {!isCollapsed && (
+                    <p className="flex items-center justify-center w-full px-2 py-2 glass-card rounded-xl text-[9px] lg:text-sm font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 border border-primary/20 text-center">
+                        {TITLES[identity as ThemeType]}
+                    </p>
+                )}
+
                 <a
                     className={`flex items-center justify-center w-full px-2 py-2 glass-card rounded-xl text-xs lg:text-base font-bold hover:bg-primary hover:text-background transition-all ${isCollapsed ? 'h-10' : ''}`}
                     href="/images/Devon Nathan.pdf"
@@ -65,9 +74,14 @@ const Sidebar: React.FC<ISidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
                 </a>
 
                 {!isCollapsed && (
-                    <p className="flex items-center justify-center w-full px-2 py-1.5 lg:py-2 glass-card rounded-xl text-[10px] lg:text-xs font-mono truncate border border-border/50">
-                        devon.nathan@protonmail.com
-                    </p>
+                    <button
+                        onClick={handleCopyEmail}
+                        className="group flex flex-col items-center justify-center w-full px-2 py-1.5 lg:py-2 glass-card rounded-xl text-[10px] lg:text-xs font-mono border border-border/50 hover:border-primary/50 transition-all active:scale-95"
+                    >
+                        <span className={`transition-all duration-300 ${isCopied ? 'text-primary font-bold' : 'text-text-main'}`}>
+                            {isCopied ? "COPIED TO CLIPBOARD!" : "devon.nathan@protonmail.com"}
+                        </span>
+                    </button>
                 )}
             </div>
 
@@ -87,7 +101,7 @@ const Sidebar: React.FC<ISidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
             {/* Identity Switcher Integrated */}
             <div className={`w-full ${isCollapsed ? 'px-2' : 'px-4 lg:px-6'} mt-2 lg:mt-6`}>
                 {!isCollapsed && (
-                    <p className="text-[8px] lg:text-[10px] uppercase tracking-[0.3em] text-text-muted mb-2 lg:mb-4 font-black text-center opacity-60">Professional Persona</p>
+                    <p className="text-[8px] lg:text-[10px] uppercase tracking-[0.3em] text-text-muted mb-2 lg:mb-4 font-black text-center opacity-60">Theme</p>
                 )}
                 <div className="flex flex-col gap-2">
                     {IDENTITIES.map(({ id, name, icon: Icon }) => (
