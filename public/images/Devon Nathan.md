@@ -5,7 +5,7 @@
 ---
 
 ## Professional Summary
-Full-stack blockchain engineer with 5+ years delivering production-grade, multi-chain (EVM/Tezos) systems. Strengths in end-to-end delivery across web apps, integrations, monitoring/incident response, and cloud (GCP).
+Full-stack blockchain engineer with 6+ years delivering production-grade, multi-chain (EVM/Tezos) systems. Strengths in end-to-end delivery across applications, crypto dapps, integrations, monitoring/incident response, and cloud (GCP).
 
 **Key Highlights**
 - Cross-chain bridge UI + integrations supporting **>$55M** bridged volume (Tezos ↔ EVM)
