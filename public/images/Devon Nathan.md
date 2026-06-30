@@ -43,11 +43,7 @@ Full-stack blockchain engineer with 6+ years delivering production-grade, multi-
 - Built automated TypeScript pipelines for cross-chain smart contract deployments and upgrades, ensuring seamless multi-network releases
 
 
-**Substitute Instructor** | 2U Monash University | 2022
-- Taught Blockchain Programming and AI to classrooms of 20+ people
-
-**Early Career Blockchain & Web Development** | 2020 - 2022
-- Developed NFT marketplaces, crowdfunding platforms, and dapps for **Panda Siege** and **Crypto Fund Me** (*Next.js, Solidity, IPFS*).
+**Early Career Blockchain & Web Development** | 2020 - 2022 — NFT marketplaces, crowdfunding platforms, and dapps for **Panda Siege** and **Crypto Fund Me** (*Next.js, Solidity, IPFS*).
 
 ---
 
@@ -59,9 +55,7 @@ Full-stack blockchain engineer with 6+ years delivering production-grade, multi-
 ---
 
 ## Own Projects
-- **StratX** — Algo crypto trading platform (**Vue.js, Python/Flask, Binance API integration**)
-- **MLB & NBA AI Betting Predictor** — Sports prediction models (**Python, Scikit-Learn, Keras, Pandas**)
-- **Telegram Mini Apps** — Custom bot-integrated interfaces (**React, Node.js, Telegram Bot API**)
+- **Quant Research Platform** (side project) — End-to-end crypto quant stack: historical research & backtesting, walk-forward validation, strategy promotion, and live execution on Binance. Monorepo with **Python/FastAPI**, **React/Vue** dashboards, **Postgres**, **Docker**, and **Ansible**-deployed infra.
 
 ---
 

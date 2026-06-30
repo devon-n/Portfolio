@@ -33,13 +33,13 @@ export const projects: IProject[] = [
     },
     {
         id: 4,
-        name: "StratX",
-        description: "Forward testing dashboard and algo-trading platform integrated with Binance API to monitor and manage multiple strategies.",
+        name: "Quant Research Platform",
+        description: "Side project: end-to-end crypto quant stack — research & backtesting, walk-forward validation, strategy promotion, and live Binance execution. Python monorepo with React/Vue dashboards, Postgres, Docker, and Ansible-deployed infra.",
         image_path: "/images/Stratx.png",
         deployed_url: "",
         github_url: "",
-        category: [ProjectCategory.Blockchain, ProjectCategory.FullStack],
-        key_techs: ["Python", "Flask", "Typescript", "Binance API", "VueJS"]
+        category: [ProjectCategory.FullStack, ProjectCategory.Python],
+        key_techs: ["Python", "FastAPI", "React", "Vue.js", "Postgres", "Docker", "Ansible", "Binance API"]
     },
     {
         id: 5,
