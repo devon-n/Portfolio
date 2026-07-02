@@ -23,9 +23,9 @@ Full-stack blockchain engineer with 6+ years delivering production-grade, multi-
   - **Engineered and sustained the production UI and integrations** for the high-volume cross-chain bridge ([bridge.etherlink.com](https://bridge.etherlink.com)) supporting **>$55M** across Tezos and EVM.
   - **Co-built Tezos Intents**, a cross-chain intent settlement platform (MPC threshold signing, ERC-4337 smart accounts, treasury pipeline); led architecture, integration, and test strategy across contracts, off-chain services, and UI. Sole maintainer.
   - **Architected the off-chain execution services and UI flow for fast-withdrawals**; advised on L2 contract design to reduce L2-to-L1 bridge latency by **~2 weeks**.
-  - **Standardized the frontend and indexing architecture** for Tezos governance ([governance.etherlink.com](https://governance.etherlink.com)) supporting **>$30M** voting power.
+  - **Led the engineering team** that built Tezos governance ([governance.etherlink.com](https://governance.etherlink.com)); standardized frontend and indexing architecture supporting **>$30M** voting power.
   - **Designed and maintained automated liquidity dashboards** to monitor EVM/Tezos bridge health via real-time data pipelines.
-  - **Mentored junior engineers**; supported delivery of [bridge.explorer.etherlink.com](https://bridge.explorer.etherlink.com)
+  - **Mentored junior engineers and conducted technical interviews** for engineering hires; supported delivery of [bridge.explorer.etherlink.com](https://bridge.explorer.etherlink.com)
 - **DevOps & Infrastructure Architecture:**
   - **Orchestrated monitoring and incident response** across dapp availability, node clusters, and RPC health using **PagerDuty, Grafana, and Prometheus**.
   - **Designed an AI-assisted alert triage system** — Slack-triggered investigation across Kubernetes and GCP logs, posts automated root-cause replies in Slack alert threads, and automated remediation via pull requests.
