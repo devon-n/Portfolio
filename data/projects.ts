@@ -14,7 +14,7 @@ export const projects: IProject[] = [
     {
         id: 2,
         name: "Tezos Governance",
-        description: "Frontend and indexer for Tezos governance supporting >$30M voting power with real-time indexing and voting analytics.",
+        description: "Led engineering delivery of the Tezos governance platform — frontend and indexer supporting >$30M voting power with real-time indexing and voting analytics.",
         image_path: "/images/EtherlinkGovernance.png",
         deployed_url: "https://governance.etherlink.com",
         github_url: "https://github.com/etherlinkcom/governance-website-v2",
