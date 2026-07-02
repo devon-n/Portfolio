@@ -10,7 +10,7 @@ const accomplishments = [
     "EXECUTED: Polygon NFT contract (12,000+ on-chain transactions)",
     "ENGINEERED: Dynamic NFT EC2->S3 metadata rendering pipeline",
     "MONITORED: RPC/Indexer alerting system with PagerDuty integration",
-    "DEVELOPED: Quant Research Platform - research, backtest, live execution stack",
+    "DEVELOPED: Quant Research Platform - AI-driven research, validation harness, blue-green signal senders",
     "LAUNCHED: Multiple NFT minting dapps and marketplaces",
     "CAPABILITY: Smart Contract Development (EVM/Tezos)",
     "CAPABILITY: Security Auditing & Formal Verification",

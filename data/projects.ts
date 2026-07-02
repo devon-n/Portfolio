@@ -34,7 +34,7 @@ export const projects: IProject[] = [
     {
         id: 4,
         name: "Quant Research Platform",
-        description: "Side project: end-to-end crypto quant stack — research & backtesting, walk-forward validation, strategy promotion, and live Binance execution. Python monorepo with React/Vue dashboards, Postgres, Docker, and Ansible-deployed infra.",
+        description: "Side project: AI-driven crypto research with human review; in-sample testing and out-of-sample validation before strategy promotion and live Binance execution with blue-green signal-sender deployments. Python monorepo with React/Vue dashboards, Postgres, Docker, and Ansible-deployed infra.",
         image_path: "/images/Stratx.png",
         deployed_url: "",
         github_url: "",

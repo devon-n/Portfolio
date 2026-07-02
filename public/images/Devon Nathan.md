@@ -56,7 +56,7 @@ Full-stack blockchain engineer with 6+ years delivering production-grade, multi-
 ---
 
 ## Own Projects
-- **Quant Research Platform** (side project) — End-to-end crypto quant stack: historical research & backtesting, walk-forward validation, strategy promotion, and live execution on Binance. Monorepo with **Python/FastAPI**, **React/Vue** dashboards, **Postgres**, **Docker**, and **Ansible**-deployed infra.
+- **Quant Research Platform** (side project) — AI-driven crypto research with human review; in-sample testing and out-of-sample validation before strategy promotion and live execution on Binance with **blue-green signal-sender deployments**. Monorepo with **Python/FastAPI**, **React/Vue** dashboards, **Postgres**, **Docker**, and **Ansible**-deployed infra.
 
 ---
 
