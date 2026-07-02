@@ -20,15 +20,9 @@ DEVOPS & INFRASTRUCTURE:
     description: "Sole smart contract developer for Web3 title (60k+ players, 1,700 ETH volume). Shipped robust upgradeable proxy systems, LayerZero cross-chain bridges, and dynamic NFT rendering pipelines.",
   },
   {
-    title: "Substitute Instructor",
-    company: "Monash University (2U)",
-    period: "2022",
-    description: "Taught Blockchain Programming and AI fundamentals to specialized cohorts."
-  },
-  {
     title: "Blockchain Developer",
     company: "Panda Siege / Crypto Fund Me",
     period: "2020 - 2022",
-    description: "Early-stage development of NFT marketplaces, crowdfunding platforms, and decentralized applications on EVM networks."
+    description: "NFT marketplaces, crowdfunding platforms, and dapps on EVM networks."
   },
 ];
